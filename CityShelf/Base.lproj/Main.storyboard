@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4dW-6E-CBf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="CooperHewitt-Bold.otf">
+            <string>CooperHewitt-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Book View Controller-->
+        <scene sceneID="kLE-Ai-Ubj">
+            <objects>
+                <tableViewController id="Izu-52-pYn" customClass="BookViewController" customModule="CityShelf" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Sjs-mm-SKu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" id="9zz-vQ-emA">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9zz-vQ-emA" id="hIE-s0-vmL">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Izu-52-pYn" id="3KZ-6K-OCB"/>
+                            <outlet property="delegate" destination="Izu-52-pYn" id="wUm-2P-mdW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTT-ui-KTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1946" y="482"/>
+        </scene>
+        <!--Instruction View Controller-->
+        <scene sceneID="7M5-BS-ter">
+            <objects>
+                <viewController id="4dW-6E-CBf" customClass="InstructionViewController" customModule="CityShelf" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MvA-bP-D1b"/>
+                        <viewControllerLayoutGuide type="bottom" id="D3m-NE-qpe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vwp-8W-laN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type in the book you want. We'll show you which NYC bookstore near you has it in stock." translatesAutoresizingMaskIntoConstraints="NO" id="8b8-nc-GwP">
+                                <rect key="frame" x="16" y="171" width="568" height="257"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8b8-nc-GwP" firstAttribute="top" secondItem="MvA-bP-D1b" secondAttribute="bottom" constant="151" id="Zhb-XJ-3wN"/>
+                            <constraint firstItem="8b8-nc-GwP" firstAttribute="leading" secondItem="vwp-8W-laN" secondAttribute="leadingMargin" id="e22-cm-WP5"/>
+                            <constraint firstAttribute="centerY" secondItem="8b8-nc-GwP" secondAttribute="centerY" id="o1P-um-3G5"/>
+                            <constraint firstAttribute="centerX" secondItem="8b8-nc-GwP" secondAttribute="centerX" id="yXp-Iz-otV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="dym-CT-Oo5" kind="presentation" identifier="goToSearch" animates="NO" id="Wsa-Yr-z67"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cS3-Oc-FKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673" y="482"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZiI-YQ-eb5">
+            <objects>
+                <viewController id="dym-CT-Oo5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HQE-9z-97Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="kJo-bX-2sx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rQW-vx-sYr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tTE-xm-SdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308" y="482"/>
+        </scene>
+    </scenes>
+</document>

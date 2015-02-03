@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B009C5231A80630D00C43439 /* CityShelf_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B009C5221A80630D00C43439 /* CityShelf_logo.png */; };
+		B009C5251A94306400C43439 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5241A94306400C43439 /* Book.swift */; };
+		B009C5271A94307300C43439 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5261A94307300C43439 /* BookService.swift */; };
+		B009C5291A94309D00C43439 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5281A94309D00C43439 /* Settings.swift */; };
+		B009C52B1A944BFE00C43439 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C52A1A944BFE00C43439 /* Store.swift */; };
+		B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */; };
+		B06FB9821A80620B00AEAB8F /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06FB9811A80620B00AEAB8F /* BookViewController.swift */; };
+		B06FB9871A80620B00AEAB8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9851A80620B00AEAB8F /* Main.storyboard */; };
+		B06FB9891A80620B00AEAB8F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9881A80620B00AEAB8F /* Images.xcassets */; };
+		B06FB98C1A80620B00AEAB8F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B06FB98A1A80620B00AEAB8F /* LaunchScreen.xib */; };
+		B0820E991AB291960015F0DB /* BookOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0820E981AB291960015F0DB /* BookOperations.swift */; };
+		B0820EA91AB4AE1F0015F0DB /* CooperHewitt-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820E9B1AB4AE1F0015F0DB /* CooperHewitt-Bold.otf */; };
+		B0820EAA1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820E9C1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf */; };
+		B0820EAB1AB4AE1F0015F0DB /* CooperHewitt-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820E9D1AB4AE1F0015F0DB /* CooperHewitt-Book.otf */; };
+		B0820EAC1AB4AE1F0015F0DB /* CooperHewitt-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820E9E1AB4AE1F0015F0DB /* CooperHewitt-BookItalic.otf */; };
+		B0820EAD1AB4AE1F0015F0DB /* CooperHewitt-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820E9F1AB4AE1F0015F0DB /* CooperHewitt-Heavy.otf */; };
+		B0820EAE1AB4AE1F0015F0DB /* CooperHewitt-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA01AB4AE1F0015F0DB /* CooperHewitt-HeavyItalic.otf */; };
+		B0820EAF1AB4AE1F0015F0DB /* CooperHewitt-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA11AB4AE1F0015F0DB /* CooperHewitt-Light.otf */; };
+		B0820EB01AB4AE1F0015F0DB /* CooperHewitt-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA21AB4AE1F0015F0DB /* CooperHewitt-LightItalic.otf */; };
+		B0820EB11AB4AE1F0015F0DB /* CooperHewitt-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA31AB4AE1F0015F0DB /* CooperHewitt-Medium.otf */; };
+		B0820EB21AB4AE1F0015F0DB /* CooperHewitt-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA41AB4AE1F0015F0DB /* CooperHewitt-MediumItalic.otf */; };
+		B0820EB31AB4AE1F0015F0DB /* CooperHewitt-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA51AB4AE1F0015F0DB /* CooperHewitt-Semibold.otf */; };
+		B0820EB41AB4AE1F0015F0DB /* CooperHewitt-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA61AB4AE1F0015F0DB /* CooperHewitt-SemiboldItalic.otf */; };
+		B0820EB51AB4AE1F0015F0DB /* CooperHewitt-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA71AB4AE1F0015F0DB /* CooperHewitt-Thin.otf */; };
+		B0820EB61AB4AE1F0015F0DB /* CooperHewitt-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA81AB4AE1F0015F0DB /* CooperHewitt-ThinItalic.otf */; };
+		B0820EB81AB4BEA80015F0DB /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */; };
+		B093DACB1A98117F00309EE2 /* BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093DACA1A98117F00309EE2 /* BookTests.swift */; };
+		B093DACC1A98151500309EE2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5241A94306400C43439 /* Book.swift */; };
+		B093DACE1A981D1500309EE2 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093DACD1A981D1500309EE2 /* StoreTests.swift */; };
+		B093DACF1A981D1900309EE2 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C52A1A944BFE00C43439 /* Store.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B06FB9921A80620B00AEAB8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B06FB9701A80620B00AEAB8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B06FB9771A80620B00AEAB8F;
+			remoteInfo = CityShelf;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B009C5221A80630D00C43439 /* CityShelf_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CityShelf_logo.png; sourceTree = "<group>"; };
+		B009C5241A94306400C43439 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		B009C5261A94307300C43439 /* BookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
+		B009C5281A94309D00C43439 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B009C52A1A944BFE00C43439 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		B06FB9781A80620B00AEAB8F /* CityShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B06FB97C1A80620B00AEAB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B06FB9811A80620B00AEAB8F /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		B06FB9861A80620B00AEAB8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B06FB9881A80620B00AEAB8F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B06FB98B1A80620B00AEAB8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B06FB9911A80620B00AEAB8F /* CityShelfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityShelfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B06FB9961A80620B00AEAB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0820E981AB291960015F0DB /* BookOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookOperations.swift; sourceTree = "<group>"; };
+		B0820E9B1AB4AE1F0015F0DB /* CooperHewitt-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Bold.otf"; sourceTree = "<group>"; };
+		B0820E9C1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-BoldItalic.otf"; sourceTree = "<group>"; };
+		B0820E9D1AB4AE1F0015F0DB /* CooperHewitt-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Book.otf"; sourceTree = "<group>"; };
+		B0820E9E1AB4AE1F0015F0DB /* CooperHewitt-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-BookItalic.otf"; sourceTree = "<group>"; };
+		B0820E9F1AB4AE1F0015F0DB /* CooperHewitt-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Heavy.otf"; sourceTree = "<group>"; };
+		B0820EA01AB4AE1F0015F0DB /* CooperHewitt-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-HeavyItalic.otf"; sourceTree = "<group>"; };
+		B0820EA11AB4AE1F0015F0DB /* CooperHewitt-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Light.otf"; sourceTree = "<group>"; };
+		B0820EA21AB4AE1F0015F0DB /* CooperHewitt-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-LightItalic.otf"; sourceTree = "<group>"; };
+		B0820EA31AB4AE1F0015F0DB /* CooperHewitt-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Medium.otf"; sourceTree = "<group>"; };
+		B0820EA41AB4AE1F0015F0DB /* CooperHewitt-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-MediumItalic.otf"; sourceTree = "<group>"; };
+		B0820EA51AB4AE1F0015F0DB /* CooperHewitt-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Semibold.otf"; sourceTree = "<group>"; };
+		B0820EA61AB4AE1F0015F0DB /* CooperHewitt-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		B0820EA71AB4AE1F0015F0DB /* CooperHewitt-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Thin.otf"; sourceTree = "<group>"; };
+		B0820EA81AB4AE1F0015F0DB /* CooperHewitt-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-ThinItalic.otf"; sourceTree = "<group>"; };
+		B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
+		B093DACA1A98117F00309EE2 /* BookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
+		B093DACD1A981D1500309EE2 /* StoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B06FB9751A80620B00AEAB8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B06FB98E1A80620B00AEAB8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B06FB96F1A80620B00AEAB8F = {
+			isa = PBXGroup;
+			children = (
+				B06FB97A1A80620B00AEAB8F /* CityShelf */,
+				B06FB9941A80620B00AEAB8F /* CityShelfTests */,
+				B06FB9791A80620B00AEAB8F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B06FB9791A80620B00AEAB8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B06FB9781A80620B00AEAB8F /* CityShelf.app */,
+				B06FB9911A80620B00AEAB8F /* CityShelfTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B06FB97A1A80620B00AEAB8F /* CityShelf */ = {
+			isa = PBXGroup;
+			children = (
+				B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */,
+				B06FB9A21A8062B500AEAB8F /* Resources */,
+				B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */,
+				B06FB9811A80620B00AEAB8F /* BookViewController.swift */,
+				B009C5241A94306400C43439 /* Book.swift */,
+				B009C5261A94307300C43439 /* BookService.swift */,
+				B0820E981AB291960015F0DB /* BookOperations.swift */,
+				B009C5281A94309D00C43439 /* Settings.swift */,
+				B009C52A1A944BFE00C43439 /* Store.swift */,
+				B06FB9851A80620B00AEAB8F /* Main.storyboard */,
+				B06FB9881A80620B00AEAB8F /* Images.xcassets */,
+				B06FB98A1A80620B00AEAB8F /* LaunchScreen.xib */,
+				B06FB97B1A80620B00AEAB8F /* Supporting Files */,
+			);
+			path = CityShelf;
+			sourceTree = "<group>";
+		};
+		B06FB97B1A80620B00AEAB8F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B06FB97C1A80620B00AEAB8F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B06FB9941A80620B00AEAB8F /* CityShelfTests */ = {
+			isa = PBXGroup;
+			children = (
+				B06FB9951A80620B00AEAB8F /* Supporting Files */,
+				B093DACA1A98117F00309EE2 /* BookTests.swift */,
+				B093DACD1A981D1500309EE2 /* StoreTests.swift */,
+			);
+			path = CityShelfTests;
+			sourceTree = "<group>";
+		};
+		B06FB9951A80620B00AEAB8F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B06FB9961A80620B00AEAB8F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B06FB9A21A8062B500AEAB8F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B0820E9A1AB4AE1F0015F0DB /* fonts */,
+				B06FB9A31A8062B500AEAB8F /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B06FB9A31A8062B500AEAB8F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B009C5221A80630D00C43439 /* CityShelf_logo.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		B0820E9A1AB4AE1F0015F0DB /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B0820E9B1AB4AE1F0015F0DB /* CooperHewitt-Bold.otf */,
+				B0820E9C1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf */,
+				B0820E9D1AB4AE1F0015F0DB /* CooperHewitt-Book.otf */,
+				B0820E9E1AB4AE1F0015F0DB /* CooperHewitt-BookItalic.otf */,
+				B0820E9F1AB4AE1F0015F0DB /* CooperHewitt-Heavy.otf */,
+				B0820EA01AB4AE1F0015F0DB /* CooperHewitt-HeavyItalic.otf */,
+				B0820EA11AB4AE1F0015F0DB /* CooperHewitt-Light.otf */,
+				B0820EA21AB4AE1F0015F0DB /* CooperHewitt-LightItalic.otf */,
+				B0820EA31AB4AE1F0015F0DB /* CooperHewitt-Medium.otf */,
+				B0820EA41AB4AE1F0015F0DB /* CooperHewitt-MediumItalic.otf */,
+				B0820EA51AB4AE1F0015F0DB /* CooperHewitt-Semibold.otf */,
+				B0820EA61AB4AE1F0015F0DB /* CooperHewitt-SemiboldItalic.otf */,
+				B0820EA71AB4AE1F0015F0DB /* CooperHewitt-Thin.otf */,
+				B0820EA81AB4AE1F0015F0DB /* CooperHewitt-ThinItalic.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B06FB9771A80620B00AEAB8F /* CityShelf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B06FB99B1A80620B00AEAB8F /* Build configuration list for PBXNativeTarget "CityShelf" */;
+			buildPhases = (
+				B06FB9741A80620B00AEAB8F /* Sources */,
+				B06FB9751A80620B00AEAB8F /* Frameworks */,
+				B06FB9761A80620B00AEAB8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CityShelf;
+			productName = CityShelf;
+			productReference = B06FB9781A80620B00AEAB8F /* CityShelf.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B06FB9901A80620B00AEAB8F /* CityShelfTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B06FB99E1A80620B00AEAB8F /* Build configuration list for PBXNativeTarget "CityShelfTests" */;
+			buildPhases = (
+				B06FB98D1A80620B00AEAB8F /* Sources */,
+				B06FB98E1A80620B00AEAB8F /* Frameworks */,
+				B06FB98F1A80620B00AEAB8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B06FB9931A80620B00AEAB8F /* PBXTargetDependency */,
+			);
+			name = CityShelfTests;
+			productName = CityShelfTests;
+			productReference = B06FB9911A80620B00AEAB8F /* CityShelfTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B06FB9701A80620B00AEAB8F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = CityShelf;
+				TargetAttributes = {
+					B06FB9771A80620B00AEAB8F = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					B06FB9901A80620B00AEAB8F = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = B06FB9771A80620B00AEAB8F;
+					};
+				};
+			};
+			buildConfigurationList = B06FB9731A80620B00AEAB8F /* Build configuration list for PBXProject "CityShelf" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B06FB96F1A80620B00AEAB8F;
+			productRefGroup = B06FB9791A80620B00AEAB8F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B06FB9771A80620B00AEAB8F /* CityShelf */,
+				B06FB9901A80620B00AEAB8F /* CityShelfTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B06FB9761A80620B00AEAB8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B009C5231A80630D00C43439 /* CityShelf_logo.png in Resources */,
+				B0820EAA1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf in Resources */,
+				B0820EAF1AB4AE1F0015F0DB /* CooperHewitt-Light.otf in Resources */,
+				B0820EB11AB4AE1F0015F0DB /* CooperHewitt-Medium.otf in Resources */,
+				B0820EA91AB4AE1F0015F0DB /* CooperHewitt-Bold.otf in Resources */,
+				B0820EB41AB4AE1F0015F0DB /* CooperHewitt-SemiboldItalic.otf in Resources */,
+				B06FB9871A80620B00AEAB8F /* Main.storyboard in Resources */,
+				B0820EAE1AB4AE1F0015F0DB /* CooperHewitt-HeavyItalic.otf in Resources */,
+				B06FB98C1A80620B00AEAB8F /* LaunchScreen.xib in Resources */,
+				B0820EB61AB4AE1F0015F0DB /* CooperHewitt-ThinItalic.otf in Resources */,
+				B0820EAC1AB4AE1F0015F0DB /* CooperHewitt-BookItalic.otf in Resources */,
+				B0820EAB1AB4AE1F0015F0DB /* CooperHewitt-Book.otf in Resources */,
+				B0820EAD1AB4AE1F0015F0DB /* CooperHewitt-Heavy.otf in Resources */,
+				B0820EB31AB4AE1F0015F0DB /* CooperHewitt-Semibold.otf in Resources */,
+				B0820EB51AB4AE1F0015F0DB /* CooperHewitt-Thin.otf in Resources */,
+				B0820EB21AB4AE1F0015F0DB /* CooperHewitt-MediumItalic.otf in Resources */,
+				B06FB9891A80620B00AEAB8F /* Images.xcassets in Resources */,
+				B0820EB01AB4AE1F0015F0DB /* CooperHewitt-LightItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B06FB98F1A80620B00AEAB8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B06FB9741A80620B00AEAB8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0820E991AB291960015F0DB /* BookOperations.swift in Sources */,
+				B009C5251A94306400C43439 /* Book.swift in Sources */,
+				B009C52B1A944BFE00C43439 /* Store.swift in Sources */,
+				B0820EB81AB4BEA80015F0DB /* InstructionViewController.swift in Sources */,
+				B009C5271A94307300C43439 /* BookService.swift in Sources */,
+				B009C5291A94309D00C43439 /* Settings.swift in Sources */,
+				B06FB9821A80620B00AEAB8F /* BookViewController.swift in Sources */,
+				B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B06FB98D1A80620B00AEAB8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B093DACC1A98151500309EE2 /* Book.swift in Sources */,
+				B093DACB1A98117F00309EE2 /* BookTests.swift in Sources */,
+				B093DACE1A981D1500309EE2 /* StoreTests.swift in Sources */,
+				B093DACF1A981D1900309EE2 /* Store.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B06FB9931A80620B00AEAB8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B06FB9771A80620B00AEAB8F /* CityShelf */;
+			targetProxy = B06FB9921A80620B00AEAB8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B06FB9851A80620B00AEAB8F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B06FB9861A80620B00AEAB8F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B06FB98A1A80620B00AEAB8F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B06FB98B1A80620B00AEAB8F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B06FB9991A80620B00AEAB8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B06FB99A1A80620B00AEAB8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B06FB99C1A80620B00AEAB8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CityShelf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B06FB99D1A80620B00AEAB8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CityShelf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B06FB99F1A80620B00AEAB8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CityShelfTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityShelf.app/CityShelf";
+			};
+			name = Debug;
+		};
+		B06FB9A01A80620B00AEAB8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CityShelfTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityShelf.app/CityShelf";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B06FB9731A80620B00AEAB8F /* Build configuration list for PBXProject "CityShelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B06FB9991A80620B00AEAB8F /* Debug */,
+				B06FB99A1A80620B00AEAB8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B06FB99B1A80620B00AEAB8F /* Build configuration list for PBXNativeTarget "CityShelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B06FB99C1A80620B00AEAB8F /* Debug */,
+				B06FB99D1A80620B00AEAB8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B06FB99E1A80620B00AEAB8F /* Build configuration list for PBXNativeTarget "CityShelfTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B06FB99F1A80620B00AEAB8F /* Debug */,
+				B06FB9A01A80620B00AEAB8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B06FB9701A80620B00AEAB8F /* Project object */;
+}
