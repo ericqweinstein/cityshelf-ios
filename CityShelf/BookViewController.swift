@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View controller for API search results.
 class BookViewController: UITableViewController {
     var results  = [Book]()
     var settings = Settings()
@@ -22,18 +23,30 @@ class BookViewController: UITableViewController {
         fetchTitleDetails()
     }
 
+    /**
+        @todo Document. (EW 14 Mar 2015)
+    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+    /**
+        @todo Document. (EW 14 Mar 2015)
+    */
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     }
     
+    /**
+        @todo Document. (EW 14 Mar 2015)
+    */
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
     
+    /**
+        @todo Document. (EW 14 Mar 2015)
+    */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath) as UITableViewCell
         
@@ -70,6 +83,9 @@ class BookViewController: UITableViewController {
         return cell
     }
     
+    /**
+        @todo Document. (EW 14 Mar 2015)
+    */
     func startOperationsForBook(bookDetails: Book, indexPath: NSIndexPath){
         switch (bookDetails.state) {
         case .New:
@@ -79,6 +95,9 @@ class BookViewController: UITableViewController {
         }
     }
     
+    /**
+        @todo Document. (EW 14 Mar 2015)
+    */
     func startDownloadForRecord(bookDetails: Book, indexPath: NSIndexPath){
         if let downloadOperation = pendingOperations.downloadsInProgress[indexPath] {
             return
@@ -101,7 +120,7 @@ class BookViewController: UITableViewController {
     }
     
     /**
-    @todo Document this. (EW 12 Mar 2015)
+        @todo Document this. (EW 14 Mar 2015)
     */
     func fetchTitleDetails() {
         let request = NSURLRequest(URL: NSURL(string: settings.searchEndpoint)!)

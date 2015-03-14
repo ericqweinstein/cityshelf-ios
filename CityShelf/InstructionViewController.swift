@@ -8,23 +8,25 @@
 
 import UIKit
 
+/// View controller for displaying CityShelf instructions.
 class InstructionViewController: UIViewController {
     /**
-        @todo Document this. (EW 14 Mar 2015)
+        Override viewDidLoad() in order to set an
+        automated segue.
     */
     override func viewDidLoad() {
         super.viewDidLoad()
         let timer = NSTimer.scheduledTimerWithTimeInterval(2.0,
             target: self,
-            selector: "timeToMoveOn",
+            selector: "nextView",
             userInfo: nil,
             repeats: false)
     }
     
     /**
-        @todo Document this. (EW 14 Mar 2015)
+        Segue to the next view.
     */
-    func timeToMoveOn() {
+    func nextView() {
         self.performSegueWithIdentifier("goToSearch", sender: self)
     }
 }

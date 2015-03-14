@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Manages pending asynchronous operations.
 class PendingOperations {
     lazy var downloadsInProgress = [NSIndexPath: NSOperation]()
     
@@ -19,6 +20,7 @@ class PendingOperations {
         }()
 }
 
+/// Manages image downloads for book covers.
 class ImageDownloader: NSOperation {
     let book: Book
     

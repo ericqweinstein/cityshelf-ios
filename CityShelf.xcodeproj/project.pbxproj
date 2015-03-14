@@ -33,6 +33,7 @@
 		B0820EB51AB4AE1F0015F0DB /* CooperHewitt-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA71AB4AE1F0015F0DB /* CooperHewitt-Thin.otf */; };
 		B0820EB61AB4AE1F0015F0DB /* CooperHewitt-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA81AB4AE1F0015F0DB /* CooperHewitt-ThinItalic.otf */; };
 		B0820EB81AB4BEA80015F0DB /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */; };
+		B0820EBA1AB4CB3F0015F0DB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */; };
 		B093DACB1A98117F00309EE2 /* BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093DACA1A98117F00309EE2 /* BookTests.swift */; };
 		B093DACC1A98151500309EE2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5241A94306400C43439 /* Book.swift */; };
 		B093DACE1A981D1500309EE2 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093DACD1A981D1500309EE2 /* StoreTests.swift */; };
@@ -80,6 +81,7 @@
 		B0820EA71AB4AE1F0015F0DB /* CooperHewitt-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Thin.otf"; sourceTree = "<group>"; };
 		B0820EA81AB4AE1F0015F0DB /* CooperHewitt-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-ThinItalic.otf"; sourceTree = "<group>"; };
 		B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
+		B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B093DACA1A98117F00309EE2 /* BookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
 		B093DACD1A981D1500309EE2 /* StoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 				B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */,
 				B06FB9A21A8062B500AEAB8F /* Resources */,
 				B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */,
+				B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */,
 				B06FB9811A80620B00AEAB8F /* BookViewController.swift */,
 				B009C5241A94306400C43439 /* Book.swift */,
 				B009C5261A94307300C43439 /* BookService.swift */,
@@ -322,6 +325,7 @@
 				B0820E991AB291960015F0DB /* BookOperations.swift in Sources */,
 				B009C5251A94306400C43439 /* Book.swift in Sources */,
 				B009C52B1A944BFE00C43439 /* Store.swift in Sources */,
+				B0820EBA1AB4CB3F0015F0DB /* SearchViewController.swift in Sources */,
 				B0820EB81AB4BEA80015F0DB /* InstructionViewController.swift in Sources */,
 				B009C5271A94307300C43439 /* BookService.swift in Sources */,
 				B009C5291A94309D00C43439 /* Settings.swift in Sources */,

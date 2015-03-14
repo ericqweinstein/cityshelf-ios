@@ -8,6 +8,9 @@
         <mutableArray key="CooperHewitt-Bold.otf">
             <string>CooperHewitt-Bold</string>
         </mutableArray>
+        <mutableArray key="CooperHewitt-HeavyItalic.otf">
+            <string>CooperHewitt-HeavyItalic</string>
+        </mutableArray>
     </customFonts>
     <scenes>
         <!--Book View Controller-->
@@ -71,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="673" y="482"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="ZiI-YQ-eb5">
             <objects>
-                <viewController id="dym-CT-Oo5" sceneMemberID="viewController">
+                <viewController id="dym-CT-Oo5" customClass="SearchViewController" customModule="CityShelf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HQE-9z-97Y"/>
                         <viewControllerLayoutGuide type="bottom" id="kJo-bX-2sx"/>
@@ -82,7 +85,19 @@
                     <view key="view" contentMode="scaleToFill" id="rQW-vx-sYr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title, author, ISBN" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-gc-CDh">
+                                <rect key="frame" x="16" y="285" width="568" height="30"/>
+                                <fontDescription key="fontDescription" name="CooperHewitt-HeavyItalic" family="Cooper Hewitt" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xtv-gc-CDh" firstAttribute="leading" secondItem="rQW-vx-sYr" secondAttribute="leadingMargin" id="XIi-0F-NcY"/>
+                            <constraint firstItem="xtv-gc-CDh" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="265" id="aVI-nC-zTx"/>
+                            <constraint firstItem="xtv-gc-CDh" firstAttribute="trailing" secondItem="rQW-vx-sYr" secondAttribute="trailingMargin" id="y3Q-hs-UTR"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTE-xm-SdD" userLabel="First Responder" sceneMemberID="firstResponder"/>

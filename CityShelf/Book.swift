@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 
-/// @todo Document this. (EW 13 Mar 2015)
+/**
+    States a book download might be in.
+
+    - New: We haven't yet downloaded the book.
+    - Downloaded: We've successfully downloaded the book.
+    - Failed: We failed to download the book.
+*/
 enum BookState {
     case New, Downloaded, Failed
 }
