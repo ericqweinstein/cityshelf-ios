@@ -15,7 +15,7 @@ class BookViewController: UITableViewController {
     
     let pendingOperations = PendingOperations()
     
-    var service: BookService!
+    // var service: BookService!
 
     override func viewDidLoad() {
         super.viewDidLoad()

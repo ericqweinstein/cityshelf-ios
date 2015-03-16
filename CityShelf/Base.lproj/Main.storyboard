@@ -87,22 +87,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title, author, ISBN" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-gc-CDh">
-                                <rect key="frame" x="16" y="285" width="568" height="30"/>
+                                <rect key="frame" x="16" y="285" width="533" height="30"/>
                                 <fontDescription key="fontDescription" name="CooperHewitt-HeavyItalic" family="Cooper Hewitt" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSe-i4-Yzp">
+                                <rect key="frame" x="557" y="289" width="27" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="R6f-bX-hlu"/>
+                                    <constraint firstAttribute="width" constant="27" id="nyc-99-XmM"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="search.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xtv-gc-CDh" firstAttribute="leading" secondItem="rQW-vx-sYr" secondAttribute="leadingMargin" id="XIi-0F-NcY"/>
-                            <constraint firstItem="xtv-gc-CDh" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="265" id="aVI-nC-zTx"/>
-                            <constraint firstItem="xtv-gc-CDh" firstAttribute="trailing" secondItem="rQW-vx-sYr" secondAttribute="trailingMargin" id="y3Q-hs-UTR"/>
+                            <constraint firstItem="xtv-gc-CDh" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="265" id="4RE-4r-j6x"/>
+                            <constraint firstItem="VSe-i4-Yzp" firstAttribute="trailing" secondItem="rQW-vx-sYr" secondAttribute="trailingMargin" id="P3B-qb-ojo"/>
+                            <constraint firstItem="VSe-i4-Yzp" firstAttribute="leading" secondItem="xtv-gc-CDh" secondAttribute="trailing" constant="8" id="We9-0S-S40"/>
+                            <constraint firstItem="xtv-gc-CDh" firstAttribute="leading" secondItem="rQW-vx-sYr" secondAttribute="leadingMargin" id="cBp-jw-TXn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchField" destination="xtv-gc-CDh" id="RbU-xb-1Rp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTE-xm-SdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1308" y="482"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search.png" width="50" height="50"/>
+    </resources>
 </document>
