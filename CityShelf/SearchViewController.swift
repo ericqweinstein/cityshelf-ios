@@ -12,10 +12,16 @@ import UIKit
 class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var searchField: UITextField!
     
+    @IBAction func searchButtonClicked(sender: AnyObject) {
+        println(searchField.text)
+    }
+    
     /**
         Styles the search bar.
     */
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         var border = CALayer()
         var width  = CGFloat(3.0)
         
