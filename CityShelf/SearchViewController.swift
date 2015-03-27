@@ -9,7 +9,7 @@
 import UIKit
 
 /// View controller for the book search field.
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var searchField: UITextField!
     
     /**
@@ -32,5 +32,19 @@ class SearchViewController: UIViewController {
         
         searchField.attributedPlaceholder = NSAttributedString(string: "Title, author, ISBN",
             attributes:[NSForegroundColorAttributeName: UIColor.blackColor()])
+        
+        searchField.delegate = self
+    }
+    
+    /**
+        Sets the search text if the return key is
+        pressed rather than the search button.
+    
+        :param: textField The search text field.
+        :returns: Boolean true.
+    */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        println(searchField.text)
+        return true
     }
 }
