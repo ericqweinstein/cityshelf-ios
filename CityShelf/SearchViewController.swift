@@ -10,10 +10,12 @@ import UIKit
 
 /// View controller for the book search field.
 class SearchViewController: UIViewController, UITextFieldDelegate {
+    var query = ""
+    
     @IBOutlet weak var searchField: UITextField!
     
     @IBAction func searchButtonClicked(sender: AnyObject) {
-        println(searchField.text)
+        query = searchField.text
     }
     
     /**
@@ -50,7 +52,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         :returns: Boolean true.
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        println(searchField.text)
+        query = searchField.text
         return true
     }
 }
