@@ -11,11 +11,13 @@ import UIKit
 /// View controller for the book search field.
 class SearchViewController: UIViewController, UITextFieldDelegate {
     var query = ""
+    let endpoint = Settings().searchEndpoint
     
     @IBOutlet weak var searchField: UITextField!
     
     @IBAction func searchButtonClicked(sender: AnyObject) {
         query = searchField.text
+        println(endpoint + formatQuery(query))
     }
     
     /**
@@ -53,6 +55,18 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchField.text
+        println(endpoint + formatQuery(query))
+
         return true
+    }
+
+    /**
+        Formats the URL query string.
+
+        :param: queryString The query.
+        :returns: The percent-encoded query string.
+    */
+    func formatQuery(queryString: String) -> String {
+        return queryString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())!
     }
 }
