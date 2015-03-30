@@ -11,31 +11,13 @@ import UIKit
 /// View controller for the book search field.
 class SearchViewController: UIViewController, UITextFieldDelegate {
     var query = ""
-    let endpoint = Settings().searchEndpoint
-    let numberOfStores = Settings().numberOfStores
-    
+    let api = SearchService()
+
     @IBOutlet weak var searchField: UITextField!
     
     @IBAction func searchButtonClicked(sender: AnyObject) {
         query = searchField.text
-
-        var stores: Array<Int> = []
-
-        let group = dispatch_group_create();
-
-        for storeNumber in (0..<numberOfStores) {
-            dispatch_group_enter(group)
-
-            sendRequest("\(endpoint)/\(storeNumber)/\(formatQuery(query))", {
-                () in
-                stores.append(storeNumber)
-                dispatch_group_leave(group)
-            })
-        }
-
-        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-
-        for store in stores { println(store) }
+        search(formatQuery(query))
     }
     
     /**
@@ -73,7 +55,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchField.text
-        println(endpoint + formatQuery(query))
+        search(formatQuery(query))
 
         return true
     }
@@ -89,14 +71,26 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
 
     /**
-        @todo Document this; should probably move into a search service.
+        Searches the API for a particular title/author.
+    
+        :param: queryString The query.
     */
-    func sendRequest(url: String, whenFinished: () -> Void) {
-        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {
-            (data, response, error) -> Void in
-            whenFinished()
-        })
-        task.resume()
+    func search(queryString: String) -> Void {
+        let endpoint = api.settings.searchEndpoint
+        let numberOfStores = api.settings.numberOfStores
+        
+        let group = dispatch_group_create()
+
+        for storeNumber in (0..<numberOfStores) {
+            dispatch_group_enter(group)
+
+            api.request("\(endpoint)/\(storeNumber)/?query=\(queryString)") {
+                (response) in
+                println(response)
+                dispatch_group_leave(group)
+            }
+        }
+
+        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
     }
 }

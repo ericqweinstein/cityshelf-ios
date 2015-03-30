@@ -98,7 +98,7 @@ class BookViewController: UITableViewController {
     /**
         @todo Document. (EW 14 Mar 2015)
     */
-    func startDownloadForRecord(bookDetails: Book, indexPath: NSIndexPath){
+    func startDownloadForRecord(bookDetails: Book, indexPath: NSIndexPath) {
         if let downloadOperation = pendingOperations.downloadsInProgress[indexPath] {
             return
         }
