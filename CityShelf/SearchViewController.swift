@@ -64,7 +64,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         Formats the URL query string.
 
         :param: queryString The query.
-        :returns: The percent-encoded query string.
+        :returns: The formatted query string.
     */
     func formatQuery(queryString: String) -> String {
         return queryString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())!
