@@ -12,5 +12,5 @@ import Foundation
 class Settings {
     let numberOfStores = 7
     
-    let searchEndpoint = "http://192.168.2.6:8080/api/stores/5/?query="
+    let searchEndpoint = "http://192.168.2.4:8080/api/stores/"
 }
