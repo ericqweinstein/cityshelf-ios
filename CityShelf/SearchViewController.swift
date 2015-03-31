@@ -17,7 +17,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func searchButtonClicked(sender: AnyObject) {
         query = searchField.text
-        search(formatQuery(query))
+        api.searchResults = search(formatQuery(query))
+
+        println(api.searchResults)
     }
     
     /**
@@ -55,7 +57,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchField.text
-        search(formatQuery(query))
+        api.searchResults = search(formatQuery(query))
 
         return true
     }
@@ -74,23 +76,27 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         Searches the API for a particular title/author.
     
         :param: queryString The query.
+        :returns: An array of search results.
     */
-    func search(queryString: String) -> Void {
+    func search(queryString: String) -> NSArray {
         let endpoint = api.settings.searchEndpoint
         let numberOfStores = api.settings.numberOfStores
         
         let group = dispatch_group_create()
+        var searchResults = NSMutableArray()
 
         for storeNumber in (0..<numberOfStores) {
             dispatch_group_enter(group)
 
             api.request("\(endpoint)/\(storeNumber)/?query=\(queryString)") {
                 (response) in
-                println(response)
+                searchResults.addObjectsFromArray(response)
                 dispatch_group_leave(group)
             }
         }
 
         dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+
+        return searchResults as NSArray
     }
 }

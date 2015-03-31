@@ -11,8 +11,23 @@ import UIKit
 
 /// Performs searches against the CityShelf API.
 class SearchService {
-    
+
+    /// Declares a local handle on our global settings.
     var settings: Settings!
+
+    /// Declares an array of search results.
+    var searchResults: NSArray
+
+    /// Manages getting and setting search results.
+    var results: NSArray {
+        get {
+            return searchResults
+        }
+
+        set(newValue) {
+            searchResults = newValue
+        }
+    }
     
     /**
         Creates a new instance of the search service.
@@ -21,6 +36,7 @@ class SearchService {
     */
     init() {
         self.settings = Settings()
+        self.searchResults = []
     }
     
     /**
