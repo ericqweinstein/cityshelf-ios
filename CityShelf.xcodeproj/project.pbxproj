@@ -34,6 +34,7 @@
 		B0820EB81AB4BEA80015F0DB /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */; };
 		B0820EBA1AB4CB3F0015F0DB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */; };
 		B0820EBC1AB67CCE0015F0DB /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B0820EBB1AB67CCE0015F0DB /* search.png */; };
+		B0820EBE1ACB5B740015F0DB /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0820EBD1ACB5B740015F0DB /* ResultsViewController.swift */; };
 		B093DACB1A98117F00309EE2 /* BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093DACA1A98117F00309EE2 /* BookTests.swift */; };
 		B093DACC1A98151500309EE2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5241A94306400C43439 /* Book.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B0820EBB1AB67CCE0015F0DB /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		B0820EBD1ACB5B740015F0DB /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		B093DACA1A98117F00309EE2 /* BookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				B06FB9A21A8062B500AEAB8F /* Resources */,
 				B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */,
 				B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */,
+				B0820EBD1ACB5B740015F0DB /* ResultsViewController.swift */,
 				B06FB9811A80620B00AEAB8F /* BookViewController.swift */,
 				B009C5241A94306400C43439 /* Book.swift */,
 				B009C5261A94307300C43439 /* SearchService.swift */,
@@ -324,6 +327,7 @@
 				B0820EBA1AB4CB3F0015F0DB /* SearchViewController.swift in Sources */,
 				B0820EB81AB4BEA80015F0DB /* InstructionViewController.swift in Sources */,
 				B009C5271A94307300C43439 /* SearchService.swift in Sources */,
+				B0820EBE1ACB5B740015F0DB /* ResultsViewController.swift in Sources */,
 				B009C5291A94309D00C43439 /* Settings.swift in Sources */,
 				B06FB9821A80620B00AEAB8F /* BookViewController.swift in Sources */,
 				B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */,

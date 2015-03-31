@@ -19,7 +19,18 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         query = searchField.text
         api.searchResults = search(formatQuery(query))
 
-        println(api.searchResults)
+        performSegueWithIdentifier("goToResults", sender: nil)
+    }
+
+    /**
+        Allows us to pass API data to the ResultsViewController.
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToResults" {
+            var svc = segue.destinationViewController as ResultsViewController
+
+            svc.toPass = api.searchResults
+        }
     }
     
     /**
@@ -58,6 +69,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchField.text
         api.searchResults = search(formatQuery(query))
+
+        performSegueWithIdentifier("goToResults", sender: nil)
 
         return true
     }

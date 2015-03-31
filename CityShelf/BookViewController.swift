@@ -12,29 +12,16 @@ import UIKit
 class BookViewController: UITableViewController {
     var results  = [Book]()
     var settings = Settings()
+
+    var toPass: NSArray!
     
     let pendingOperations = PendingOperations()
-    
-    // var service: BookService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "CityShelf"
-        fetchTitleDetails()
-    }
-
-    /**
-        @todo Document. (EW 14 Mar 2015)
-    */
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    /**
-        @todo Document. (EW 14 Mar 2015)
-    */
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        // fetchTitleDetails()
+        showResults()
     }
     
     /**
@@ -165,6 +152,36 @@ class BookViewController: UITableViewController {
             }
         }
         
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+
+    func showResults() {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+
+        for result in toPass {
+            let title  = result["title"] as String
+            let author = result["author"] as String
+            let price  = result["price"] as String
+            let store  = result["storeLink"] as String
+            let avail  = result["availability"] as String
+            let phone  = result["phone"] as String
+            let img    = result["img"] as String
+
+            let book = Book(title: title,
+                author: author,
+                cover: NSURL(string: img)!,
+                availability: avail,
+                link: NSURL(string: store)!,
+                price: (price as NSString).doubleValue)
+
+            self.results.append(book)
+
+            // Debugging.
+            println("\(title) \(author) at \(price) (call: \(phone))")
+
+            self.tableView.reloadData()
+        }
+
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
 }
