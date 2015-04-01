@@ -37,7 +37,7 @@ class ResultsViewController: UICollectionViewController,
     func collectionView(collectionView: UICollectionView!,
         layout collectionViewLayout: UICollectionViewLayout!,
         sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
-            return CGSize(width: 93, height: 140)
+            return CGSize(width: 93, height: 200)
     }
 
     /**
