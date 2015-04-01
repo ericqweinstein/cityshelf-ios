@@ -65,7 +65,7 @@ class ResultsViewController: UICollectionViewController,
             let image = UIImage(data: data!)
             cell.imageView?.image = image
             cell.title.text = book.title
-            // cell.author.text = book.author
+            cell.author.text = book.author
         }
         
         return cell

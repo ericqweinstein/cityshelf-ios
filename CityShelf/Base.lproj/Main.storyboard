@@ -9,6 +9,9 @@
             <string>CooperHewitt-Bold</string>
             <string>CooperHewitt-Bold</string>
         </mutableArray>
+        <mutableArray key="CooperHewitt-Book.otf">
+            <string>CooperHewitt-Book</string>
+        </mutableArray>
         <mutableArray key="CooperHewitt-HeavyItalic.otf">
             <string>CooperHewitt-HeavyItalic</string>
         </mutableArray>
@@ -158,10 +161,17 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bd-dN-smA">
+                                            <rect key="frame" x="8" y="171" width="77" height="21"/>
+                                            <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
+                                    <outlet property="author" destination="7bd-dN-smA" id="HmG-s5-JkP"/>
                                     <outlet property="imageView" destination="X3s-bC-GMR" id="lr5-td-3f0"/>
                                     <outlet property="title" destination="qh2-xd-Dca" id="QJ7-lP-qWR"/>
                                 </connections>
