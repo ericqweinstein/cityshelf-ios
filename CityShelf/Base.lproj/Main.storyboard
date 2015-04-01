@@ -8,6 +8,7 @@
         <mutableArray key="CooperHewitt-Bold.otf">
             <string>CooperHewitt-Bold</string>
             <string>CooperHewitt-Bold</string>
+            <string>CooperHewitt-Bold</string>
         </mutableArray>
         <mutableArray key="CooperHewitt-Book.otf">
             <string>CooperHewitt-Book</string>
@@ -110,7 +111,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Z8-90-K9y">
                             <size key="itemSize" width="93" height="200"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="100"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
@@ -151,6 +152,26 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResultsHeaderView" id="yf6-EN-PKR" customClass="ResultsHeaderView" customModule="CityShelf" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbg-vJ-c5w">
+                                    <rect key="frame" x="279" y="14" width="42" height="71"/>
+                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="top" secondItem="yf6-EN-PKR" secondAttribute="topMargin" constant="6" id="2hv-U0-Hkg"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="kbg-vJ-c5w" secondAttribute="bottom" constant="7" id="3OW-gW-Bgu"/>
+                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="centerX" secondItem="yf6-EN-PKR" secondAttribute="centerX" id="AWJ-Ei-ChS"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="search" destination="kbg-vJ-c5w" id="jjg-Vl-lRq"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="CwU-RW-kbs" id="TlZ-oA-amh"/>
                             <outlet property="delegate" destination="CwU-RW-kbs" id="WL6-Km-WVA"/>

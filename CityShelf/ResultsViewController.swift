@@ -12,8 +12,8 @@ import UIKit
 class ResultsViewController: UICollectionViewController,
                              UICollectionViewDelegateFlowLayout {
     var results  = [Book]()
-
-    var toPass: NSArray!
+    var searchResults: NSArray!
+    var searchQuery: String!
 
     private let reuseIdentifier = "CityShelfCell"
 
@@ -72,6 +72,26 @@ class ResultsViewController: UICollectionViewController,
     }
 
     /**
+        Overrides collectionView in order to set the header.
+    */
+    override func collectionView(collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+            switch kind {
+            case UICollectionElementKindSectionHeader:
+                let headerView =
+                collectionView.dequeueReusableSupplementaryViewOfKind(kind,
+                    withReuseIdentifier: "ResultsHeaderView",
+                    forIndexPath: indexPath)
+                    as ResultsHeaderView
+                headerView.search.text = "You searched for \"\(searchQuery)\".\nIs this the book you're looking for?"
+                return headerView
+            default:
+                assert(false, "Unexpected element kind")
+            }
+    }
+
+    /**
         Gets the cover image for the current cell.
 
         :returns: The cover image.
@@ -83,7 +103,7 @@ class ResultsViewController: UICollectionViewController,
     func showResults() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 
-        for result in toPass {
+        for result in searchResults {
             let title  = result["title"] as String
             let author = result["author"] as String
             let price  = result["price"] as String

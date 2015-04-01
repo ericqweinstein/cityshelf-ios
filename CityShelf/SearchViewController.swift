@@ -29,7 +29,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "goToResults" {
             var svc = segue.destinationViewController as ResultsViewController
 
-            svc.toPass = api.searchResults
+            svc.searchResults = api.searchResults
+            svc.searchQuery = query
         }
     }
     
