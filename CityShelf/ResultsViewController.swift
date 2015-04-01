@@ -32,7 +32,11 @@ class ResultsViewController: UICollectionViewController,
     }
 
     /**
-        @todo Document this. (EW 31 Mar 2015)
+        Sets the size of each cell in the collection
+        view. Implemented in order to conform to the
+        UICollectionViewDelegateFlowLayout protocol.
+
+        :returns: The cell dimensions.
     */
     func collectionView(collectionView: UICollectionView!,
         layout collectionViewLayout: UICollectionViewLayout!,
@@ -41,7 +45,10 @@ class ResultsViewController: UICollectionViewController,
     }
 
     /**
-        @todo Document this. (EW 31 Mar 2015)
+        Overrides collectionView in order to set the
+        cover image and title data for each search result.
+
+        :returns: The collection view cell.
     */
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
@@ -57,6 +64,8 @@ class ResultsViewController: UICollectionViewController,
         if data != nil {
             let image = UIImage(data: data!)
             cell.imageView?.image = image
+            // cell.title.text = book.title
+            // cell.author.text = book.author
         }
         
         return cell
