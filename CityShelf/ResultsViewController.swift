@@ -31,12 +31,31 @@ class ResultsViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
 
-        // Style the cell.
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as CoverImageCell
+
+        let book = coverForIndexPath(indexPath)
+
         cell.backgroundColor = UIColor.whiteColor()
 
+        let imageLink = book.cover
+        let data = NSData(contentsOfURL: imageLink)
+
+        if data != nil {
+            let image = UIImage(data: data!)
+            cell.imageView?.image = image
+        }
+        
         return cell
+    }
+
+    /**
+        Gets the cover image for the current cell.
+
+        :returns: The cover image.
+    */
+    func coverForIndexPath(indexPath: NSIndexPath) -> Book {
+        return results[indexPath.row]
     }
 
     func showResults() {
