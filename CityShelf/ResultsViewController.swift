@@ -105,4 +105,94 @@ class ResultsViewController: UICollectionViewController,
 
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
+
+    // These may be reused to implement async image loading. (EW 31 Mar 2015)
+
+//     let pendingOperations = PendingOperations()
+//    
+//     switch (bookDetails.state) {
+//     case .Failed:
+//        indicator.stopAnimating()
+//        cell.textLabel?.text = "Failed to load"
+//     case .New:
+//        indicator.startAnimating()
+//        self.startOperationsForBook(bookDetails, indexPath:indexPath)
+//     case .Downloaded:
+//        NSLog("Downloaded image successfully.")
+//     }
+//    
+//     func startOperationsForBook(bookDetails: Book, indexPath: NSIndexPath) {
+//         switch (bookDetails.state) {
+//         case .New:
+//             startDownloadForRecord(bookDetails, indexPath: indexPath)
+//         default:
+//             NSLog("Nothing to do here!")
+//         }
+//     }
+//    
+//     func startDownloadForRecord(bookDetails: Book, indexPath: NSIndexPath) {
+//         if let downloadOperation = pendingOperations.downloadsInProgress[indexPath] {
+//             return
+//         }
+//    
+//         let downloader = ImageDownloader(book: bookDetails)
+//    
+//         downloader.completionBlock = {
+//             if downloader.cancelled {
+//                 return
+//             }
+//             dispatch_async(dispatch_get_main_queue(), {
+//                 self.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
+//                 self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//             })
+//         }
+//    
+//         pendingOperations.downloadsInProgress[indexPath] = downloader
+//         pendingOperations.downloadQueue.addOperation(downloader)
+//     }
+//    func fetchTitleDetails() {
+//        let request = NSURLRequest(URL: NSURL(string: settings.searchEndpoint)!)
+//        var parseError: NSError?
+//
+//        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+//
+//        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { response, data, error in
+//            if data != nil {
+//                let searchResults = NSJSONSerialization.JSONObjectWithData(data,
+//                    options: NSJSONReadingOptions.MutableContainers, error: &parseError) as NSArray
+//
+//                for result in searchResults {
+//                    let title  = result["title"] as String
+//                    let author = result["author"] as String
+//                    let price  = result["price"] as String
+//                    let store  = result["storeLink"] as String
+//                    let avail  = result["availability"] as String
+//                    let phone  = result["phone"] as String
+//                    let img    = result["img"] as String
+//
+//                    let book = Book(title: title,
+//                        author: author,
+//                        cover: NSURL(string: img)!,
+//                        availability: avail,
+//                        link: NSURL(string: store)!,
+//                        price: (price as NSString).doubleValue)
+//
+//                    self.results.append(book)
+//                    // println("\(title) \(author) at \(price) (call: \(phone))")
+//                    self.tableView.reloadData()
+//                }
+//            }
+//
+//            if error != nil {
+//                let alert = UIAlertView(title: "We're Sorry",
+//                    message: error.localizedDescription,
+//                    delegate: nil,
+//                    cancelButtonTitle: "OK")
+//
+//                alert.show()
+//            }
+//        }
+//
+//        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+//    }
 }

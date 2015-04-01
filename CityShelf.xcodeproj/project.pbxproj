@@ -12,7 +12,6 @@
 		B009C5271A94307300C43439 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5261A94307300C43439 /* SearchService.swift */; };
 		B009C5291A94309D00C43439 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5281A94309D00C43439 /* Settings.swift */; };
 		B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */; };
-		B06FB9821A80620B00AEAB8F /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06FB9811A80620B00AEAB8F /* BookViewController.swift */; };
 		B06FB9871A80620B00AEAB8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9851A80620B00AEAB8F /* Main.storyboard */; };
 		B06FB9891A80620B00AEAB8F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9881A80620B00AEAB8F /* Images.xcassets */; };
 		B06FB98C1A80620B00AEAB8F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B06FB98A1A80620B00AEAB8F /* LaunchScreen.xib */; };
@@ -58,7 +57,6 @@
 		B06FB9781A80620B00AEAB8F /* CityShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06FB97C1A80620B00AEAB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B06FB9811A80620B00AEAB8F /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		B06FB9861A80620B00AEAB8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B06FB9881A80620B00AEAB8F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B06FB98B1A80620B00AEAB8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */,
 				B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */,
 				B0820EBD1ACB5B740015F0DB /* ResultsViewController.swift */,
-				B06FB9811A80620B00AEAB8F /* BookViewController.swift */,
 				B0820EBF1ACB701F0015F0DB /* CoverImageCell.swift */,
 				B009C5241A94306400C43439 /* Book.swift */,
 				B009C5261A94307300C43439 /* SearchService.swift */,
@@ -332,7 +329,6 @@
 				B009C5271A94307300C43439 /* SearchService.swift in Sources */,
 				B0820EBE1ACB5B740015F0DB /* ResultsViewController.swift in Sources */,
 				B009C5291A94309D00C43439 /* Settings.swift in Sources */,
-				B06FB9821A80620B00AEAB8F /* BookViewController.swift in Sources */,
 				B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */,
 				B0820EC01ACB701F0015F0DB /* CoverImageCell.swift in Sources */,
 			);
