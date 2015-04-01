@@ -9,7 +9,8 @@
 import UIKit
 
 /// View controller for API search results.
-class ResultsViewController: UICollectionViewController {
+class ResultsViewController: UICollectionViewController,
+                             UICollectionViewDelegateFlowLayout {
     var results  = [Book]()
 
     var toPass: NSArray!
@@ -30,6 +31,18 @@ class ResultsViewController: UICollectionViewController {
         return results.count
     }
 
+    /**
+        @todo Document this. (EW 31 Mar 2015)
+    */
+    func collectionView(collectionView: UICollectionView!,
+        layout collectionViewLayout: UICollectionViewLayout!,
+        sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
+            return CGSize(width: 93, height: 140)
+    }
+
+    /**
+        @todo Document this. (EW 31 Mar 2015)
+    */
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as CoverImageCell
