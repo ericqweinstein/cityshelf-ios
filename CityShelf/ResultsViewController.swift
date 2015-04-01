@@ -91,10 +91,6 @@ class ResultsViewController: UICollectionViewController,
                 price: (price as NSString).doubleValue)
 
             self.results.append(book)
-
-            // Debugging.
-            println("\(title) \(author) at \(price) (call: \(phone))")
-
             self.collectionView?.reloadData()
         }
 
