@@ -11,7 +11,7 @@ import UIKit
 /// View controller for displaying CityShelf instructions.
 class InstructionViewController: UIViewController {
     /**
-        Override viewDidLoad() in order to set an
+        Overrides viewDidLoad() in order to set an
         automated segue.
     */
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class InstructionViewController: UIViewController {
     }
     
     /**
-        Segue to the next view.
+        Segues to the next view.
     */
     func nextView() {
         self.performSegueWithIdentifier("goToSearch", sender: self)

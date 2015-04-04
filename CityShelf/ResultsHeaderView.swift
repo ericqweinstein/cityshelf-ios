@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Handles the header text in the search results view.
 class ResultsHeaderView: UICollectionReusableView {
     @IBOutlet weak var search: UILabel!
 }
