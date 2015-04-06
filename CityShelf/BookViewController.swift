@@ -9,7 +9,14 @@
 import UIKit
 
 class BookViewController: UIViewController {
-    override func viewWillAppear(animated: Bool) {
-        //
+    @IBOutlet weak var bookTitle: UILabel!
+    @IBOutlet weak var author: UILabel!
+
+    var selectedTitle: String!
+    var selectedAuthor: String!
+
+    override func viewDidLoad() {
+        bookTitle.text = selectedTitle
+        author.text = selectedAuthor
     }
 }

@@ -103,6 +103,18 @@ class ResultsViewController: UICollectionViewController,
     }
 
     /**
+        Allows us to pass API data to the BookViewController.
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToTitle" {
+            var bk = segue.destinationViewController as BookViewController
+
+            bk.selectedTitle = "Glory Be to Tested Things"
+            bk.selectedAuthor = "G.K. Testerton"
+        }
+    }
+
+    /**
         Gets the cover image for the current cell.
 
         :returns: The cover image.
