@@ -95,6 +95,14 @@ class ResultsViewController: UICollectionViewController,
     }
 
     /**
+        Handles showing the cell detail view when the user
+        selects a particular book.
+    */
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("goToTitle", sender: nil)
+    }
+
+    /**
         Gets the cover image for the current cell.
 
         :returns: The cover image.
@@ -102,6 +110,10 @@ class ResultsViewController: UICollectionViewController,
     func coverForIndexPath(indexPath: NSIndexPath) -> Book {
         return results[indexPath.row]
     }
+
+    /**
+        Munges the results from the search API.
+    */
 
     func showResults() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
