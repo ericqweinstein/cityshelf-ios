@@ -11,6 +11,5 @@ import Foundation
 /// Handles global settings for CityShelf.
 class Settings {
     let numberOfStores = 7
-    
-    let searchEndpoint = "http://192.168.1.13:8080/api/stores"
+    let searchEndpoint = "http://192.168.2.4:8080/api/stores"
 }

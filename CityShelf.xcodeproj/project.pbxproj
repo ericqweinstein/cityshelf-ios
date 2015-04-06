@@ -11,11 +11,11 @@
 		B009C5251A94306400C43439 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5241A94306400C43439 /* Book.swift */; };
 		B009C5271A94307300C43439 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5261A94307300C43439 /* SearchService.swift */; };
 		B009C5291A94309D00C43439 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5281A94309D00C43439 /* Settings.swift */; };
+		B02AFA391AD2DF4600BAF932 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA381AD2DF4600BAF932 /* BookViewController.swift */; };
 		B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */; };
 		B06FB9871A80620B00AEAB8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9851A80620B00AEAB8F /* Main.storyboard */; };
 		B06FB9891A80620B00AEAB8F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9881A80620B00AEAB8F /* Images.xcassets */; };
 		B06FB98C1A80620B00AEAB8F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B06FB98A1A80620B00AEAB8F /* LaunchScreen.xib */; };
-		B0820E991AB291960015F0DB /* BookOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0820E981AB291960015F0DB /* BookOperations.swift */; };
 		B0820EA91AB4AE1F0015F0DB /* CooperHewitt-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820E9B1AB4AE1F0015F0DB /* CooperHewitt-Bold.otf */; };
 		B0820EAA1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820E9C1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf */; };
 		B0820EAB1AB4AE1F0015F0DB /* CooperHewitt-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820E9D1AB4AE1F0015F0DB /* CooperHewitt-Book.otf */; };
@@ -55,6 +55,7 @@
 		B009C5241A94306400C43439 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B009C5261A94307300C43439 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		B009C5281A94309D00C43439 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B02AFA381AD2DF4600BAF932 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		B06FB9781A80620B00AEAB8F /* CityShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06FB97C1A80620B00AEAB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		B06FB98B1A80620B00AEAB8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B06FB9911A80620B00AEAB8F /* CityShelfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityShelfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06FB9961A80620B00AEAB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0820E981AB291960015F0DB /* BookOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookOperations.swift; sourceTree = "<group>"; };
 		B0820E9B1AB4AE1F0015F0DB /* CooperHewitt-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Bold.otf"; sourceTree = "<group>"; };
 		B0820E9C1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-BoldItalic.otf"; sourceTree = "<group>"; };
 		B0820E9D1AB4AE1F0015F0DB /* CooperHewitt-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Book.otf"; sourceTree = "<group>"; };
@@ -133,9 +133,9 @@
 				B0820EBD1ACB5B740015F0DB /* ResultsViewController.swift */,
 				B0820EC11ACB8B5A0015F0DB /* ResultsHeaderView.swift */,
 				B0820EBF1ACB701F0015F0DB /* CoverImageCell.swift */,
+				B02AFA381AD2DF4600BAF932 /* BookViewController.swift */,
 				B009C5241A94306400C43439 /* Book.swift */,
 				B009C5261A94307300C43439 /* SearchService.swift */,
-				B0820E981AB291960015F0DB /* BookOperations.swift */,
 				B009C5281A94309D00C43439 /* Settings.swift */,
 				B06FB9851A80620B00AEAB8F /* Main.storyboard */,
 				B06FB9881A80620B00AEAB8F /* Images.xcassets */,
@@ -325,9 +325,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0820E991AB291960015F0DB /* BookOperations.swift in Sources */,
 				B009C5251A94306400C43439 /* Book.swift in Sources */,
 				B0820EBA1AB4CB3F0015F0DB /* SearchViewController.swift in Sources */,
+				B02AFA391AD2DF4600BAF932 /* BookViewController.swift in Sources */,
 				B0820EB81AB4BEA80015F0DB /* InstructionViewController.swift in Sources */,
 				B009C5271A94307300C43439 /* SearchService.swift in Sources */,
 				B0820EBE1ACB5B740015F0DB /* ResultsViewController.swift in Sources */,

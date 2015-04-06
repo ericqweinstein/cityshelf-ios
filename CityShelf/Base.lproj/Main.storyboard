@@ -126,10 +126,14 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X3s-bC-GMR">
                                             <rect key="frame" x="0.0" y="0.0" width="93" height="140"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="93" id="HZn-Lt-CYQ"/>
                                                 <constraint firstAttribute="height" constant="140" id="fBV-qQ-YWs"/>
                                             </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="DGm-Us-Nde" appends="YES" id="aa2-HS-iQt"/>
+                                            </connections>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh2-xd-Dca">
                                             <rect key="frame" x="8" y="148" width="77" height="21"/>
@@ -180,8 +184,39 @@
                     </collectionView>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yb-Mb-FPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DGm-Us-Nde">
+                    <connections>
+                        <segue destination="uiT-70-UZv" kind="show" identifier="goToTitle" id="lHt-cU-ace"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1954" y="482"/>
+        </scene>
+        <!--Book View Controller-->
+        <scene sceneID="8tG-UM-oKq">
+            <objects>
+                <viewController id="uiT-70-UZv" customClass="BookViewController" customModule="CityShelf" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q9o-eh-8mL"/>
+                        <viewControllerLayoutGuide type="bottom" id="NjM-7c-tlX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ke0-EV-Gf4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wired up!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcW-EU-9nt">
+                                <rect key="frame" x="263" y="289" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fd-Ka-CxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2600" y="482"/>
         </scene>
     </scenes>
     <resources>
