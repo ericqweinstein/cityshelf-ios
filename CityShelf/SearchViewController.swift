@@ -39,21 +39,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var border = CALayer()
-        var width  = CGFloat(3.0)
-        
-        border.borderColor = UIColor.darkGrayColor().CGColor
-        border.frame = CGRect(x: 0,
-            y: searchField.frame.size.height - width,
-            width: searchField.frame.size.width,
-            height: searchField.frame.size.height)
-        
-        border.borderWidth = width
-        searchField.layer.addSublayer(border)
-        searchField.layer.masksToBounds = true
-        searchField.layer.cornerRadius = 0.0
-        
+
+        searchField.layer.borderColor = UIColor.whiteColor().CGColor
+        searchField.layer.borderWidth = 1.0
+
         searchField.attributedPlaceholder = NSAttributedString(string: "Title, author, ISBN",
             attributes:[NSForegroundColorAttributeName: UIColor.blackColor()])
         
