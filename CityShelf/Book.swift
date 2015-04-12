@@ -9,17 +9,6 @@
 import Foundation
 import UIKit
 
-/**
-    States a book download might be in.
-
-    - New: We haven't yet downloaded the book.
-    - Downloaded: We've successfully downloaded the book.
-    - Failed: We failed to download the book.
-*/
-enum BookState {
-    case New, Downloaded, Failed
-}
-
 /// Models a book returned by the BookService.
 class Book {
     var title: String
@@ -28,7 +17,6 @@ class Book {
     var availability: String // To do: Make this an enum or boolean (EW 17 Feb 2015)
     var link: NSURL
     var price: Double
-    var state: BookState
     var image = UIImage(named: "Placeholder")
     
     /**
@@ -50,6 +38,5 @@ class Book {
         self.availability = availability
         self.link = link
         self.price = price
-        self.state = BookState.New
     }
 }
