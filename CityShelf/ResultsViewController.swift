@@ -23,10 +23,6 @@ class ResultsViewController: UICollectionViewController,
         showResults()
     }
 
-    /**
-        Overrides the number of sections in the collection
-        in order to show one section per search result.
-    */
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return results.count
     }
@@ -47,12 +43,6 @@ class ResultsViewController: UICollectionViewController,
             return CGSize(width: 93, height: 200)
     }
 
-    /**
-        Overrides collectionView in order to set the
-        cover image and title data for each search result.
-
-        :returns: The collection view cell.
-    */
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as CoverImageCell
@@ -74,9 +64,6 @@ class ResultsViewController: UICollectionViewController,
         return cell
     }
 
-    /**
-        Overrides collectionView in order to set the header.
-    */
     override func collectionView(collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
         atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
@@ -94,9 +81,6 @@ class ResultsViewController: UICollectionViewController,
             }
     }
 
-    /**
-        Allows us to pass API data to the BookViewController.
-    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToTitle" {
             var bk = segue.destinationViewController as BookViewController
@@ -108,6 +92,7 @@ class ResultsViewController: UICollectionViewController,
 
             bk.selectedTitle = book.title
             bk.selectedAuthor = book.author
+            bk.selectedCover = book.cover
         }
     }
 
@@ -123,7 +108,6 @@ class ResultsViewController: UICollectionViewController,
     /**
         Munges the results from the search API.
     */
-
     func showResults() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 

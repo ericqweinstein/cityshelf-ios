@@ -220,6 +220,7 @@
                     <connections>
                         <outlet property="author" destination="MKj-Ck-LRd" id="WaB-is-74N"/>
                         <outlet property="bookTitle" destination="ydJ-ZT-PM4" id="Vuy-26-b6v"/>
+                        <outlet property="cover" destination="pRt-6Q-iTK" id="cBQ-MT-Vkl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fd-Ka-CxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
