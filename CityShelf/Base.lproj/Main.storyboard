@@ -153,6 +153,7 @@
                                     <outlet property="author" destination="7bd-dN-smA" id="HmG-s5-JkP"/>
                                     <outlet property="imageView" destination="X3s-bC-GMR" id="lr5-td-3f0"/>
                                     <outlet property="title" destination="qh2-xd-Dca" id="QJ7-lP-qWR"/>
+                                    <segue destination="uiT-70-UZv" kind="show" identifier="goToTitle" id="LQN-1e-tHB"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -181,9 +182,6 @@
                             <outlet property="delegate" destination="CwU-RW-kbs" id="WL6-Km-WVA"/>
                         </connections>
                     </collectionView>
-                    <connections>
-                        <segue destination="uiT-70-UZv" kind="show" identifier="goToTitle" id="rbM-VG-EUn"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yb-Mb-FPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

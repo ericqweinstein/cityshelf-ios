@@ -95,22 +95,19 @@ class ResultsViewController: UICollectionViewController,
     }
 
     /**
-        Handles showing the cell detail view when the user
-        selects a particular book.
-    */
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("goToTitle", sender: nil)
-    }
-
-    /**
         Allows us to pass API data to the BookViewController.
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToTitle" {
             var bk = segue.destinationViewController as BookViewController
 
-            bk.selectedTitle = "Glory Be to Tested Things"
-            bk.selectedAuthor = "G.K. Testerton"
+            let cell = sender as CoverImageCell
+            let indexPath = self.collectionView!.indexPathForCell(cell)!
+
+            let book = results[indexPath.item]
+
+            bk.selectedTitle = book.title
+            bk.selectedAuthor = book.author
         }
     }
 
