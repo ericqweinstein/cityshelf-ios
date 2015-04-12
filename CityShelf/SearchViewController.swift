@@ -14,12 +14,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     let api = SearchService()
 
     @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var searchProgress: UIProgressView!
     
     @IBAction func searchButtonClicked(sender: AnyObject) {
         query = searchField.text
         api.searchResults = search(formatQuery(query))
-
-        performSegueWithIdentifier("goToResults", sender: nil)
     }
 
     /**
@@ -47,6 +46,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             attributes:[NSForegroundColorAttributeName: UIColor.blackColor()])
         
         searchField.delegate = self
+
+        searchProgress.setProgress(0, animated: true)
     }
     
     /**
@@ -59,8 +60,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchField.text
         api.searchResults = search(formatQuery(query))
-
-        performSegueWithIdentifier("goToResults", sender: nil)
 
         return true
     }
@@ -76,6 +75,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
 
     /**
+        Segues to the results view.
+    */
+    func goToResults() {
+        performSegueWithIdentifier("goToResults", sender: self)
+    }
+
+    /**
         Searches the API for a particular title/author.
     
         :param: queryString The query.
@@ -84,21 +90,31 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     func search(queryString: String) -> NSArray {
         let endpoint = api.settings.searchEndpoint
         let numberOfStores = api.settings.numberOfStores
-        
-        let group = dispatch_group_create()
+
+        var completeness = (1 / Float(numberOfStores))
+        searchProgress.setProgress(completeness, animated: true)
+
         var searchResults = NSMutableArray()
+
+        let group = dispatch_group_create()
 
         for storeNumber in (0..<numberOfStores) {
             dispatch_group_enter(group)
-
-            api.request("\(endpoint)/\(storeNumber)/?query=\(queryString)") {
+            self.api.request("\(endpoint)/\(storeNumber)/?query=\(queryString)") {
                 (response) in
                 searchResults.addObjectsFromArray(response)
+                completeness += (1 / Float(numberOfStores - 1))
                 dispatch_group_leave(group)
+
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.searchProgress.setProgress(completeness, animated: true)
+                }
             }
         }
 
-        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+        dispatch_group_notify(group, dispatch_get_main_queue()) {
+            self.goToResults()
+        }
 
         return searchResults as NSArray
     }

@@ -85,28 +85,26 @@
                                     <action selector="searchButtonClicked:" destination="dym-CT-Oo5" eventType="touchUpInside" id="C7O-2o-OpS"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCp-9t-Agn">
-                                <rect key="frame" x="16" y="323" width="568" height="4"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="4" id="8rh-dz-NqH"/>
-                                </constraints>
-                            </view>
+                            <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FWn-Ni-cws">
+                                <rect key="frame" x="16" y="324" width="568" height="2"/>
+                                <color key="progressTintColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xtv-gc-CDh" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="265" id="4RE-4r-j6x"/>
-                            <constraint firstItem="WCp-9t-Agn" firstAttribute="top" secondItem="xtv-gc-CDh" secondAttribute="bottom" constant="8" id="DCw-yw-Gdb"/>
+                            <constraint firstItem="FWn-Ni-cws" firstAttribute="top" secondItem="VSe-i4-Yzp" secondAttribute="bottom" constant="8" symbolic="YES" id="MjI-5z-ga8"/>
+                            <constraint firstItem="FWn-Ni-cws" firstAttribute="trailing" secondItem="VSe-i4-Yzp" secondAttribute="trailing" id="Nlv-0r-JKo"/>
                             <constraint firstItem="VSe-i4-Yzp" firstAttribute="trailing" secondItem="rQW-vx-sYr" secondAttribute="trailingMargin" id="P3B-qb-ojo"/>
-                            <constraint firstItem="WCp-9t-Agn" firstAttribute="leading" secondItem="rQW-vx-sYr" secondAttribute="leadingMargin" id="RCu-MR-HNw"/>
+                            <constraint firstItem="FWn-Ni-cws" firstAttribute="leading" secondItem="xtv-gc-CDh" secondAttribute="leading" id="Qsj-4e-4Ab"/>
                             <constraint firstItem="VSe-i4-Yzp" firstAttribute="leading" secondItem="xtv-gc-CDh" secondAttribute="trailing" constant="8" id="We9-0S-S40"/>
                             <constraint firstItem="xtv-gc-CDh" firstAttribute="leading" secondItem="rQW-vx-sYr" secondAttribute="leadingMargin" id="cBp-jw-TXn"/>
                             <constraint firstItem="VSe-i4-Yzp" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="269" id="vYL-vp-6cc"/>
-                            <constraint firstItem="WCp-9t-Agn" firstAttribute="trailing" secondItem="rQW-vx-sYr" secondAttribute="trailingMargin" id="vbB-Qo-U2U"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="searchField" destination="xtv-gc-CDh" id="RbU-xb-1Rp"/>
+                        <outlet property="searchProgress" destination="FWn-Ni-cws" id="eZ2-Yr-Mmg"/>
                         <segue destination="CwU-RW-kbs" kind="show" identifier="goToResults" id="LmP-rB-nwG"/>
                     </connections>
                 </viewController>
