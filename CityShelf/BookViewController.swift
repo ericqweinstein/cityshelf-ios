@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Detail view for an individual book.
 class BookViewController: UIViewController {
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var author: UILabel!
