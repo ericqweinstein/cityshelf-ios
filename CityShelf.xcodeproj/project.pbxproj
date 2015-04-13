@@ -14,6 +14,8 @@
 		B02AFA391AD2DF4600BAF932 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA381AD2DF4600BAF932 /* BookViewController.swift */; };
 		B02AFA3D1ADB6C7300BAF932 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA3C1ADB6C7300BAF932 /* Store.swift */; };
 		B02AFA3F1ADB6E1800BAF932 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA3E1ADB6E1800BAF932 /* MapView.swift */; };
+		B02AFA401ADB70B500BAF932 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA3C1ADB6C7300BAF932 /* Store.swift */; };
+		B02AFA421ADB70C300BAF932 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA411ADB70C300BAF932 /* StoreTests.swift */; };
 		B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */; };
 		B06FB9871A80620B00AEAB8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9851A80620B00AEAB8F /* Main.storyboard */; };
 		B06FB9891A80620B00AEAB8F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9881A80620B00AEAB8F /* Images.xcassets */; };
@@ -60,6 +62,7 @@
 		B02AFA381AD2DF4600BAF932 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		B02AFA3C1ADB6C7300BAF932 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B02AFA3E1ADB6E1800BAF932 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B02AFA411ADB70C300BAF932 /* StoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
 		B06FB9781A80620B00AEAB8F /* CityShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06FB97C1A80620B00AEAB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 			children = (
 				B06FB9951A80620B00AEAB8F /* Supporting Files */,
 				B093DACA1A98117F00309EE2 /* BookTests.swift */,
+				B02AFA411ADB70C300BAF932 /* StoreTests.swift */,
 			);
 			path = CityShelfTests;
 			sourceTree = "<group>";
@@ -350,8 +354,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02AFA401ADB70B500BAF932 /* Store.swift in Sources */,
 				B093DACC1A98151500309EE2 /* Book.swift in Sources */,
 				B093DACB1A98117F00309EE2 /* BookTests.swift in Sources */,
+				B02AFA421ADB70C300BAF932 /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
