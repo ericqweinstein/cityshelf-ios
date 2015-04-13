@@ -106,7 +106,7 @@ class ResultsViewController: UICollectionViewController,
     }
 
     /**
-        Munges the results from the search API.
+        Converts JSON from the API into Book objects.
     */
     func showResults() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
