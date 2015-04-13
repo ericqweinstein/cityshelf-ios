@@ -37,10 +37,10 @@ class ResultsViewController: UICollectionViewController,
     func collectionView(collectionView: UICollectionView!,
         layout collectionViewLayout: UICollectionViewLayout!,
         sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
-            // Sets uniform gutters around cell content.
+            // Sets gutters around cell content.
             collectionView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10)
 
-            return CGSize(width: 93, height: 200)
+            return CGSize(width: 93, height: 220)
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -59,6 +59,7 @@ class ResultsViewController: UICollectionViewController,
             cell.imageView?.image = image
             cell.title.text = book.title
             cell.author.text = book.author
+            cell.isbn.text = book.isbn
         }
         
         return cell
@@ -119,13 +120,17 @@ class ResultsViewController: UICollectionViewController,
             let avail  = result["availability"] as String
             let phone  = result["phone"] as String
             let img    = result["img"] as String
+            let isbn   = result["isbn"] as String
 
-            let book = Book(title: title,
+            let book = Book(
+                title: title,
                 author: author,
                 cover: NSURL(string: img)!,
                 availability: avail,
                 link: NSURL(string: store)!,
-                price: (price as NSString).doubleValue)
+                price: (price as NSString).doubleValue,
+                isbn: isbn
+            )
 
             self.results.append(book)
             self.collectionView?.reloadData()

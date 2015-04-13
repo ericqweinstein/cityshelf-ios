@@ -17,12 +17,15 @@ class BookTests: XCTestCase {
         
         let url = NSURL(string: "www.example.com")
         
-        book = Book(title: "Cat's Cradle",
-                    author: "Kurt Vonnegut",
-                    cover: url!,
-                    availability: "On shelves now",
-                    link: url!,
-                    price: 14.99)
+        book = Book(
+            title: "Cat's Cradle",
+            author: "Kurt Vonnegut",
+            cover: url!,
+            availability: "On shelves now",
+            link: url!,
+            price: 14.99,
+            isbn: "9780123456789"
+        )
     }
     
     func testTitle() {
@@ -43,5 +46,9 @@ class BookTests: XCTestCase {
     
     func testPrice() {
         XCTAssertEqual(book!.price, 14.99)
+    }
+
+    func testISBN() {
+        XCTAssertEqual(book!.isbn, "9780123456789")
     }
 }

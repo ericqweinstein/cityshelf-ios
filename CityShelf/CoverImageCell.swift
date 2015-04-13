@@ -13,4 +13,5 @@ class CoverImageCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var isbn: UILabel!
 }

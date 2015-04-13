@@ -18,6 +18,7 @@ class Book {
     var link: NSURL
     var price: Double
     var image = UIImage(named: "Placeholder")
+    var isbn: String
     
     /**
         Creates a new book with the above attributes (author, title, &c).
@@ -28,15 +29,18 @@ class Book {
         :param: availability Indicates whether the book is available.
         :param: link A link to the book on the associated store's website.
         :param: price The price of the book.
+        :param: isbn The book's International Standard Book Number. The ISBN
+                     serves as a unique identifier for the book.
     
         :returns: A new book instance.
     */
-    init(title: String, author: String, cover: NSURL, availability: String, link: NSURL, price: Double) {
+    init(title: String, author: String, cover: NSURL, availability: String, link: NSURL, price: Double, isbn: String) {
         self.title = title
         self.author = author
         self.cover = cover
         self.availability = availability
         self.link = link
         self.price = price
+        self.isbn = isbn
     }
 }
