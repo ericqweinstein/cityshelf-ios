@@ -8,9 +8,14 @@
 
 import MapKit
 
+/// Extends the BookViewController in order to enable map annotations.
 extension BookViewController: MKMapViewDelegate {
     /**
-        @todo Document.
+        Allows us to annotate our map view with pins.
+
+        :param: mapView The map view.
+        :param: annotation The map annotation.
+        :returns: A MapKit annotation view (a map that can hae pins placed on it).
     */
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         if let annotation = annotation as? Store {

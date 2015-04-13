@@ -8,6 +8,7 @@
 
 import MapKit
 
+/// Models a store returned by the API.
 class Store: NSObject, MKAnnotation {
     let title: String
     let coordinate: CLLocationCoordinate2D

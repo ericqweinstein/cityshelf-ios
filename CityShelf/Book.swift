@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-/// Models a book returned by the BookService.
+/// Models a book returned by the API.
 class Book {
     var title: String
     var author: String

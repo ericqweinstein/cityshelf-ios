@@ -38,7 +38,9 @@ class BookViewController: UIViewController {
     }
 
     /**
-        @todo Document. (EW 13 Apr 2015)
+        Centers the map on the desired location.
+    
+        :param: location The desired location.
     */
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
