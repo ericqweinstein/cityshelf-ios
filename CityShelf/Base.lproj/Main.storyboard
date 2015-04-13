@@ -48,7 +48,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="dym-CT-Oo5" kind="presentation" identifier="goToSearch" animates="NO" id="Wsa-Yr-z67"/>
+                        <segue destination="dym-CT-Oo5" kind="show" identifier="goToSearch" id="Wsa-Yr-z67"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cS3-Oc-FKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
