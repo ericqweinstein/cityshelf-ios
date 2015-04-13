@@ -20,11 +20,23 @@ class BookViewController: UIViewController {
     var selectedAuthor: String!
     var selectedCover: NSURL!
 
+    let initialLocation = CLLocation(latitude: 40.738640, longitude: -73.932250)
+    let regionRadius: CLLocationDistance = 5000
+
     override func viewDidLoad() {
         bookTitle.text = selectedTitle
         author.text = selectedAuthor
 
         let coverData = NSData(contentsOfURL: selectedCover)
         cover.image = UIImage(data: coverData!)
+
+        centerMapOnLocation(initialLocation)
+    }
+
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+            regionRadius * 2.0,
+            regionRadius * 2.0)
+        map.setRegion(coordinateRegion, animated: true)
     }
 }
