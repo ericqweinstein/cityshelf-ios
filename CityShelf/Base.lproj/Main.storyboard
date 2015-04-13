@@ -144,13 +144,13 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh2-xd-Dca">
                                             <rect key="frame" x="8" y="148" width="77" height="21"/>
-                                            <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bd-dN-smA">
                                             <rect key="frame" x="8" y="171" width="77" height="21"/>
-                                            <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
