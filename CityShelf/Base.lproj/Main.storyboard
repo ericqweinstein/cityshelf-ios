@@ -222,13 +222,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-kE-oUI">
+                                <rect key="frame" x="16" y="176" width="568" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="568" id="lKt-Xn-5JX"/>
+                                    <constraint firstAttribute="height" constant="188" id="ubI-SC-yHl"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ytI-kE-oUI" firstAttribute="top" secondItem="Q9o-eh-8mL" secondAttribute="bottom" constant="156" id="DHF-Pt-9N0"/>
+                            <constraint firstAttribute="centerX" secondItem="ytI-kE-oUI" secondAttribute="centerX" id="xhh-nM-r83"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="author" destination="MKj-Ck-LRd" id="WaB-is-74N"/>
                         <outlet property="bookTitle" destination="ydJ-ZT-PM4" id="Vuy-26-b6v"/>
                         <outlet property="cover" destination="pRt-6Q-iTK" id="cBQ-MT-Vkl"/>
+                        <outlet property="map" destination="ytI-kE-oUI" id="hAs-2D-unb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fd-Ka-CxS" userLabel="First Responder" sceneMemberID="firstResponder"/>

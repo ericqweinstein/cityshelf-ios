@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
 /// Detail view for an individual book.
 class BookViewController: UIViewController {
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var cover: UIImageView!
+    @IBOutlet weak var map: MKMapView!
 
     var selectedTitle: String!
     var selectedAuthor: String!
