@@ -12,6 +12,8 @@
 		B009C5271A94307300C43439 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5261A94307300C43439 /* SearchService.swift */; };
 		B009C5291A94309D00C43439 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5281A94309D00C43439 /* Settings.swift */; };
 		B02AFA391AD2DF4600BAF932 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA381AD2DF4600BAF932 /* BookViewController.swift */; };
+		B02AFA3D1ADB6C7300BAF932 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA3C1ADB6C7300BAF932 /* Store.swift */; };
+		B02AFA3F1ADB6E1800BAF932 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA3E1ADB6E1800BAF932 /* MapView.swift */; };
 		B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */; };
 		B06FB9871A80620B00AEAB8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9851A80620B00AEAB8F /* Main.storyboard */; };
 		B06FB9891A80620B00AEAB8F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9881A80620B00AEAB8F /* Images.xcassets */; };
@@ -56,6 +58,8 @@
 		B009C5261A94307300C43439 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		B009C5281A94309D00C43439 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B02AFA381AD2DF4600BAF932 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		B02AFA3C1ADB6C7300BAF932 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		B02AFA3E1ADB6E1800BAF932 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B06FB9781A80620B00AEAB8F /* CityShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06FB97C1A80620B00AEAB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,10 +136,12 @@
 				B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */,
 				B0820EBD1ACB5B740015F0DB /* ResultsViewController.swift */,
 				B0820EC11ACB8B5A0015F0DB /* ResultsHeaderView.swift */,
+				B02AFA3E1ADB6E1800BAF932 /* MapView.swift */,
 				B0820EBF1ACB701F0015F0DB /* CoverImageCell.swift */,
 				B02AFA381AD2DF4600BAF932 /* BookViewController.swift */,
 				B009C5241A94306400C43439 /* Book.swift */,
 				B009C5261A94307300C43439 /* SearchService.swift */,
+				B02AFA3C1ADB6C7300BAF932 /* Store.swift */,
 				B009C5281A94309D00C43439 /* Settings.swift */,
 				B06FB9851A80620B00AEAB8F /* Main.storyboard */,
 				B06FB9881A80620B00AEAB8F /* Images.xcassets */,
@@ -326,11 +332,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B009C5251A94306400C43439 /* Book.swift in Sources */,
+				B02AFA3F1ADB6E1800BAF932 /* MapView.swift in Sources */,
 				B0820EBA1AB4CB3F0015F0DB /* SearchViewController.swift in Sources */,
 				B02AFA391AD2DF4600BAF932 /* BookViewController.swift in Sources */,
 				B0820EB81AB4BEA80015F0DB /* InstructionViewController.swift in Sources */,
 				B009C5271A94307300C43439 /* SearchService.swift in Sources */,
 				B0820EBE1ACB5B740015F0DB /* ResultsViewController.swift in Sources */,
+				B02AFA3D1ADB6C7300BAF932 /* Store.swift in Sources */,
 				B009C5291A94309D00C43439 /* Settings.swift in Sources */,
 				B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */,
 				B0820EC21ACB8B5A0015F0DB /* ResultsHeaderView.swift in Sources */,

@@ -31,6 +31,16 @@ class BookViewController: UIViewController {
         cover.image = UIImage(data: coverData!)
 
         centerMapOnLocation(initialLocation)
+
+        map.delegate = self
+
+        // Test dropping a pin on the map. (EW 12 Apr 2015)
+        let store = Store(
+            title: "WORD Bookstore",
+            coordinate: CLLocationCoordinate2D(latitude: 40.729197, longitude: -73.957319)
+        )
+
+        map.addAnnotation(store)
     }
 
     func centerMapOnLocation(location: CLLocation) {
