@@ -1,5 +1,5 @@
 //
-//  BookTest.swift
+//  BookTests.swift
 //  CityShelf
 //
 //  Created by Eric Weinstein <eric.q.weinstein@gmail.com>
@@ -9,7 +9,7 @@
 import CityShelf
 import XCTest
 
-class BookTest: XCTestCase {
+class BookTests: XCTestCase {
     var book: Book?
     
     override func setUp() {

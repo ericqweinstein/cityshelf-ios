@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 import XCTest
 
-class StoreTest: XCTestCase {
+class StoreTests: XCTestCase {
     var store: Store?
 
     override func setUp() {
