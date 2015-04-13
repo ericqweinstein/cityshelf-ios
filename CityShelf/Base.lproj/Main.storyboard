@@ -229,11 +229,21 @@
                                     <constraint firstAttribute="height" constant="188" id="ubI-SC-yHl"/>
                                 </constraints>
                             </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9Eu-dV-dKP">
+                                <rect key="frame" x="16" y="372" width="568" height="208"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="568" id="YOe-E3-x3E"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="9Eu-dV-dKP" secondAttribute="centerX" id="Ck5-fX-1Eg"/>
                             <constraint firstItem="ytI-kE-oUI" firstAttribute="top" secondItem="Q9o-eh-8mL" secondAttribute="bottom" constant="156" id="DHF-Pt-9N0"/>
+                            <constraint firstItem="NjM-7c-tlX" firstAttribute="top" secondItem="9Eu-dV-dKP" secondAttribute="bottom" constant="20" id="qCa-gL-1kK"/>
                             <constraint firstAttribute="centerX" secondItem="ytI-kE-oUI" secondAttribute="centerX" id="xhh-nM-r83"/>
+                            <constraint firstItem="9Eu-dV-dKP" firstAttribute="top" secondItem="ytI-kE-oUI" secondAttribute="bottom" constant="8" id="zVv-PK-g2i"/>
                         </constraints>
                     </view>
                     <connections>
