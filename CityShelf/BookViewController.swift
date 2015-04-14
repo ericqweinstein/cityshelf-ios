@@ -23,6 +23,7 @@ class BookViewController: UIViewController {
     var selectedAuthor: String!
     var selectedCover: NSURL!
     var selectedISBN: String!
+    var selectedAvailability: Array<Book>!
 
     let initialLocation = CLLocation(latitude: 40.759710, longitude: -73.974262)
     let regionRadius: CLLocationDistance = 8000
@@ -96,6 +97,10 @@ class BookViewController: UIViewController {
 
         let coverData = NSData(contentsOfURL: selectedCover)
         cover.image = UIImage(data: coverData!)
+
+        for bk in selectedAvailability {
+            println("\(bk.store): \(bk.availability)")
+        }
     }
 
     /**

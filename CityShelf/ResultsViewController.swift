@@ -95,6 +95,7 @@ class ResultsViewController: UICollectionViewController,
             bk.selectedAuthor = book.author
             bk.selectedCover = book.cover
             bk.selectedISBN = book.isbn
+            bk.selectedAvailability = results.filter() { $0.isbn == book.isbn }
         }
     }
 
@@ -117,7 +118,7 @@ class ResultsViewController: UICollectionViewController,
             let title  = result["title"] as String
             let author = result["author"] as String
             let price  = result["price"] as String
-            let store  = result["storeLink"] as String
+            let store  = result["storeName"] as String
             let avail  = result["availability"] as String
             let phone  = result["phone"] as String
             let img    = result["img"] as String
@@ -127,8 +128,8 @@ class ResultsViewController: UICollectionViewController,
                 title: title,
                 author: author,
                 cover: NSURL(string: img)!,
+                store: store,
                 availability: avail,
-                link: NSURL(string: store)!,
                 price: (price as NSString).doubleValue,
                 isbn: isbn
             )

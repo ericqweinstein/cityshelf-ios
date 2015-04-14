@@ -21,8 +21,8 @@ class BookTests: XCTestCase {
             title: "Cat's Cradle",
             author: "Kurt Vonnegut",
             cover: url!,
+            store: "The Strand",
             availability: "On shelves now",
-            link: url!,
             price: 14.99,
             isbn: "9780123456789"
         )
@@ -38,6 +38,10 @@ class BookTests: XCTestCase {
 
     func testCover() {
         XCTAssertEqual(book!.cover.absoluteString!, "www.example.com")
+    }
+
+    func testStore() {
+        XCTAssertEqual(book!.store, "The Strand")
     }
 
     func testAvailability() {
