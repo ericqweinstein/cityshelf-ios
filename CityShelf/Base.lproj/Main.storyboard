@@ -11,14 +11,14 @@
             <string>CooperHewitt-Bold</string>
             <string>CooperHewitt-Bold</string>
         </mutableArray>
-        <mutableArray key="CooperHewitt-Book.otf">
-            <string>CooperHewitt-Book</string>
-            <string>CooperHewitt-Book</string>
-            <string>CooperHewitt-Book</string>
-            <string>CooperHewitt-Book</string>
-        </mutableArray>
         <mutableArray key="CooperHewitt-HeavyItalic.otf">
             <string>CooperHewitt-HeavyItalic</string>
+        </mutableArray>
+        <mutableArray key="CooperHewitt-Light.otf">
+            <string>CooperHewitt-Light</string>
+            <string>CooperHewitt-Light</string>
+            <string>CooperHewitt-Light</string>
+            <string>CooperHewitt-Light</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -142,19 +142,19 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh2-xd-Dca">
                                             <rect key="frame" x="0.0" y="148" width="93" height="21"/>
-                                            <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bd-dN-smA">
                                             <rect key="frame" x="0.0" y="171" width="93" height="21"/>
-                                            <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ISBN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXm-K5-deZ">
                                             <rect key="frame" x="0.0" y="191" width="93" height="21"/>
-                                            <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -223,11 +223,11 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-Ck-LRd">
                                 <rect key="frame" x="117" y="78" width="467" height="39"/>
-                                <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-kE-oUI">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-kE-oUI">
                                 <rect key="frame" x="16" y="176" width="568" height="188"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="568" id="lKt-Xn-5JX"/>
@@ -240,10 +240,15 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="568" id="YOe-E3-x3E"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YOe-E3-x3E"/>
+                                    </mask>
+                                </variation>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
                                 <rect key="frame" x="117" y="125" width="467" height="39"/>
-                                <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -252,6 +257,8 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="9Eu-dV-dKP" secondAttribute="centerX" id="Ck5-fX-1Eg"/>
                             <constraint firstItem="ytI-kE-oUI" firstAttribute="top" secondItem="Q9o-eh-8mL" secondAttribute="bottom" constant="156" id="DHF-Pt-9N0"/>
+                            <constraint firstItem="9Eu-dV-dKP" firstAttribute="leading" secondItem="ke0-EV-Gf4" secondAttribute="leadingMargin" id="OJj-OT-Esp"/>
+                            <constraint firstItem="9Eu-dV-dKP" firstAttribute="trailing" secondItem="ke0-EV-Gf4" secondAttribute="trailingMargin" id="bQi-VS-rlc"/>
                             <constraint firstItem="NjM-7c-tlX" firstAttribute="top" secondItem="9Eu-dV-dKP" secondAttribute="bottom" constant="20" id="qCa-gL-1kK"/>
                             <constraint firstAttribute="centerX" secondItem="ytI-kE-oUI" secondAttribute="centerX" id="xhh-nM-r83"/>
                             <constraint firstItem="9Eu-dV-dKP" firstAttribute="top" secondItem="ytI-kE-oUI" secondAttribute="bottom" constant="8" id="zVv-PK-g2i"/>
@@ -263,6 +270,7 @@
                         <outlet property="cover" destination="pRt-6Q-iTK" id="cBQ-MT-Vkl"/>
                         <outlet property="isbn" destination="A5Z-li-6ag" id="Nrj-Qh-d8f"/>
                         <outlet property="map" destination="ytI-kE-oUI" id="hAs-2D-unb"/>
+                        <outlet property="storesList" destination="9Eu-dV-dKP" id="nLL-45-1Mm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fd-Ka-CxS" userLabel="First Responder" sceneMemberID="firstResponder"/>

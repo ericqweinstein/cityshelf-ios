@@ -17,6 +17,7 @@ class BookViewController: UIViewController {
     @IBOutlet weak var isbn: UILabel!
     
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var storesList: UITableView!
 
     var selectedTitle: String!
     var selectedAuthor: String!
@@ -26,17 +27,44 @@ class BookViewController: UIViewController {
     let initialLocation = CLLocation(latitude: 40.759710, longitude: -73.974262)
     let regionRadius: CLLocationDistance = 8000
 
+    // @todo Remove this and replace with API call. (EW 13 Apr 2015)
+    let stores = [
+        Store(
+            title: "Astoria Bookshop",
+            coordinate: CLLocationCoordinate2D(latitude: 40.763754, longitude: -73.923849)
+        ),
+        Store(
+            title: "Bank Street Books",
+            coordinate: CLLocationCoordinate2D(latitude: 40.805786, longitude: -73.966143)
+        ),
+        Store(
+            title: "Book Culture",
+            coordinate: CLLocationCoordinate2D(latitude: 40.805135, longitude: -73.964991)
+        ),
+        Store(
+            title: "Greenlight Bookstore",
+            coordinate: CLLocationCoordinate2D(latitude: 40.686502, longitude: -73.974571)
+        ),
+        Store(
+            title: "McNally Jackson",
+            coordinate: CLLocationCoordinate2D(latitude: 40.723518, longitude: -73.996061)
+        ),
+        Store(
+            title: "St. Mark's Bookshop",
+            coordinate: CLLocationCoordinate2D(latitude: 40.729921, longitude: -73.989448)
+        ),
+        Store(
+            title: "WORD Bookstore",
+            coordinate: CLLocationCoordinate2D(latitude: 40.729197, longitude: -73.957319)
+        )
+    ]
+
     override func viewDidLoad() {
-        bookTitle.text = selectedTitle
-        author.text = selectedAuthor
-        isbn.text = selectedISBN
+        configureBook()
 
-        let coverData = NSData(contentsOfURL: selectedCover)
-        cover.image = UIImage(data: coverData!)
+        configureMap()
 
-        centerMapOnLocation(initialLocation)
-        map.delegate = self
-        addStores()
+        configureStoreList()
     }
 
     /**
@@ -55,38 +83,36 @@ class BookViewController: UIViewController {
         Adds stores as annotations to the map view.
     */
     func addStores() {
-        // @todo Remove this and replace with API call. (EW 13 Apr 2015)
-        var stores = [
-            Store(
-                title: "Astoria Bookshop",
-                coordinate: CLLocationCoordinate2D(latitude: 40.763754, longitude: -73.923849)
-            ),
-            Store(
-                title: "Bank Street Books",
-                coordinate: CLLocationCoordinate2D(latitude: 40.805786, longitude: -73.966143)
-            ),
-            Store(
-                title: "Book Culture",
-                coordinate: CLLocationCoordinate2D(latitude: 40.805135, longitude: -73.964991)
-            ),
-            Store(
-                title: "Greenlight Bookstore",
-                coordinate: CLLocationCoordinate2D(latitude: 40.686502, longitude: -73.974571)
-            ),
-            Store(
-                title: "McNally Jackson",
-                coordinate: CLLocationCoordinate2D(latitude: 40.723518, longitude: -73.996061)
-            ),
-            Store(
-                title: "St. Mark's Bookshop",
-                coordinate: CLLocationCoordinate2D(latitude: 40.729921, longitude: -73.989448)
-            ),
-            Store(
-                title: "WORD Bookstore",
-                coordinate: CLLocationCoordinate2D(latitude: 40.729197, longitude: -73.957319)
-            )
-        ]
-
         map.addAnnotations(stores)
+    }
+
+    /**
+        Sets up the title image and metadata.
+    */
+    func configureBook() {
+        bookTitle.text = selectedTitle
+        author.text = selectedAuthor
+        isbn.text = selectedISBN
+
+        let coverData = NSData(contentsOfURL: selectedCover)
+        cover.image = UIImage(data: coverData!)
+    }
+
+    /**
+        Sets up the map subview.
+    */
+    func configureMap() {
+        centerMapOnLocation(initialLocation)
+        map.delegate = self
+        addStores()
+    }
+
+    /**
+        Sets up the store list subview.
+    */
+    func configureStoreList() {
+        storesList.delegate = self
+        storesList.dataSource = self
+        storesList.registerClass(UITableViewCell.self, forCellReuseIdentifier: "storeCell")
     }
 }
