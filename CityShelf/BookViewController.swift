@@ -55,7 +55,7 @@ class BookViewController: UIViewController {
             coordinate: CLLocationCoordinate2D(latitude: 40.729921, longitude: -73.989448)
         ),
         Store(
-            title: "WORD Bookstore",
+            title: "Word Bookstore",
             coordinate: CLLocationCoordinate2D(latitude: 40.729197, longitude: -73.957319)
         )
     ]
