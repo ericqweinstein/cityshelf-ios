@@ -27,16 +27,39 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell = storesList.dequeueReusableCellWithIdentifier("storeCell") as UITableViewCell
 
-        cell.textLabel?.text = stores[indexPath.row].title
+        let storeName = stores[indexPath.row].title
+        var price = 0.00
+        var availability = "Call to place an order"
+
+        // @todo This is a horrible idea; correct ASAP. (EW 14 Apr 2015)
+        for bk in selectedAvailability {
+            if bk.store == storeName {
+                price = bk.price
+                availability = bk.availability
+            }
+        }
+
+        cell.textLabel?.text = "\(storeName)     $\(price)     \(normalizeAvailability(availability))"
         cell.textLabel?.font = UIFont(name: "CooperHewitt-Book", size: 14)
 
         return cell
     }
 
     /**
-        @todo Remove (testing)
+        Calls the book store when the user selects it.
     */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
+        // println("You selected cell #\(indexPath.row)!")
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://12122607853")!)
+    }
+
+    /**
+        Normalizes book availability language.
+
+        :param: text The text to normalize.
+        :returns: The normalized text.
+    */
+    func normalizeAvailability(text: String) -> String {
+        return text == "On shelves now" ? "Call to reserve" : "Call to place an order"
     }
 }
