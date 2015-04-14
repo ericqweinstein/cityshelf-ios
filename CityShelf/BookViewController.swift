@@ -39,7 +39,7 @@ class BookViewController: UIViewController {
 
     /**
         Centers the map on the desired location.
-    
+
         :param: location The desired location.
     */
     func centerMapOnLocation(location: CLLocation) {

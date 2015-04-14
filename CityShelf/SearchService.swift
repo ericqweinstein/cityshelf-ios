@@ -28,7 +28,7 @@ class SearchService {
             searchResults = newValue
         }
     }
-    
+
     /**
         Creates a new instance of the search service.
 
@@ -38,7 +38,7 @@ class SearchService {
         self.settings = Settings()
         self.searchResults = []
     }
-    
+
     /**
         Makes the actual request to the API.
 
@@ -48,7 +48,7 @@ class SearchService {
     */
     func request(url: String, callback: (NSArray) -> ()) {
         var nsURL = NSURL(string: url)
-        
+
         let task = NSURLSession.sharedSession().dataTaskWithURL(nsURL!) { data, response, error in
             var parseError: NSError?
 
@@ -69,7 +69,7 @@ class SearchService {
                 alert.show()
             }
         }
-        
+
         task.resume()
     }
 }

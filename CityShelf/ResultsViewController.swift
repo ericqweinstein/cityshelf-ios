@@ -11,7 +11,7 @@ import UIKit
 /// View controller for API search results.
 class ResultsViewController: UICollectionViewController,
                              UICollectionViewDelegateFlowLayout {
-    var results  = [Book]()
+    var results = [Book]()
     var searchResults: NSArray!
     var searchQuery: String!
 

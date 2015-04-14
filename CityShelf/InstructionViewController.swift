@@ -22,7 +22,7 @@ class InstructionViewController: UIViewController {
             userInfo: nil,
             repeats: false)
     }
-    
+
     /**
         Segues to the next view.
     */

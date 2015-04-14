@@ -15,7 +15,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var searchProgress: UIProgressView!
-    
+
     @IBAction func searchButtonClicked(sender: AnyObject) {
         query = searchField.text
         api.searchResults = search(formatQuery(query))
@@ -32,7 +32,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             svc.searchQuery = query
         }
     }
-    
+
     /**
         Styles the search bar.
     */
@@ -44,16 +44,16 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
         searchField.attributedPlaceholder = NSAttributedString(string: "Title, author, ISBN",
             attributes:[NSForegroundColorAttributeName: UIColor.blackColor()])
-        
+
         searchField.delegate = self
 
         searchProgress.setProgress(0, animated: true)
     }
-    
+
     /**
         Sets the search text if the return key is
         pressed rather than the search button.
-    
+
         :param: textField The search text field.
         :returns: Boolean true.
     */
@@ -83,7 +83,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     /**
         Searches the API for a particular title/author.
-    
+
         :param: queryString The query.
         :returns: An array of search results.
     */
