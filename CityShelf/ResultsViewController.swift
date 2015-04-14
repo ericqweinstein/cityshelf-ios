@@ -94,6 +94,7 @@ class ResultsViewController: UICollectionViewController,
             bk.selectedTitle = book.title
             bk.selectedAuthor = book.author
             bk.selectedCover = book.cover
+            bk.selectedISBN = book.isbn
         }
     }
 

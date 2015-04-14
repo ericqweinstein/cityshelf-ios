@@ -14,11 +14,14 @@ class BookViewController: UIViewController {
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var cover: UIImageView!
+    @IBOutlet weak var isbn: UILabel!
+    
     @IBOutlet weak var map: MKMapView!
 
     var selectedTitle: String!
     var selectedAuthor: String!
     var selectedCover: NSURL!
+    var selectedISBN: String!
 
     let initialLocation = CLLocation(latitude: 40.759710, longitude: -73.974262)
     let regionRadius: CLLocationDistance = 8000
@@ -26,14 +29,13 @@ class BookViewController: UIViewController {
     override func viewDidLoad() {
         bookTitle.text = selectedTitle
         author.text = selectedAuthor
+        isbn.text = selectedISBN
 
         let coverData = NSData(contentsOfURL: selectedCover)
         cover.image = UIImage(data: coverData!)
 
         centerMapOnLocation(initialLocation)
-
         map.delegate = self
-
         addStores()
     }
 

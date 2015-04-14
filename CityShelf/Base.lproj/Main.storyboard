@@ -15,6 +15,7 @@
             <string>CooperHewitt-Book</string>
             <string>CooperHewitt-Book</string>
             <string>CooperHewitt-Book</string>
+            <string>CooperHewitt-Book</string>
         </mutableArray>
         <mutableArray key="CooperHewitt-HeavyItalic.otf">
             <string>CooperHewitt-HeavyItalic</string>
@@ -240,6 +241,12 @@
                                     <constraint firstAttribute="width" constant="568" id="YOe-E3-x3E"/>
                                 </constraints>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
+                                <rect key="frame" x="117" y="86" width="467" height="21"/>
+                                <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -254,6 +261,7 @@
                         <outlet property="author" destination="MKj-Ck-LRd" id="WaB-is-74N"/>
                         <outlet property="bookTitle" destination="ydJ-ZT-PM4" id="Vuy-26-b6v"/>
                         <outlet property="cover" destination="pRt-6Q-iTK" id="cBQ-MT-Vkl"/>
+                        <outlet property="isbn" destination="A5Z-li-6ag" id="Nrj-Qh-d8f"/>
                         <outlet property="map" destination="ytI-kE-oUI" id="hAs-2D-unb"/>
                     </connections>
                 </viewController>
