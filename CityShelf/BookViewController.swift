@@ -32,37 +32,37 @@ class BookViewController: UIViewController {
     let stores = [
         Store(
             title: "Astoria Bookshop",
-            phone: "tel:+1-718-278-2665",
+            phone: "tel:7182782665",
             coordinate: CLLocationCoordinate2D(latitude: 40.763754, longitude: -73.923849)
         ),
         Store(
             title: "Bank Street Books",
-            phone: "tel:+1-212-678-1654",
+            phone: "tel:2126781654",
             coordinate: CLLocationCoordinate2D(latitude: 40.805786, longitude: -73.966143)
         ),
         Store(
             title: "Book Culture",
-            phone: "tel:+1-212-865-1588",
+            phone: "tel:2128651588",
             coordinate: CLLocationCoordinate2D(latitude: 40.805135, longitude: -73.964991)
         ),
         Store(
             title: "Greenlight Bookstore",
-            phone: "tel:+1-718-246-0200",
+            phone: "tel:7182460200",
             coordinate: CLLocationCoordinate2D(latitude: 40.686502, longitude: -73.974571)
         ),
         Store(
             title: "McNally Jackson",
-            phone: "tel:+1-212-274-1160",
+            phone: "tel:2122741160",
             coordinate: CLLocationCoordinate2D(latitude: 40.723518, longitude: -73.996061)
         ),
         Store(
             title: "St. Mark's Bookshop",
-            phone: "tel:+1-212-260-7853",
+            phone: "tel:2122607853",
             coordinate: CLLocationCoordinate2D(latitude: 40.729921, longitude: -73.989448)
         ),
         Store(
             title: "Word Bookstore",
-            phone: "tel:+1-718-383-0096",
+            phone: "tel:7183830096",
             coordinate: CLLocationCoordinate2D(latitude: 40.729197, longitude: -73.957319)
         )
     ]
