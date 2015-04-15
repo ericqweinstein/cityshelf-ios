@@ -39,7 +39,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
 
-        cell.textLabel?.text = "\(storeName)     $\(price)     \(normalizeAvailability(availability))"
+        cell.textLabel?.text = "\(storeName) $\(price) \(normalizeAvailability(availability))"
         cell.textLabel?.font = UIFont(name: "CooperHewitt-Book", size: 14)
 
         return cell
@@ -49,8 +49,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         Calls the book store when the user selects it.
     */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // println("You selected cell #\(indexPath.row)!")
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://12122607853")!)
+        UIApplication.sharedApplication().openURL(NSURL(string: stores[indexPath.row].phone)!)
     }
 
     /**

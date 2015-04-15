@@ -11,10 +11,12 @@ import MapKit
 /// Models a store returned by the API.
 class Store: NSObject, MKAnnotation {
     let title: String
+    let phone: String
     let coordinate: CLLocationCoordinate2D
 
-    init(title: String, coordinate: CLLocationCoordinate2D) {
+    init(title: String, phone: String, coordinate: CLLocationCoordinate2D) {
         self.title = title
+        self.phone = phone
         self.coordinate = coordinate
 
         super.init()

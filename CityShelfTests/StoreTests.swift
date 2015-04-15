@@ -18,12 +18,17 @@ class StoreTests: XCTestCase {
 
         store = Store(
             title: "Book Culture",
+            phone: "tel:+1-212-865-1588",
             coordinate: CLLocationCoordinate2D(latitude: 40.805135, longitude: -73.964991)
         )
     }
 
     func testTitle() {
         XCTAssertEqual(store!.title, "Book Culture", "Store has a title.")
+    }
+
+    func testPhone() {
+        XCTAssertEqual(store!.phone, "tel:+1-212-865-1588", "Store has a phone number.")
     }
 
     func testLatitude() {

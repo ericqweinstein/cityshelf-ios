@@ -37,22 +37,22 @@ class BookTests: XCTestCase {
     }
 
     func testCover() {
-        XCTAssertEqual(book!.cover.absoluteString!, "www.example.com")
+        XCTAssertEqual(book!.cover.absoluteString!, "www.example.com", "Book has a cover.")
     }
 
     func testStore() {
-        XCTAssertEqual(book!.store, "The Strand")
+        XCTAssertEqual(book!.store, "The Strand", "Book has an associated store.")
     }
 
     func testAvailability() {
-        XCTAssertEqual(book!.availability, "On shelves now")
+        XCTAssertEqual(book!.availability, "On shelves now", "Book has an availability.")
     }
 
     func testPrice() {
-        XCTAssertEqual(book!.price, 14.99)
+        XCTAssertEqual(book!.price, 14.99, "Book has a price.")
     }
 
     func testISBN() {
-        XCTAssertEqual(book!.isbn, "9780123456789")
+        XCTAssertEqual(book!.isbn, "9780123456789", "Book has an ISBN.")
     }
 }
