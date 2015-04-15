@@ -23,6 +23,10 @@ class ResultsViewController: UICollectionViewController,
         showResults()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        collectionView?.reloadData()
+    }
+
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return results.count
     }

@@ -93,8 +93,9 @@ class BookViewController: UIViewController {
         author.text = selectedAuthor
         isbn.text = selectedISBN
 
-        let coverData = NSData(contentsOfURL: selectedCover)
-        cover.image = UIImage(data: coverData!)
+        if let coverData = NSData(contentsOfURL: selectedCover) {
+            cover.image = UIImage(data: coverData)
+        }
     }
 
     /**
