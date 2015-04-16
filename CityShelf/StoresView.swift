@@ -39,7 +39,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
 
-        cell.textLabel?.text = "\(storeName) $\(price) \(normalizeAvailability(availability))"
+        cell.textLabel?.text = "\(storeName) \(normalizePrice(price)) \(normalizeAvailability(availability))"
         cell.textLabel?.font = UIFont(name: "CooperHewitt-Book", size: 14)
 
         return cell
@@ -60,5 +60,14 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     */
     func normalizeAvailability(text: String) -> String {
         return text == "On shelves now" ? "Call to reserve" : "Call to place an order"
+    }
+
+    /**
+        Normalizes pricing. This is necessary because some stores
+        now put "Call for price" or something to that effect rather
+        than an actual dollar value.
+    */
+    func normalizePrice(price: Double) -> String {
+        return price > 0 ? "$" + NSString(format: "%.2f", price) : "Call for price"
     }
 }
