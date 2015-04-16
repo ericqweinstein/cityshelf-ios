@@ -25,7 +25,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         :returns: The row (a UITableViewCell).
     */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: UITableViewCell = storesList.dequeueReusableCellWithIdentifier("storeCell") as UITableViewCell
+        var cell = storesList.dequeueReusableCellWithIdentifier("StoreCell") as StoreCell
 
         let storeName = stores[indexPath.row].title
         var price = 0.00
@@ -39,8 +39,9 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
 
-        cell.textLabel?.text = "\(storeName) \(normalizePrice(price)) \(normalizeAvailability(availability))"
-        cell.textLabel?.font = UIFont(name: "CooperHewitt-Book", size: 14)
+        cell.storeName.text = storeName
+        cell.storePrice.text = normalizePrice(price)
+        cell.storeAvailability.text = normalizeAvailability(availability)
 
         return cell
     }

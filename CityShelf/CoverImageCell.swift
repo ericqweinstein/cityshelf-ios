@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Manages individual titles in the title grid view.
+/// Manages individual titles in the ResultsView.
 class CoverImageCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var title: UILabel!

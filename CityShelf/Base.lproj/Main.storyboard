@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4dW-6E-CBf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -10,6 +11,11 @@
             <string>CooperHewitt-Bold</string>
             <string>CooperHewitt-Bold</string>
             <string>CooperHewitt-Bold</string>
+            <string>CooperHewitt-Bold</string>
+            <string>CooperHewitt-Bold</string>
+        </mutableArray>
+        <mutableArray key="CooperHewitt-Book.otf">
+            <string>CooperHewitt-Book</string>
         </mutableArray>
         <mutableArray key="CooperHewitt-HeavyItalic.otf">
             <string>CooperHewitt-HeavyItalic</string>
@@ -72,7 +78,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title, author, ISBN" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-gc-CDh">
                                 <rect key="frame" x="16" y="285" width="533" height="30"/>
                                 <fontDescription key="fontDescription" name="CooperHewitt-HeavyItalic" family="Cooper Hewitt" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSe-i4-Yzp">
                                 <rect key="frame" x="557" y="289" width="27" height="27"/>
@@ -129,7 +135,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="resultCell" id="Z50-gB-AcJ" customClass="CoverImageCell" customModule="CityShelf" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResultCell" id="Z50-gB-AcJ" customClass="CoverImageCell" customModule="CityShelf" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -240,6 +246,60 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="568" id="YOe-E3-x3E"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoreCell" id="2qg-ef-xzP" customClass="StoreCell" customModule="CityShelf" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2qg-ef-xzP" id="Fo8-yT-qnj">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLh-Cp-niS">
+                                                    <rect key="frame" x="8" y="14" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="b7x-GA-AIB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Ga-cjk">
+                                                    <rect key="frame" x="518" y="14" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="QRq-OD-cDw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSO-Dl-VP7">
+                                                    <rect key="frame" x="263" y="14" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="FyE-t6-jGC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KLh-Cp-niS" firstAttribute="top" secondItem="Fo8-yT-qnj" secondAttribute="topMargin" constant="6" id="1oA-fZ-7SU"/>
+                                                <constraint firstItem="KLh-Cp-niS" firstAttribute="firstBaseline" secondItem="xSO-Dl-VP7" secondAttribute="firstBaseline" id="3pa-x4-bpC"/>
+                                                <constraint firstItem="KLh-Cp-niS" firstAttribute="leading" secondItem="Fo8-yT-qnj" secondAttribute="leadingMargin" id="H73-QW-1mf"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="baseline" secondItem="xSO-Dl-VP7" secondAttribute="baseline" id="Odf-yo-8MC"/>
+                                                <constraint firstItem="KLh-Cp-niS" firstAttribute="baseline" secondItem="xSO-Dl-VP7" secondAttribute="baseline" id="eeo-y4-4ev"/>
+                                                <constraint firstItem="xSO-Dl-VP7" firstAttribute="centerX" secondItem="Fo8-yT-qnj" secondAttribute="centerX" id="qns-zb-T7d"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="trailing" secondItem="Fo8-yT-qnj" secondAttribute="trailingMargin" id="sD1-l7-51Z"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="firstBaseline" secondItem="xSO-Dl-VP7" secondAttribute="firstBaseline" id="snU-y6-Tra"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="bottom" secondItem="Fo8-yT-qnj" secondAttribute="bottomMargin" id="wT0-3n-cDW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="storeAvailability" destination="gvQ-Ga-cjk" id="cWU-kG-jR5"/>
+                                            <outlet property="storeName" destination="KLh-Cp-niS" id="Tzi-E4-F9U"/>
+                                            <outlet property="storePrice" destination="xSO-Dl-VP7" id="a9W-3i-1sk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="YOe-E3-x3E"/>

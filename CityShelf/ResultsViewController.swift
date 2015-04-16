@@ -15,7 +15,7 @@ class ResultsViewController: UICollectionViewController,
     var searchResults: NSArray!
     var searchQuery: String!
 
-    private let reuseIdentifier = "resultCell"
+    private let reuseIdentifier = "ResultCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
