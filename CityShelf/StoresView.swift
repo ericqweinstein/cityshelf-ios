@@ -57,6 +57,11 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         Normalizes pricing. This is necessary because some stores
         now put "Call for price" or something to that effect rather
         than an actual dollar value.
+
+        :param: price The price to normalize.
+        :returns: The normalized price. May be a string representation
+                  of a float (e.g. "$4.99") or another string (e.g.
+                  "Call for price," "N/A", &c).
     */
     func normalizePrice(price: Double) -> String {
         return price > 0 ? "$" + NSString(format: "%.2f", price) : "N/A"
@@ -75,6 +80,12 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     /**
         Annotates the store name to signal availability.
         @todo Clean this up; I don't like doing all this if/else nonsense. (EW 16 Apr 2015)
+
+        :param: storename The name of the store.
+        :param: availability The availability of the associated title.
+
+        :returns: The store name annotated with an "X" (unavailable) or a check
+                  mark (available).
     */
     func annotateStoreName(storename: String, availability: String) -> String {
         let checkMark = "\u{2713}"
