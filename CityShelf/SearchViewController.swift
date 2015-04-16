@@ -18,7 +18,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func searchButtonClicked(sender: AnyObject) {
         query = searchField.text
-        api.searchResults = search(formatQuery(query))
+        search(formatQuery(query))
     }
 
     /**
@@ -59,7 +59,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchField.text
-        api.searchResults = search(formatQuery(query))
+        search(formatQuery(query))
 
         return true
     }
@@ -83,13 +83,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     /**
         Searches the API for a particular title/author.
+        @todo Localize all this knowledge (#search, settings, &c)
+              in SearchService. (EW 16 Apr 2015)
 
         :param: queryString The query.
-        :returns: An array of search results.
     */
-    func search(queryString: String) -> NSArray {
-        let endpoint = api.settings.searchEndpoint
-        let numberOfStores = api.settings.numberOfStores
+    func search(queryString: String) {
+        let endpoint = api.searchEndpoint
+        let numberOfStores = api.numberOfStores
 
         var completeness = (1 / Float(numberOfStores))
         searchProgress.setProgress(completeness, animated: true)
@@ -112,10 +113,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             }
         }
 
+        api.searchResults = searchResults
+
         dispatch_group_notify(group, dispatch_get_main_queue()) {
             self.goToResults()
         }
-
-        return searchResults as NSArray
     }
 }

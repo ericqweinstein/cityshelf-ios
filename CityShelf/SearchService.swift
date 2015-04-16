@@ -12,8 +12,11 @@ import UIKit
 /// Performs searches against the CityShelf API.
 class SearchService {
 
-    /// Declares a local handle on our global settings.
-    var settings: Settings!
+    /// The number of stores to search (to be fixed in API version 2).
+    let numberOfStores = 7
+
+    /// The search endpoint.
+    let searchEndpoint = "http://192.168.2.6:8080/api/stores"
 
     /// Declares an array of search results.
     var searchResults: NSArray
@@ -35,7 +38,6 @@ class SearchService {
         :returns: A new instance of the search service.
     */
     init() {
-        self.settings = Settings()
         self.searchResults = []
     }
 

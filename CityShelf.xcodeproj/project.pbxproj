@@ -10,7 +10,6 @@
 		B009C5231A80630D00C43439 /* CityShelf_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B009C5221A80630D00C43439 /* CityShelf_logo.png */; };
 		B009C5251A94306400C43439 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5241A94306400C43439 /* Book.swift */; };
 		B009C5271A94307300C43439 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5261A94307300C43439 /* SearchService.swift */; };
-		B009C5291A94309D00C43439 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5281A94309D00C43439 /* Settings.swift */; };
 		B02AFA391AD2DF4600BAF932 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA381AD2DF4600BAF932 /* BookViewController.swift */; };
 		B02AFA3D1ADB6C7300BAF932 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA3C1ADB6C7300BAF932 /* Store.swift */; };
 		B02AFA3F1ADB6E1800BAF932 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA3E1ADB6E1800BAF932 /* MapView.swift */; };
@@ -59,7 +58,6 @@
 		B009C5221A80630D00C43439 /* CityShelf_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CityShelf_logo.png; sourceTree = "<group>"; };
 		B009C5241A94306400C43439 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B009C5261A94307300C43439 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
-		B009C5281A94309D00C43439 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B02AFA381AD2DF4600BAF932 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		B02AFA3C1ADB6C7300BAF932 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B02AFA3E1ADB6E1800BAF932 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				B009C5241A94306400C43439 /* Book.swift */,
 				B009C5261A94307300C43439 /* SearchService.swift */,
 				B02AFA3C1ADB6C7300BAF932 /* Store.swift */,
-				B009C5281A94309D00C43439 /* Settings.swift */,
 				B06FB9851A80620B00AEAB8F /* Main.storyboard */,
 				B06FB9881A80620B00AEAB8F /* Images.xcassets */,
 				B06FB98A1A80620B00AEAB8F /* LaunchScreen.xib */,
@@ -346,7 +343,6 @@
 				B009C5271A94307300C43439 /* SearchService.swift in Sources */,
 				B0820EBE1ACB5B740015F0DB /* ResultsViewController.swift in Sources */,
 				B02AFA3D1ADB6C7300BAF932 /* Store.swift in Sources */,
-				B009C5291A94309D00C43439 /* Settings.swift in Sources */,
 				B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */,
 				B02AFA461ADCB62300BAF932 /* StoresView.swift in Sources */,
 				B0820EC21ACB8B5A0015F0DB /* ResultsHeaderView.swift in Sources */,
