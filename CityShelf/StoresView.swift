@@ -83,7 +83,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         if availability == "On shelves now" {
             return "\(checkMark) \(storename)"
         } else {
-            return "\(x) \(storename)"
+            return " \(x)  \(storename)"
         }
     }
 }
