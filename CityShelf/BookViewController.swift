@@ -113,6 +113,5 @@ class BookViewController: UIViewController {
     func configureStoreList() {
         storesList.delegate = self
         storesList.dataSource = self
-        storesList.registerClass(UITableViewCell.self, forCellReuseIdentifier: "storeCell")
     }
 }
