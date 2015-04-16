@@ -39,7 +39,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
 
-        cell.storeName.text = storeName
+        cell.storeName.text = annotateStoreName(storeName, availability: availability)
         cell.storePrice.text = normalizePrice(price)
         cell.storeAvailability.text = normalizeAvailability(availability)
 
@@ -54,6 +54,15 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     /**
+        Normalizes pricing. This is necessary because some stores
+        now put "Call for price" or something to that effect rather
+        than an actual dollar value.
+    */
+    func normalizePrice(price: Double) -> String {
+        return price > 0 ? "$" + NSString(format: "%.2f", price) : "N/A"
+    }
+
+    /**
         Normalizes book availability language.
 
         :param: text The text to normalize.
@@ -64,11 +73,17 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     /**
-        Normalizes pricing. This is necessary because some stores
-        now put "Call for price" or something to that effect rather
-        than an actual dollar value.
+        Annotates the store name to signal availability.
+        @todo Clean this up; I don't like doing all this if/else nonsense. (EW 16 Apr 2015)
     */
-    func normalizePrice(price: Double) -> String {
-        return price > 0 ? "$" + NSString(format: "%.2f", price) : "Call for price"
+    func annotateStoreName(storename: String, availability: String) -> String {
+        let checkMark = "\u{2713}"
+        let x = "\u{D7}"
+
+        if availability == "On shelves now" {
+            return "\(checkMark) \(storename)"
+        } else {
+            return "\(x) \(storename)"
+        }
     }
 }

@@ -253,28 +253,28 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2qg-ef-xzP" id="Fo8-yT-qnj">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLh-Cp-niS">
-                                                    <rect key="frame" x="8" y="14" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLh-Cp-niS">
+                                                    <rect key="frame" x="8" y="14" width="150" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="b7x-GA-AIB"/>
+                                                        <constraint firstAttribute="width" constant="150" id="42p-sp-z2G"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Ga-cjk">
-                                                    <rect key="frame" x="518" y="14" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Ga-cjk">
+                                                    <rect key="frame" x="410" y="14" width="150" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="QRq-OD-cDw"/>
+                                                        <constraint firstAttribute="width" constant="150" id="erG-me-FFP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSO-Dl-VP7">
-                                                    <rect key="frame" x="263" y="14" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSO-Dl-VP7">
+                                                    <rect key="frame" x="209" y="14" width="150" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="FyE-t6-jGC"/>
+                                                        <constraint firstAttribute="width" constant="150" id="pUQ-h8-zVq"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -282,15 +282,15 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="KLh-Cp-niS" firstAttribute="top" secondItem="Fo8-yT-qnj" secondAttribute="topMargin" constant="6" id="1oA-fZ-7SU"/>
-                                                <constraint firstItem="KLh-Cp-niS" firstAttribute="firstBaseline" secondItem="xSO-Dl-VP7" secondAttribute="firstBaseline" id="3pa-x4-bpC"/>
-                                                <constraint firstItem="KLh-Cp-niS" firstAttribute="leading" secondItem="Fo8-yT-qnj" secondAttribute="leadingMargin" id="H73-QW-1mf"/>
-                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="baseline" secondItem="xSO-Dl-VP7" secondAttribute="baseline" id="Odf-yo-8MC"/>
-                                                <constraint firstItem="KLh-Cp-niS" firstAttribute="baseline" secondItem="xSO-Dl-VP7" secondAttribute="baseline" id="eeo-y4-4ev"/>
-                                                <constraint firstItem="xSO-Dl-VP7" firstAttribute="centerX" secondItem="Fo8-yT-qnj" secondAttribute="centerX" id="qns-zb-T7d"/>
-                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="trailing" secondItem="Fo8-yT-qnj" secondAttribute="trailingMargin" id="sD1-l7-51Z"/>
-                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="firstBaseline" secondItem="xSO-Dl-VP7" secondAttribute="firstBaseline" id="snU-y6-Tra"/>
-                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="bottom" secondItem="Fo8-yT-qnj" secondAttribute="bottomMargin" id="wT0-3n-cDW"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="baseline" secondItem="KLh-Cp-niS" secondAttribute="baseline" id="8Al-9p-zr5"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="bottom" secondItem="Fo8-yT-qnj" secondAttribute="bottomMargin" id="Joe-P9-fpT"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="trailing" secondItem="Fo8-yT-qnj" secondAttribute="trailingMargin" id="T9l-Y4-wIl"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="top" secondItem="Fo8-yT-qnj" secondAttribute="topMargin" constant="6" id="ZvF-rz-VfM"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="firstBaseline" secondItem="KLh-Cp-niS" secondAttribute="firstBaseline" id="cKF-Yh-bF6"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="firstBaseline" secondItem="xSO-Dl-VP7" secondAttribute="firstBaseline" id="e8A-k5-H7s"/>
+                                                <constraint firstItem="xSO-Dl-VP7" firstAttribute="centerX" secondItem="Fo8-yT-qnj" secondAttribute="centerX" id="ga7-g0-nEU"/>
+                                                <constraint firstItem="KLh-Cp-niS" firstAttribute="leading" secondItem="Fo8-yT-qnj" secondAttribute="leadingMargin" id="lch-Iv-uyl"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="baseline" secondItem="xSO-Dl-VP7" secondAttribute="baseline" id="xxM-mG-Kbm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
