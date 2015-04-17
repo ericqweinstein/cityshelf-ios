@@ -16,11 +16,14 @@ class InstructionViewController: UIViewController {
     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        let timer = NSTimer.scheduledTimerWithTimeInterval(3.0,
+
+        let timer = NSTimer.scheduledTimerWithTimeInterval(
+            3.0,
             target: self,
             selector: "nextView",
             userInfo: nil,
-            repeats: false)
+            repeats: false
+        )
     }
 
     /**
