@@ -16,6 +16,7 @@
         </mutableArray>
         <mutableArray key="CooperHewitt-BoldItalic.otf">
             <string>CooperHewitt-BoldItalic</string>
+            <string>CooperHewitt-BoldItalic</string>
         </mutableArray>
         <mutableArray key="CooperHewitt-Book.otf">
             <string>CooperHewitt-Book</string>
@@ -133,7 +134,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Z8-90-K9y">
                             <size key="itemSize" width="93" height="217"/>
-                            <size key="headerReferenceSize" width="50" height="100"/>
+                            <size key="headerReferenceSize" width="50" height="145"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
@@ -180,23 +181,44 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResultsHeaderView" id="yf6-EN-PKR" customClass="ResultsHeaderView" customModule="CityShelf" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="145"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbg-vJ-c5w">
-                                    <rect key="frame" x="279" y="14" width="42" height="71"/>
-                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbg-vJ-c5w">
+                                    <rect key="frame" x="8" y="56" width="584" height="81"/>
+                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="15"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8bo-tN-wIv">
+                                    <rect key="frame" x="8" y="18" width="584" height="30"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="CooperHewitt-BoldItalic" family="Cooper Hewitt" pointSize="12"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                </textField>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5e2-uS-Zh3">
+                                    <rect key="frame" x="8" y="46" width="584" height="2"/>
+                                    <color key="progressTintColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </progressView>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="top" secondItem="yf6-EN-PKR" secondAttribute="topMargin" constant="6" id="2hv-U0-Hkg"/>
-                                <constraint firstAttribute="bottomMargin" secondItem="kbg-vJ-c5w" secondAttribute="bottom" constant="7" id="3OW-gW-Bgu"/>
-                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="centerX" secondItem="yf6-EN-PKR" secondAttribute="centerX" id="AWJ-Ei-ChS"/>
+                                <constraint firstItem="8bo-tN-wIv" firstAttribute="top" secondItem="yf6-EN-PKR" secondAttribute="topMargin" constant="10" id="3vc-yz-lPD"/>
+                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="leading" secondItem="5e2-uS-Zh3" secondAttribute="leading" id="4LP-lD-dcg"/>
+                                <constraint firstItem="5e2-uS-Zh3" firstAttribute="trailing" secondItem="yf6-EN-PKR" secondAttribute="trailingMargin" id="7bA-CA-2UG"/>
+                                <constraint firstItem="5e2-uS-Zh3" firstAttribute="leading" secondItem="yf6-EN-PKR" secondAttribute="leadingMargin" id="8Rg-ON-5a4"/>
+                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="trailing" secondItem="5e2-uS-Zh3" secondAttribute="trailing" id="KRv-yd-R4p"/>
+                                <constraint firstItem="8bo-tN-wIv" firstAttribute="trailing" secondItem="5e2-uS-Zh3" secondAttribute="trailing" id="RwB-HV-8CY"/>
+                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="top" secondItem="5e2-uS-Zh3" secondAttribute="bottom" constant="8" symbolic="YES" id="b1R-DO-KUK"/>
+                                <constraint firstItem="8bo-tN-wIv" firstAttribute="leading" secondItem="5e2-uS-Zh3" secondAttribute="leading" id="ba2-cU-sSh"/>
+                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="bottom" secondItem="yf6-EN-PKR" secondAttribute="bottomMargin" id="kWf-V5-63t"/>
+                                <constraint firstItem="5e2-uS-Zh3" firstAttribute="top" secondItem="yf6-EN-PKR" secondAttribute="topMargin" constant="38" id="qZ1-5x-d8K"/>
+                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="top" secondItem="8bo-tN-wIv" secondAttribute="bottom" constant="8" symbolic="YES" id="zfO-VX-rNY"/>
                             </constraints>
                             <connections>
+                                <outlet property="researchProgress" destination="5e2-uS-Zh3" id="2Yf-yR-WHV"/>
                                 <outlet property="search" destination="kbg-vJ-c5w" id="jjg-Vl-lRq"/>
+                                <outlet property="searchBar" destination="8bo-tN-wIv" id="xjj-jg-aeR"/>
                             </connections>
                         </collectionReusableView>
                         <connections>
@@ -323,7 +345,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="CooperHewitt-BoldItalic" family="Cooper Hewitt" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </textField>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-IM-94N">
                                 <rect key="frame" x="16" y="53" width="568" height="2"/>

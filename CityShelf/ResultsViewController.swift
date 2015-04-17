@@ -10,10 +10,15 @@ import UIKit
 
 /// View controller for API search results.
 class ResultsViewController: UICollectionViewController,
-                             UICollectionViewDelegateFlowLayout {
+                             UICollectionViewDelegateFlowLayout,
+                             UITextFieldDelegate {
     var results = [Book]()
+    var api = SearchService()
+
     var searchResults: NSArray!
     var searchQuery: String!
+    var searchBar: UITextField!
+    var researchProgress: UIProgressView!
 
     private let reuseIdentifier = "ResultCell"
 
@@ -78,7 +83,12 @@ class ResultsViewController: UICollectionViewController,
                     withReuseIdentifier: "ResultsHeaderView",
                     forIndexPath: indexPath)
                     as ResultsHeaderView
-                headerView.search.text = "You searched for \"\(searchQuery)\".\nIs this the book you're looking for?"
+                headerView.search.text = "You searched for \"\(searchQuery)\". Is this the book you're looking for?"
+
+                searchBar = headerView.searchBar
+                researchProgress = headerView.researchProgress
+                configureSearchBar()
+
                 return headerView
             default:
                 assert(false, "Unexpected element kind")
@@ -142,5 +152,92 @@ class ResultsViewController: UICollectionViewController,
         }
 
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+
+    // @todo Here be dragons (read: copy/paste). I'm tolerating this for the time
+    // being since duplication is cheaper than the wrong abstraction, but I think
+    // this should all be extracted into the SearchService() ASAP. (EW 16 Apr 2015)
+
+    /**
+        Styles and sets up the search bar.
+    */
+    func configureSearchBar() {
+        let cityShelfGreen = UIColor(red: 0, green: 250/255, blue: 159/255, alpha: 1)
+
+        searchBar.attributedPlaceholder = NSAttributedString(string: "Search again",
+            attributes:[NSForegroundColorAttributeName: cityShelfGreen])
+
+        var space = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
+
+        searchBar.leftViewMode = UITextFieldViewMode.Always
+        searchBar.leftView = space
+
+        searchBar.delegate = self
+
+        researchProgress.setProgress(0, animated: true)
+    }
+
+    /**
+        Sets the search text if the return key is
+        pressed rather than the search button.
+
+        :param: textField The search text field.
+        :returns: Boolean true.
+    */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        searchQuery = searchBar.text
+        searchResults = []
+        results = []
+        search(formatQuery(searchQuery))
+
+        return true
+    }
+
+    /**
+        Searches the API for a particular title/author.
+        @todo Localize all this knowledge (#search, settings, &c)
+        in SearchService. (EW 16 Apr 2015)
+
+        :param: queryString The query.
+    */
+    func search(queryString: String) {
+        let endpoint = api.searchEndpoint
+        let numberOfStores = api.numberOfStores
+
+        var completeness = (1 / Float(numberOfStores))
+        researchProgress.setProgress(completeness, animated: true)
+
+        var searchResults = NSMutableArray()
+
+        let group = dispatch_group_create()
+
+        for storeNumber in (0..<numberOfStores) {
+            dispatch_group_enter(group)
+            self.api.request("\(endpoint)/\(storeNumber)/?query=\(queryString)") {
+                (response) in
+                searchResults.addObjectsFromArray(response)
+                completeness += (1 / Float(numberOfStores - 1))
+                dispatch_group_leave(group)
+
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.researchProgress.setProgress(completeness, animated: true)
+                }
+            }
+        }
+
+        dispatch_group_notify(group, dispatch_get_main_queue()) {
+            self.searchResults = searchResults
+            self.showResults()
+        }
+    }
+
+    /**
+        Formats the URL query string.
+
+        :param: queryString The query.
+        :returns: The formatted query string.
+    */
+    func formatQuery(queryString: String) -> String {
+        return queryString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())!
     }
 }
