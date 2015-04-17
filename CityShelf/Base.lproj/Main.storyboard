@@ -14,6 +14,9 @@
             <string>CooperHewitt-Bold</string>
             <string>CooperHewitt-Bold</string>
         </mutableArray>
+        <mutableArray key="CooperHewitt-BoldItalic.otf">
+            <string>CooperHewitt-BoldItalic</string>
+        </mutableArray>
         <mutableArray key="CooperHewitt-Book.otf">
             <string>CooperHewitt-Book</string>
         </mutableArray>
@@ -118,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTE-xm-SdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1308" y="482"/>
+            <point key="canvasLocation" x="1388" y="-114"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="M8D-lK-TX3">
@@ -204,7 +207,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yb-Mb-FPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1954" y="482"/>
+            <point key="canvasLocation" x="1388" y="644"/>
         </scene>
         <!--Book View Controller-->
         <scene sceneID="8tG-UM-oKq">
@@ -219,16 +222,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRt-6Q-iTK">
-                                <rect key="frame" x="16" y="28" width="93" height="140"/>
+                                <rect key="frame" x="16" y="73" width="62" height="95"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydJ-ZT-PM4">
-                                <rect key="frame" x="117" y="28" width="467" height="39"/>
+                                <rect key="frame" x="86" y="73" width="467" height="39"/>
                                 <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-Ck-LRd">
-                                <rect key="frame" x="117" y="78" width="467" height="39"/>
+                                <rect key="frame" x="86" y="101" width="467" height="39"/>
                                 <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -307,20 +310,43 @@
                                 </variation>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
-                                <rect key="frame" x="117" y="125" width="467" height="39"/>
+                                <rect key="frame" x="86" y="129" width="467" height="39"/>
                                 <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search again" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jix-ui-QUl">
+                                <rect key="frame" x="16" y="20" width="568" height="35"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="gBG-bi-PSp"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="CooperHewitt-BoldItalic" family="Cooper Hewitt" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-IM-94N">
+                                <rect key="frame" x="16" y="53" width="568" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="Qib-CY-hil"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jix-ui-QUl" firstAttribute="top" secondItem="Q9o-eh-8mL" secondAttribute="bottom" id="6TD-R9-NtL"/>
+                            <constraint firstItem="tnM-IM-94N" firstAttribute="trailing" secondItem="ke0-EV-Gf4" secondAttribute="trailingMargin" id="CHQ-OA-O6W"/>
                             <constraint firstAttribute="centerX" secondItem="9Eu-dV-dKP" secondAttribute="centerX" id="Ck5-fX-1Eg"/>
                             <constraint firstItem="ytI-kE-oUI" firstAttribute="top" secondItem="Q9o-eh-8mL" secondAttribute="bottom" constant="156" id="DHF-Pt-9N0"/>
                             <constraint firstItem="9Eu-dV-dKP" firstAttribute="leading" secondItem="ke0-EV-Gf4" secondAttribute="leadingMargin" id="OJj-OT-Esp"/>
+                            <constraint firstItem="jix-ui-QUl" firstAttribute="trailing" secondItem="ke0-EV-Gf4" secondAttribute="trailingMargin" id="OYD-Dc-d47"/>
+                            <constraint firstItem="tnM-IM-94N" firstAttribute="top" secondItem="jix-ui-QUl" secondAttribute="bottom" constant="-2" id="VLU-eY-2K5"/>
                             <constraint firstItem="9Eu-dV-dKP" firstAttribute="trailing" secondItem="ke0-EV-Gf4" secondAttribute="trailingMargin" id="bQi-VS-rlc"/>
+                            <constraint firstItem="tnM-IM-94N" firstAttribute="leading" secondItem="ke0-EV-Gf4" secondAttribute="leadingMargin" id="oKK-A1-Ke4"/>
                             <constraint firstItem="NjM-7c-tlX" firstAttribute="top" secondItem="9Eu-dV-dKP" secondAttribute="bottom" constant="20" id="qCa-gL-1kK"/>
                             <constraint firstAttribute="centerX" secondItem="ytI-kE-oUI" secondAttribute="centerX" id="xhh-nM-r83"/>
+                            <constraint firstItem="jix-ui-QUl" firstAttribute="leading" secondItem="ke0-EV-Gf4" secondAttribute="leadingMargin" id="zHR-GP-diT"/>
                             <constraint firstItem="9Eu-dV-dKP" firstAttribute="top" secondItem="ytI-kE-oUI" secondAttribute="bottom" constant="8" id="zVv-PK-g2i"/>
                         </constraints>
                     </view>
@@ -330,15 +356,21 @@
                         <outlet property="cover" destination="pRt-6Q-iTK" id="cBQ-MT-Vkl"/>
                         <outlet property="isbn" destination="A5Z-li-6ag" id="Nrj-Qh-d8f"/>
                         <outlet property="map" destination="ytI-kE-oUI" id="hAs-2D-unb"/>
+                        <outlet property="researchProgress" destination="tnM-IM-94N" id="JEM-uU-kjc"/>
+                        <outlet property="searchBar" destination="jix-ui-QUl" id="353-Kc-Ak5"/>
                         <outlet property="storesList" destination="9Eu-dV-dKP" id="nLL-45-1Mm"/>
+                        <segue destination="CwU-RW-kbs" kind="show" identifier="searchAgain" id="6vS-gD-An9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fd-Ka-CxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2600" y="482"/>
+            <point key="canvasLocation" x="2314" y="404"/>
         </scene>
     </scenes>
     <resources>
         <image name="search.png" width="50" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="6vS-gD-An9"/>
+    </inferredMetricsTieBreakers>
 </document>

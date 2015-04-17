@@ -10,12 +10,15 @@ import UIKit
 import MapKit
 
 /// Detail view for an individual book.
-class BookViewController: UIViewController {
+class BookViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var cover: UIImageView!
     @IBOutlet weak var isbn: UILabel!
-    
+
+    @IBOutlet weak var searchBar: UITextField!
+    @IBOutlet weak var researchProgress: UIProgressView!
+
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var storesList: UITableView!
 
@@ -27,6 +30,9 @@ class BookViewController: UIViewController {
 
     let initialLocation = CLLocation(latitude: 40.759710, longitude: -73.974262)
     let regionRadius: CLLocationDistance = 8000
+
+    let api = SearchService()
+    var query = ""
 
     // @todo Remove this and replace with API call. (EW 13 Apr 2015)
     let stores = [
@@ -68,6 +74,7 @@ class BookViewController: UIViewController {
     ]
 
     override func viewDidLoad() {
+        configureSearchBar()
         configureBook()
         configureMap()
         configureStoreList()
@@ -83,6 +90,25 @@ class BookViewController: UIViewController {
             regionRadius * 2.0,
             regionRadius * 2.0)
         map.setRegion(coordinateRegion, animated: true)
+    }
+
+    /**
+        Styles and sets up the search bar.
+    */
+    func configureSearchBar() {
+        let cityShelfGreen = UIColor(red: 0, green: 250/255, blue: 159/255, alpha: 1)
+
+        searchBar.attributedPlaceholder = NSAttributedString(string: "Search again",
+            attributes:[NSForegroundColorAttributeName: cityShelfGreen])
+
+        var space = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
+
+        searchBar.leftViewMode = UITextFieldViewMode.Always
+        searchBar.leftView = space
+
+        searchBar.delegate = self
+
+        researchProgress.setProgress(0, animated: true)
     }
 
     /**
@@ -113,5 +139,83 @@ class BookViewController: UIViewController {
     func configureStoreList() {
         storesList.delegate = self
         storesList.dataSource = self
+    }
+
+    // @todo Lots of copy/paste bullshit here. We've
+    // got to clean this up ASAP. (EW 16 Apr 2015)
+
+    /**
+        Sets the search text if the return key is
+        pressed rather than the search button.
+
+        :param: textField The search text field.
+        :returns: Boolean true.
+    */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        query = searchBar.text
+        search(formatQuery(query))
+
+        return true
+    }
+
+    /**
+        Allows us to pass API data to the ResultsViewController.
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "searchAgain" {
+            var svc = segue.destinationViewController as ResultsViewController
+
+            svc.searchResults = api.searchResults
+            svc.searchQuery = query
+        }
+    }
+
+    /**
+        Searches the API for a particular title/author.
+        @todo Localize all this knowledge (#search, settings, &c)
+              in SearchService. (EW 16 Apr 2015)
+
+        :param: queryString The query.
+    */
+    func search(queryString: String) {
+        let endpoint = api.searchEndpoint
+        let numberOfStores = api.numberOfStores
+
+        var completeness = (1 / Float(numberOfStores))
+        researchProgress.setProgress(completeness, animated: true)
+
+        var searchResults = NSMutableArray()
+
+        let group = dispatch_group_create()
+
+        for storeNumber in (0..<numberOfStores) {
+            dispatch_group_enter(group)
+            self.api.request("\(endpoint)/\(storeNumber)/?query=\(queryString)") {
+                (response) in
+                searchResults.addObjectsFromArray(response)
+                completeness += (1 / Float(numberOfStores - 1))
+                dispatch_group_leave(group)
+
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.researchProgress.setProgress(completeness, animated: true)
+                }
+            }
+        }
+
+        api.searchResults = searchResults
+
+        dispatch_group_notify(group, dispatch_get_main_queue()) {
+            self.performSegueWithIdentifier("searchAgain", sender: nil)
+        }
+    }
+
+    /**
+        Formats the URL query string.
+
+        :param: queryString The query.
+        :returns: The formatted query string.
+    */
+    func formatQuery(queryString: String) -> String {
+        return queryString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())!
     }
 }

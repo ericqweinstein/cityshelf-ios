@@ -19,7 +19,6 @@ class ResultsViewController: UICollectionViewController,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "CityShelf"
         showResults()
     }
 

@@ -75,13 +75,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
 
     /**
-        Segues to the results view.
-    */
-    func goToResults() {
-        performSegueWithIdentifier("goToResults", sender: self)
-    }
-
-    /**
         Searches the API for a particular title/author.
         @todo Localize all this knowledge (#search, settings, &c)
               in SearchService. (EW 16 Apr 2015)
@@ -116,7 +109,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         api.searchResults = searchResults
 
         dispatch_group_notify(group, dispatch_get_main_queue()) {
-            self.goToResults()
+            self.performSegueWithIdentifier("goToResults", sender: self)
         }
     }
 }
