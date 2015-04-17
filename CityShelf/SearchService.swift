@@ -39,7 +39,7 @@ class SearchService {
         let task = NSURLSession.sharedSession().dataTaskWithURL(nsURL!) { data, response, error in
             var parseError: NSError?
 
-            if data != nil {
+            if data != nil && data.length != 0 {
                 var response = NSJSONSerialization.JSONObjectWithData(data,
                     options: NSJSONReadingOptions.MutableContainers,
                     error: &parseError) as NSArray
@@ -47,9 +47,9 @@ class SearchService {
                 callback(response)
             }
 
-            if error != nil {
+            if error != nil || data.length == 0 {
                 let alert = UIAlertView(title: "We're Sorry",
-                    message: error.localizedDescription,
+                    message: "CityShelf is currently unavailable.",
                     delegate: nil,
                     cancelButtonTitle: "OK")
 
