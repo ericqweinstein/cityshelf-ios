@@ -269,16 +269,40 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-kE-oUI">
-                                <rect key="frame" x="0.0" y="176" width="600" height="188"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="188" id="ubI-SC-yHl"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="176" width="600" height="258"/>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
+                                <rect key="frame" x="86" y="129" width="467" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="kIh-4T-4le"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search again" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jix-ui-QUl">
+                                <rect key="frame" x="16" y="20" width="568" height="35"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="gBG-bi-PSp"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="CooperHewitt-BoldItalic" family="Cooper Hewitt" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </textField>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-IM-94N">
+                                <rect key="frame" x="16" y="53" width="568" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="Qib-CY-hil"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9Eu-dV-dKP">
-                                <rect key="frame" x="16" y="372" width="568" height="208"/>
+                                <rect key="frame" x="16" y="442" width="568" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="568" id="YOe-E3-x3E"/>
+                                    <constraint firstAttribute="height" constant="150" id="aC9-z8-ZOv"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoreCell" id="2qg-ef-xzP" customClass="StoreCell" customModule="CityShelf" customModuleProvider="target">
@@ -340,32 +364,6 @@
                                     </mask>
                                 </variation>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
-                                <rect key="frame" x="86" y="129" width="467" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="kIh-4T-4le"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search again" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jix-ui-QUl">
-                                <rect key="frame" x="16" y="20" width="568" height="35"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="gBG-bi-PSp"/>
-                                </constraints>
-                                <color key="textColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="CooperHewitt-BoldItalic" family="Cooper Hewitt" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                            </textField>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-IM-94N">
-                                <rect key="frame" x="16" y="53" width="568" height="2"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="Qib-CY-hil"/>
-                                </constraints>
-                                <color key="progressTintColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -391,7 +389,7 @@
                             <constraint firstItem="ydJ-ZT-PM4" firstAttribute="top" secondItem="jix-ui-QUl" secondAttribute="bottom" constant="18" id="eb7-O0-hWM"/>
                             <constraint firstItem="pRt-6Q-iTK" firstAttribute="top" secondItem="jix-ui-QUl" secondAttribute="bottom" constant="18" id="keX-ay-5NP"/>
                             <constraint firstItem="tnM-IM-94N" firstAttribute="leading" secondItem="ke0-EV-Gf4" secondAttribute="leadingMargin" id="oKK-A1-Ke4"/>
-                            <constraint firstItem="NjM-7c-tlX" firstAttribute="top" secondItem="9Eu-dV-dKP" secondAttribute="bottom" constant="20" id="qCa-gL-1kK"/>
+                            <constraint firstItem="NjM-7c-tlX" firstAttribute="top" secondItem="9Eu-dV-dKP" secondAttribute="bottom" constant="8" id="qCa-gL-1kK"/>
                             <constraint firstItem="ydJ-ZT-PM4" firstAttribute="leading" secondItem="pRt-6Q-iTK" secondAttribute="trailing" constant="8" id="v75-Tw-fuS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ydJ-ZT-PM4" secondAttribute="trailing" constant="31" id="wLl-L4-M1c"/>
                             <constraint firstAttribute="centerX" secondItem="ytI-kE-oUI" secondAttribute="centerX" id="xhh-nM-r83"/>
