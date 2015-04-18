@@ -12,7 +12,7 @@ import UIKit
 /// Performs searches against the CityShelf API.
 class SearchService {
     let numberOfStores = 7
-    let searchEndpoint = "http://192.168.2.6:8080/api/stores"
+    let searchEndpoint = "http://www.cityshelf.com/api/stores"
     var searchResults = NSArray()
 
     /// Manages getting and setting search results.

@@ -216,6 +216,10 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         :returns: The formatted query string.
     */
     func formatQuery(queryString: String) -> String {
-        return queryString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())!
+        // For some reason Heroku cares about %20 vs + for query encoding. (EW 17 Apr 2015)
+        let characterSet = NSMutableCharacterSet.alphanumericCharacterSet()
+        characterSet.addCharactersInString("-._* ")
+
+        return queryString.stringByAddingPercentEncodingWithAllowedCharacters(characterSet)!.stringByReplacingOccurrencesOfString(" ", withString: "+")
     }
 }
