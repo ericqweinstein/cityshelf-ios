@@ -79,12 +79,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title, author, ISBN" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-gc-CDh">
-                                <rect key="frame" x="16" y="285" width="533" height="30"/>
+                                <rect key="frame" x="16" y="172" width="533" height="30"/>
                                 <fontDescription key="fontDescription" name="CooperHewitt-HeavyItalic" family="Cooper Hewitt" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSe-i4-Yzp">
-                                <rect key="frame" x="557" y="289" width="27" height="27"/>
+                                <rect key="frame" x="557" y="176" width="27" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="R6f-bX-hlu"/>
                                     <constraint firstAttribute="width" constant="27" id="nyc-99-XmM"/>
@@ -97,20 +97,20 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FWn-Ni-cws">
-                                <rect key="frame" x="16" y="324" width="568" height="2"/>
+                                <rect key="frame" x="16" y="211" width="568" height="2"/>
                                 <color key="progressTintColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xtv-gc-CDh" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="265" id="4RE-4r-j6x"/>
+                            <constraint firstItem="xtv-gc-CDh" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="152" id="4RE-4r-j6x"/>
                             <constraint firstItem="FWn-Ni-cws" firstAttribute="top" secondItem="VSe-i4-Yzp" secondAttribute="bottom" constant="8" symbolic="YES" id="MjI-5z-ga8"/>
                             <constraint firstItem="FWn-Ni-cws" firstAttribute="trailing" secondItem="VSe-i4-Yzp" secondAttribute="trailing" id="Nlv-0r-JKo"/>
                             <constraint firstItem="VSe-i4-Yzp" firstAttribute="trailing" secondItem="rQW-vx-sYr" secondAttribute="trailingMargin" id="P3B-qb-ojo"/>
                             <constraint firstItem="FWn-Ni-cws" firstAttribute="leading" secondItem="xtv-gc-CDh" secondAttribute="leading" id="Qsj-4e-4Ab"/>
                             <constraint firstItem="VSe-i4-Yzp" firstAttribute="leading" secondItem="xtv-gc-CDh" secondAttribute="trailing" constant="8" id="We9-0S-S40"/>
                             <constraint firstItem="xtv-gc-CDh" firstAttribute="leading" secondItem="rQW-vx-sYr" secondAttribute="leadingMargin" id="cBp-jw-TXn"/>
-                            <constraint firstItem="VSe-i4-Yzp" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="269" id="vYL-vp-6cc"/>
+                            <constraint firstItem="VSe-i4-Yzp" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="156" id="vYL-vp-6cc"/>
                         </constraints>
                     </view>
                     <connections>
