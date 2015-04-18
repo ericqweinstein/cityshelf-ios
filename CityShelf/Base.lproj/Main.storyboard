@@ -44,19 +44,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type in the book you want. We'll show you which NYC bookstore near you has it in stock." translatesAutoresizingMaskIntoConstraints="NO" id="8b8-nc-GwP">
-                                <rect key="frame" x="16" y="171" width="568" height="257"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Type in the book you want. We'll show you which NYC bookstore near you has it in stock." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b8-nc-GwP">
+                                <rect key="frame" x="16" y="241" width="568" height="149"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="34"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8b8-nc-GwP" firstAttribute="top" secondItem="MvA-bP-D1b" secondAttribute="bottom" constant="151" id="Zhb-XJ-3wN"/>
-                            <constraint firstItem="8b8-nc-GwP" firstAttribute="leading" secondItem="vwp-8W-laN" secondAttribute="leadingMargin" id="e22-cm-WP5"/>
-                            <constraint firstAttribute="centerY" secondItem="8b8-nc-GwP" secondAttribute="centerY" id="o1P-um-3G5"/>
-                            <constraint firstAttribute="centerX" secondItem="8b8-nc-GwP" secondAttribute="centerX" id="yXp-Iz-otV"/>
+                            <constraint firstItem="8b8-nc-GwP" firstAttribute="leading" secondItem="vwp-8W-laN" secondAttribute="leadingMargin" id="8mQ-Nx-30N"/>
+                            <constraint firstAttribute="centerY" secondItem="8b8-nc-GwP" secondAttribute="centerY" constant="-16" id="f1S-yJ-WCV"/>
+                            <constraint firstItem="8b8-nc-GwP" firstAttribute="trailing" secondItem="vwp-8W-laN" secondAttribute="trailingMargin" id="iWJ-A5-Yn7"/>
                         </constraints>
                     </view>
                     <connections>
