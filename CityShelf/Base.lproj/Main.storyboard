@@ -268,7 +268,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-kE-oUI">
-                                <rect key="frame" x="0.0" y="176" width="600" height="288"/>
+                                <rect key="frame" x="0.0" y="176" width="600" height="171"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
                                 <rect key="frame" x="86" y="129" width="467" height="39"/>
@@ -297,11 +297,11 @@
                                 <color key="progressTintColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9Eu-dV-dKP">
-                                <rect key="frame" x="16" y="472" width="568" height="120"/>
+                                <rect key="frame" x="0.0" y="355" width="600" height="237"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="568" id="YOe-E3-x3E"/>
-                                    <constraint firstAttribute="height" constant="120" id="aC9-z8-ZOv"/>
+                                    <constraint firstAttribute="height" constant="237" id="aC9-z8-ZOv"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoreCell" id="2qg-ef-xzP" customClass="StoreCell" customModule="CityShelf" customModuleProvider="target">
@@ -315,25 +315,25 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="42p-sp-z2G"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Ga-cjk">
-                                                    <rect key="frame" x="410" y="14" width="150" height="21"/>
+                                                    <rect key="frame" x="442" y="14" width="150" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="erG-me-FFP"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSO-Dl-VP7">
-                                                    <rect key="frame" x="209" y="14" width="150" height="21"/>
+                                                    <rect key="frame" x="225" y="14" width="150" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="pUQ-h8-zVq"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -377,13 +377,13 @@
                             <constraint firstAttribute="trailing" secondItem="ytI-kE-oUI" secondAttribute="trailing" id="JnQ-Ug-pYF"/>
                             <constraint firstItem="MKj-Ck-LRd" firstAttribute="leading" secondItem="pRt-6Q-iTK" secondAttribute="trailing" constant="8" id="LOa-qS-4yT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MKj-Ck-LRd" secondAttribute="trailing" constant="31" id="Mbl-94-Iwk"/>
-                            <constraint firstItem="9Eu-dV-dKP" firstAttribute="leading" secondItem="ke0-EV-Gf4" secondAttribute="leadingMargin" id="OJj-OT-Esp"/>
+                            <constraint firstItem="9Eu-dV-dKP" firstAttribute="leading" secondItem="ke0-EV-Gf4" secondAttribute="leadingMargin" constant="-16" id="OJj-OT-Esp"/>
                             <constraint firstItem="jix-ui-QUl" firstAttribute="trailing" secondItem="ke0-EV-Gf4" secondAttribute="trailingMargin" id="OYD-Dc-d47"/>
                             <constraint firstItem="pRt-6Q-iTK" firstAttribute="leading" secondItem="ke0-EV-Gf4" secondAttribute="leadingMargin" id="QDQ-JV-apn"/>
                             <constraint firstItem="tnM-IM-94N" firstAttribute="top" secondItem="jix-ui-QUl" secondAttribute="bottom" constant="-2" id="VLU-eY-2K5"/>
                             <constraint firstItem="ytI-kE-oUI" firstAttribute="leading" secondItem="ke0-EV-Gf4" secondAttribute="leadingMargin" id="Wdi-Jq-Dtk"/>
                             <constraint firstItem="MKj-Ck-LRd" firstAttribute="top" secondItem="ydJ-ZT-PM4" secondAttribute="bottom" constant="-11" id="Zye-SE-qkW"/>
-                            <constraint firstItem="9Eu-dV-dKP" firstAttribute="trailing" secondItem="ke0-EV-Gf4" secondAttribute="trailingMargin" id="bQi-VS-rlc"/>
+                            <constraint firstItem="9Eu-dV-dKP" firstAttribute="trailing" secondItem="ke0-EV-Gf4" secondAttribute="trailingMargin" constant="16" id="bQi-VS-rlc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A5Z-li-6ag" secondAttribute="trailing" constant="31" id="dGu-3T-tm9"/>
                             <constraint firstItem="ydJ-ZT-PM4" firstAttribute="top" secondItem="jix-ui-QUl" secondAttribute="bottom" constant="18" id="eb7-O0-hWM"/>
                             <constraint firstItem="pRt-6Q-iTK" firstAttribute="top" secondItem="jix-ui-QUl" secondAttribute="bottom" constant="18" id="keX-ay-5NP"/>
