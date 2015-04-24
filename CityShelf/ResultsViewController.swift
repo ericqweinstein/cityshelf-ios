@@ -125,29 +125,20 @@ class ResultsViewController: UICollectionViewController,
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 
         for result in searchResults {
-            let title  = result["title"] as String
-            let author = result["author"] as String
-            let price  = result["price"] as String
-            let store  = result["storeName"] as String
-            let avail  = result["availability"] as String
-            let phone  = result["phone"] as String
-            let img    = result["img"] as String
-            let isbn   = result["isbn"] as String
-
             let book = Book(
-                title: title,
-                author: author,
-                cover: NSURL(string: img)!,
-                store: store,
-                availability: avail,
-                price: (price as NSString).doubleValue,
-                isbn: isbn
+                title: result["title"] as String,
+                author: result["author"] as String,
+                cover: NSURL(string: result["img"] as String)!,
+                store: result["storeName"] as String,
+                availability: result["availability"] as String,
+                price: (result["price"] as NSString).doubleValue,
+                isbn: result["isbn"] as String
             )
 
             self.results.append(book)
-            self.collectionView?.reloadData()
         }
 
+        collectionView?.reloadData()
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
 
