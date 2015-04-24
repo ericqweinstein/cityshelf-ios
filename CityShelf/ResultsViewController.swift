@@ -143,6 +143,14 @@ class ResultsViewController: UICollectionViewController,
     }
 
     /**
+        Updates search results when we search again.
+    */
+    func updateSearchResults() {
+        searchResults = api.searchResults
+        showResults()
+    }
+
+    /**
         Styles and sets up the search bar.
         @todo Pull this out, since it's shared with BookViewController. (EW 24 Apr 2015)
     */
@@ -173,7 +181,7 @@ class ResultsViewController: UICollectionViewController,
         searchQuery = searchBar.text
         searchResults = []
         results = []
-        api.search(api.formatQuery(searchQuery), searchProgress: researchProgress, showResults)
+        api.search(api.formatQuery(searchQuery), searchProgress: researchProgress, updateSearchResults)
 
         return true
     }

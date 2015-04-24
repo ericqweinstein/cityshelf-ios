@@ -101,6 +101,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
 
     /**
         Styles and sets up the search bar.
+        @todo Pull this out, since it's shared with ResultsViewController. (EW 24 Apr 2015)
     */
     func configureSearchBar() {
         let cityShelfGreen = UIColor(red: 0, green: 250/255, blue: 159/255, alpha: 1)

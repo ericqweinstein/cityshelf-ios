@@ -104,8 +104,6 @@ class SearchService {
 
         searchResults = books
 
-        dispatch_group_notify(group, dispatch_get_main_queue()) {
-            callback()
-        }
+        dispatch_group_notify(group, dispatch_get_main_queue()) { callback() }
     }
 }
