@@ -59,4 +59,17 @@ class SearchService {
 
         task.resume()
     }
+
+    /**
+        Formats the search query string.
+
+        :param: queryString The query.
+        :returns: The formatted query string.
+    */
+    func formatQuery(queryString: String) -> String {
+        let characterSet = NSMutableCharacterSet.alphanumericCharacterSet()
+        characterSet.addCharactersInString("-._* ")
+
+        return queryString.stringByAddingPercentEncodingWithAllowedCharacters(characterSet)!.stringByReplacingOccurrencesOfString(" ", withString: "+")
+    }
 }

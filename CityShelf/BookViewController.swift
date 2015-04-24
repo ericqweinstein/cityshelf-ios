@@ -108,7 +108,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         searchBar.attributedPlaceholder = NSAttributedString(string: "Search again",
             attributes:[NSForegroundColorAttributeName: cityShelfGreen])
 
-        var space = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
+        var space = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
 
         searchBar.leftViewMode = UITextFieldViewMode.Always
         searchBar.leftView = space
@@ -160,7 +160,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchBar.text
-        search(formatQuery(query))
+        search(api.formatQuery(query))
 
         return true
     }
@@ -214,19 +214,5 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         dispatch_group_notify(group, dispatch_get_main_queue()) {
             self.performSegueWithIdentifier("searchAgain", sender: nil)
         }
-    }
-
-    /**
-        Formats the URL query string.
-
-        :param: queryString The query.
-        :returns: The formatted query string.
-    */
-    func formatQuery(queryString: String) -> String {
-        // For some reason Heroku cares about %20 vs + for query encoding. (EW 17 Apr 2015)
-        let characterSet = NSMutableCharacterSet.alphanumericCharacterSet()
-        characterSet.addCharactersInString("-._* ")
-
-        return queryString.stringByAddingPercentEncodingWithAllowedCharacters(characterSet)!.stringByReplacingOccurrencesOfString(" ", withString: "+")
     }
 }

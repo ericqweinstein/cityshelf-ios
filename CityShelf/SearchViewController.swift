@@ -18,7 +18,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func searchButtonClicked(sender: AnyObject) {
         query = searchField.text
-        search(formatQuery(query))
+        search(api.formatQuery(query))
     }
 
     /**
@@ -59,23 +59,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchField.text
-        search(formatQuery(query))
+        search(api.formatQuery(query))
 
         return true
-    }
-
-    /**
-        Formats the URL query string.
-
-        :param: queryString The query.
-        :returns: The formatted query string.
-    */
-    func formatQuery(queryString: String) -> String {
-        // For some reason Heroku cares about %20 vs + for query encoding. (EW 17 Apr 2015)
-        let characterSet = NSMutableCharacterSet.alphanumericCharacterSet()
-        characterSet.addCharactersInString("-._* ")
-
-        return queryString.stringByAddingPercentEncodingWithAllowedCharacters(characterSet)!.stringByReplacingOccurrencesOfString(" ", withString: "+")
     }
 
     /**

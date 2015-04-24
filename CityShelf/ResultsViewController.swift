@@ -12,9 +12,10 @@ import UIKit
 class ResultsViewController: UICollectionViewController,
                              UICollectionViewDelegateFlowLayout,
                              UITextFieldDelegate {
-    var results = [Book]()
-    var api = SearchService()
 
+    let api = SearchService()
+
+    var results = [Book]()
     var searchResults: NSArray!
     var searchQuery: String!
     var searchBar: UITextField!
@@ -188,7 +189,7 @@ class ResultsViewController: UICollectionViewController,
         searchQuery = searchBar.text
         searchResults = []
         results = []
-        search(formatQuery(searchQuery))
+        search(api.formatQuery(searchQuery))
 
         return true
     }
@@ -229,19 +230,5 @@ class ResultsViewController: UICollectionViewController,
             self.searchResults = searchResults
             self.showResults()
         }
-    }
-
-    /**
-        Formats the URL query string.
-
-        :param: queryString The query.
-        :returns: The formatted query string.
-    */
-    func formatQuery(queryString: String) -> String {
-        // For some reason Heroku cares about %20 vs + for query encoding. (EW 17 Apr 2015)
-        let characterSet = NSMutableCharacterSet.alphanumericCharacterSet()
-        characterSet.addCharactersInString("-._* ")
-
-        return queryString.stringByAddingPercentEncodingWithAllowedCharacters(characterSet)!.stringByReplacingOccurrencesOfString(" ", withString: "+")
     }
 }
