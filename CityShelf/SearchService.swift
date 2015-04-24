@@ -72,4 +72,40 @@ class SearchService {
 
         return queryString.stringByAddingPercentEncodingWithAllowedCharacters(characterSet)!.stringByReplacingOccurrencesOfString(" ", withString: "+")
     }
+
+    /**
+        Searches the API for a particular title/author.
+
+        :param: queryString The query.
+        :param: searchProgress The UIProgressView to update as results are fetched.
+        :param: callback The completion handler to execute when done searching.
+    */
+    func search(queryString: String, searchProgress: UIProgressView, callback: () -> ()) {
+        var completeness = (1 / Float(numberOfStores))
+        searchProgress.setProgress(completeness, animated: true)
+
+        var books = NSMutableArray()
+
+        let group = dispatch_group_create()
+
+        for storeNumber in (0..<numberOfStores) {
+            dispatch_group_enter(group)
+            request("\(searchEndpoint)/\(storeNumber)/?query=\(queryString)") {
+                (response) in
+                books.addObjectsFromArray(response)
+                completeness += (1 / Float(self.numberOfStores - 1))
+                dispatch_group_leave(group)
+
+                dispatch_async(dispatch_get_main_queue()) {
+                    searchProgress.setProgress(completeness, animated: true)
+                }
+            }
+        }
+
+        searchResults = books
+
+        dispatch_group_notify(group, dispatch_get_main_queue()) {
+            callback()
+        }
+    }
 }

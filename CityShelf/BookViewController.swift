@@ -148,9 +148,6 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         storesList.dataSource = self
     }
 
-    // @todo Lots of copy/paste bullshit here. We've
-    // got to clean this up ASAP. (EW 16 Apr 2015)
-
     /**
         Sets the search text if the return key is
         pressed rather than the search button.
@@ -160,7 +157,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchBar.text
-        search(api.formatQuery(query))
+        api.search(api.formatQuery(query), searchProgress: researchProgress, searchAgain)
 
         return true
     }
@@ -178,41 +175,9 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     }
 
     /**
-        Searches the API for a particular title/author.
-        @todo Localize all this knowledge (#search, settings, &c)
-              in SearchService. (EW 16 Apr 2015)
-
-        :param: queryString The query.
+        Segues to the individual title view.
     */
-    func search(queryString: String) {
-        let endpoint = api.searchEndpoint
-        let numberOfStores = api.numberOfStores
-
-        var completeness = (1 / Float(numberOfStores))
-        researchProgress.setProgress(completeness, animated: true)
-
-        var searchResults = NSMutableArray()
-
-        let group = dispatch_group_create()
-
-        for storeNumber in (0..<numberOfStores) {
-            dispatch_group_enter(group)
-            self.api.request("\(endpoint)/\(storeNumber)/?query=\(queryString)") {
-                (response) in
-                searchResults.addObjectsFromArray(response)
-                completeness += (1 / Float(numberOfStores - 1))
-                dispatch_group_leave(group)
-
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.researchProgress.setProgress(completeness, animated: true)
-                }
-            }
-        }
-
-        api.searchResults = searchResults
-
-        dispatch_group_notify(group, dispatch_get_main_queue()) {
-            self.performSegueWithIdentifier("searchAgain", sender: nil)
-        }
+    func searchAgain() {
+        performSegueWithIdentifier("searchAgain", sender: nil)
     }
 }

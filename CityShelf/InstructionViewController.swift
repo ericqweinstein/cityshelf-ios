@@ -10,6 +10,8 @@ import UIKit
 
 /// View controller for displaying CityShelf instructions.
 class InstructionViewController: UIViewController {
+    // @todo Add click-to-dismiss functionality. (EW 24 Apr 2015)
+
     /**
         Overrides viewDidLoad() in order to set an
         automated segue.

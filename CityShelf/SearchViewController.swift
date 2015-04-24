@@ -18,7 +18,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func searchButtonClicked(sender: AnyObject) {
         query = searchField.text
-        search(api.formatQuery(query))
+        api.search(api.formatQuery(query), searchProgress: searchProgress, goToResults)
     }
 
     /**
@@ -59,47 +59,15 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchField.text
-        search(api.formatQuery(query))
+        api.search(api.formatQuery(query), searchProgress: searchProgress, goToResults)
 
         return true
     }
 
     /**
-        Searches the API for a particular title/author.
-        @todo Localize all this knowledge (#search, settings, &c)
-              in SearchService. (EW 16 Apr 2015)
-
-        :param: queryString The query.
+        Segues to the search results view.
     */
-    func search(queryString: String) {
-        let endpoint = api.searchEndpoint
-        let numberOfStores = api.numberOfStores
-
-        var completeness = (1 / Float(numberOfStores))
-        searchProgress.setProgress(completeness, animated: true)
-
-        var searchResults = NSMutableArray()
-
-        let group = dispatch_group_create()
-
-        for storeNumber in (0..<numberOfStores) {
-            dispatch_group_enter(group)
-            self.api.request("\(endpoint)/\(storeNumber)/?query=\(queryString)") {
-                (response) in
-                searchResults.addObjectsFromArray(response)
-                completeness += (1 / Float(numberOfStores - 1))
-                dispatch_group_leave(group)
-
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.searchProgress.setProgress(completeness, animated: true)
-                }
-            }
-        }
-
-        api.searchResults = searchResults
-
-        dispatch_group_notify(group, dispatch_get_main_queue()) {
-            self.performSegueWithIdentifier("goToResults", sender: self)
-        }
+    func goToResults() {
+        performSegueWithIdentifier("goToResults", sender: self)
     }
 }
