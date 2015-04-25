@@ -42,7 +42,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         searchField.layer.borderColor = UIColor.whiteColor().CGColor
         searchField.layer.borderWidth = 1.0
 
-        searchField.attributedPlaceholder = NSAttributedString(string: "Title, author, ISBN",
+        searchField.attributedPlaceholder = NSAttributedString(string: "Title, author, or ISBN",
             attributes:[NSForegroundColorAttributeName: UIColor.blackColor()])
 
         searchField.delegate = self
