@@ -11,7 +11,7 @@ import UIKit
 
 /// Performs searches against the CityShelf API.
 class SearchService {
-    let numberOfStores = 7
+    let numberOfStores = 8
     let searchEndpoint = "http://www.cityshelf.com/api/stores"
     var searchResults = NSArray()
 

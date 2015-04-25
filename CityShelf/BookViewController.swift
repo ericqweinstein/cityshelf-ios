@@ -59,6 +59,11 @@ class BookViewController: UIViewController, UITextFieldDelegate {
             coordinate: CLLocationCoordinate2D(latitude: 40.805135, longitude: -73.964991)
         ),
         Store(
+            title: "Community Bookstore",
+            phone: "tel:7187833075",
+            coordinate: CLLocationCoordinate2D(latitude: 40.672900, longitude: -73.976457)
+        ),
+        Store(
             title: "Greenlight Bookstore",
             phone: "tel:7182460200",
             coordinate: CLLocationCoordinate2D(latitude: 40.686502, longitude: -73.974571)
