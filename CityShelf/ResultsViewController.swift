@@ -80,7 +80,7 @@ class ResultsViewController: UICollectionViewController,
                     withReuseIdentifier: "ResultsHeaderView",
                     forIndexPath: indexPath)
                     as ResultsHeaderView
-                headerView.search.text = "You searched for \"\(searchQuery)\". Is this the book you're looking for?"
+                headerView.search.text = "You searched for \"\(searchQuery)\". Which book are you looking for?"
 
                 searchBar = headerView.searchBar
                 researchProgress = headerView.researchProgress
