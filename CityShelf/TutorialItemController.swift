@@ -10,7 +10,7 @@ import UIKit
 
 /// Manages the individual views within the tutorial sequence.
 class TutorialItemController: UIViewController {
-    @IBOutlet weak var instruction: UITextField!
+    @IBOutlet weak var instruction: UITextView!
 
     var itemIndex: Int = 0
     var instructionText: String = "" {
