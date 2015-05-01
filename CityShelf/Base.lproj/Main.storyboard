@@ -39,7 +39,7 @@
                 <pageViewController storyboardIdentifier="TutorialController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Hmt-m1-nwU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9W9-R7-if8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="-206"/>
+            <point key="canvasLocation" x="25" y="-180"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="PXN-Hy-Z46">
@@ -81,12 +81,22 @@
                                 <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bk-VF-I6E" customClass="TutorialView" customModule="CityShelf" customModuleProvider="target">
+                                <rect key="frame" x="100" y="217" width="400" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="Bri-k9-UoS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zCU-A1-a9V" firstAttribute="top" secondItem="FLw-sS-GJc" secondAttribute="bottom" constant="8" id="3eG-AK-9pt"/>
+                            <constraint firstItem="qll-jX-W64" firstAttribute="top" secondItem="4Bk-VF-I6E" secondAttribute="bottom" constant="83" id="8kX-Dd-pN6"/>
                             <constraint firstItem="zCU-A1-a9V" firstAttribute="leading" secondItem="0Vh-y7-3aD" secondAttribute="leadingMargin" id="bct-24-Pub"/>
+                            <constraint firstItem="4Bk-VF-I6E" firstAttribute="top" secondItem="zCU-A1-a9V" secondAttribute="bottom" constant="-38" id="dTU-M5-XLg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zCU-A1-a9V" secondAttribute="trailing" id="hVT-TQ-oMD"/>
+                            <constraint firstAttribute="centerX" secondItem="4Bk-VF-I6E" secondAttribute="centerX" id="igl-he-Itb"/>
                         </constraints>
                     </view>
                     <connections>
