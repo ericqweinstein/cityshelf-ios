@@ -45,42 +45,42 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     let stores = [
         Store(
             title: "Astoria Bookshop",
-            phone: "tel:7182782665",
+            phone: "telprompt://7182782665",
             coordinate: CLLocationCoordinate2D(latitude: 40.763754, longitude: -73.923849)
         ),
         Store(
             title: "Bank Street Books",
-            phone: "tel:2126781654",
+            phone: "telprompt://2126781654",
             coordinate: CLLocationCoordinate2D(latitude: 40.805786, longitude: -73.966143)
         ),
         Store(
             title: "Book Culture",
-            phone: "tel:2128651588",
+            phone: "telprompt://2128651588",
             coordinate: CLLocationCoordinate2D(latitude: 40.805135, longitude: -73.964991)
         ),
         Store(
             title: "Community Bookstore",
-            phone: "tel:7187833075",
+            phone: "telprompt://7187833075",
             coordinate: CLLocationCoordinate2D(latitude: 40.672900, longitude: -73.976457)
         ),
         Store(
             title: "Greenlight Bookstore",
-            phone: "tel:7182460200",
+            phone: "telprompt://7182460200",
             coordinate: CLLocationCoordinate2D(latitude: 40.686502, longitude: -73.974571)
         ),
         Store(
             title: "McNally Jackson",
-            phone: "tel:2122741160",
+            phone: "telprompt://2122741160",
             coordinate: CLLocationCoordinate2D(latitude: 40.723518, longitude: -73.996061)
         ),
         Store(
             title: "St. Mark's Bookshop",
-            phone: "tel:2122607853",
+            phone: "telprompt://2122607853",
             coordinate: CLLocationCoordinate2D(latitude: 40.729921, longitude: -73.989448)
         ),
         Store(
             title: "Word Bookstore",
-            phone: "tel:7183830096",
+            phone: "telprompt://7183830096",
             coordinate: CLLocationCoordinate2D(latitude: 40.729197, longitude: -73.957319)
         )
     ]
