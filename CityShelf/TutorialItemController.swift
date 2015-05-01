@@ -32,9 +32,13 @@ class TutorialItemController: UIViewController {
 class TutorialView: UIView {
     override func drawRect(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
+
         CGContextSetLineWidth(context, 2.0)
-        CGContextSetStrokeColorWithColor(context,
-            UIColor.blackColor().CGColor)
+
+        CGContextSetStrokeColorWithColor(
+            context,
+            UIColor.blackColor().CGColor
+        )
 
         // Horizontal line for the ground.
         CGContextMoveToPoint(context, 25, 250)
@@ -61,7 +65,7 @@ class TutorialView: UIView {
         CGContextAddLineToPoint(context, 275, 150)
         CGContextAddLineToPoint(context, 275, 250)
         CGContextAddLineToPoint(context, 200, 250)
-        CGContextAddLineToPoint(context, 200, 50)
+        CGContextAddLineToPoint(context, 200, 150)
         CGContextStrokePath(context)
 
         // Add in the six windows, leftmost to rightmost.
