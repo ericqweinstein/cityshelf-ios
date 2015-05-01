@@ -26,6 +26,13 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
     }
 
     /**
+        Only allow portrait orientation for this view.
+    */
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+
+    /**
         Checks whether we're launching the app for the first time.
         @todo Move this earlier & remove the test code so we can
               skip the tutorial if we've launched before. (EW 29 Apr 2015)
