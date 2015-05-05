@@ -13,7 +13,6 @@
             <string>CooperHewitt-Bold</string>
             <string>CooperHewitt-Bold</string>
             <string>CooperHewitt-Bold</string>
-            <string>CooperHewitt-Bold</string>
         </mutableArray>
         <mutableArray key="CooperHewitt-BoldItalic.otf">
             <string>CooperHewitt-BoldItalic</string>
@@ -72,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCU-A1-a9V">
-                                <rect key="frame" x="16" y="28" width="568" height="227"/>
+                                <rect key="frame" x="16" y="65" width="568" height="227"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="lr8-Fp-mLp"/>
@@ -82,17 +81,28 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bk-VF-I6E" customClass="TutorialView" customModule="CityShelf" customModuleProvider="target">
-                                <rect key="frame" x="138" y="198" width="325" height="300"/>
+                                <rect key="frame" x="138" y="235" width="325" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="325" id="Bri-k9-UoS"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7i-qW-Jga">
+                                <rect key="frame" x="277" y="28" width="42" height="30"/>
+                                <state key="normal" title="Got it!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gotIt:" destination="GrU-7G-y0y" eventType="touchUpInside" id="dhd-up-6us"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zCU-A1-a9V" firstAttribute="top" secondItem="FLw-sS-GJc" secondAttribute="bottom" constant="8" id="3eG-AK-9pt"/>
-                            <constraint firstItem="qll-jX-W64" firstAttribute="top" secondItem="4Bk-VF-I6E" secondAttribute="bottom" constant="102" id="8kX-Dd-pN6"/>
+                            <constraint firstItem="zCU-A1-a9V" firstAttribute="top" secondItem="FLw-sS-GJc" secondAttribute="bottom" constant="45" id="3eG-AK-9pt"/>
+                            <constraint firstItem="qll-jX-W64" firstAttribute="top" secondItem="4Bk-VF-I6E" secondAttribute="bottom" constant="65" id="8kX-Dd-pN6"/>
+                            <constraint firstAttribute="centerX" secondItem="M7i-qW-Jga" secondAttribute="centerX" constant="2" id="BvJ-ix-HQO"/>
+                            <constraint firstItem="M7i-qW-Jga" firstAttribute="top" secondItem="FLw-sS-GJc" secondAttribute="bottom" constant="8" id="HgH-hJ-mKX"/>
                             <constraint firstItem="zCU-A1-a9V" firstAttribute="leading" secondItem="0Vh-y7-3aD" secondAttribute="leadingMargin" id="bct-24-Pub"/>
                             <constraint firstItem="4Bk-VF-I6E" firstAttribute="top" secondItem="zCU-A1-a9V" secondAttribute="bottom" constant="-57" id="dTU-M5-XLg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zCU-A1-a9V" secondAttribute="trailing" id="hVT-TQ-oMD"/>
@@ -101,45 +111,12 @@
                     </view>
                     <connections>
                         <outlet property="instruction" destination="zCU-A1-a9V" id="LoB-cy-Sm4"/>
+                        <segue destination="dym-CT-Oo5" kind="show" identifier="goToSearch" id="kXS-yo-Qxf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cy-XT-yDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="1140"/>
-        </scene>
-        <!--Instruction View Controller-->
-        <scene sceneID="7M5-BS-ter">
-            <objects>
-                <viewController id="4dW-6E-CBf" customClass="InstructionViewController" customModule="CityShelf" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MvA-bP-D1b"/>
-                        <viewControllerLayoutGuide type="bottom" id="D3m-NE-qpe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vwp-8W-laN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Type in the book you want. We'll show you which NYC bookstore near you has it in stock." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b8-nc-GwP">
-                                <rect key="frame" x="16" y="241" width="568" height="149"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="34"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="8b8-nc-GwP" firstAttribute="leading" secondItem="vwp-8W-laN" secondAttribute="leadingMargin" id="8mQ-Nx-30N"/>
-                            <constraint firstAttribute="centerY" secondItem="8b8-nc-GwP" secondAttribute="centerY" constant="-16" id="f1S-yJ-WCV"/>
-                            <constraint firstItem="8b8-nc-GwP" firstAttribute="trailing" secondItem="vwp-8W-laN" secondAttribute="trailingMargin" id="iWJ-A5-Yn7"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <segue destination="dym-CT-Oo5" kind="show" identifier="goToSearch" id="Wsa-Yr-z67"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cS3-Oc-FKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="673" y="482"/>
+            <point key="canvasLocation" x="671" y="482"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="ZiI-YQ-eb5">

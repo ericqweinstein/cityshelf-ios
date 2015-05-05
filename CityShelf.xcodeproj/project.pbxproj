@@ -36,7 +36,6 @@
 		B0820EB41AB4AE1F0015F0DB /* CooperHewitt-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA61AB4AE1F0015F0DB /* CooperHewitt-SemiboldItalic.otf */; };
 		B0820EB51AB4AE1F0015F0DB /* CooperHewitt-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA71AB4AE1F0015F0DB /* CooperHewitt-Thin.otf */; };
 		B0820EB61AB4AE1F0015F0DB /* CooperHewitt-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820EA81AB4AE1F0015F0DB /* CooperHewitt-ThinItalic.otf */; };
-		B0820EB81AB4BEA80015F0DB /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */; };
 		B0820EBA1AB4CB3F0015F0DB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */; };
 		B0820EBC1AB67CCE0015F0DB /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B0820EBB1AB67CCE0015F0DB /* search.png */; };
 		B0820EBE1ACB5B740015F0DB /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0820EBD1ACB5B740015F0DB /* ResultsViewController.swift */; };
@@ -90,7 +89,6 @@
 		B0820EA61AB4AE1F0015F0DB /* CooperHewitt-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		B0820EA71AB4AE1F0015F0DB /* CooperHewitt-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Thin.otf"; sourceTree = "<group>"; };
 		B0820EA81AB4AE1F0015F0DB /* CooperHewitt-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-ThinItalic.otf"; sourceTree = "<group>"; };
-		B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B0820EBB1AB67CCE0015F0DB /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		B0820EBD1ACB5B740015F0DB /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			children = (
 				B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */,
 				B06FB9A21A8062B500AEAB8F /* Resources */,
-				B0820EB71AB4BEA80015F0DB /* InstructionViewController.swift */,
 				B019B5331AF1BA54002417E8 /* TutorialViewController.swift */,
 				B019B5351AF1BD07002417E8 /* TutorialItemController.swift */,
 				B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */,
@@ -350,7 +347,6 @@
 				B0820EBA1AB4CB3F0015F0DB /* SearchViewController.swift in Sources */,
 				B019B5361AF1BD07002417E8 /* TutorialItemController.swift in Sources */,
 				B02AFA391AD2DF4600BAF932 /* BookViewController.swift in Sources */,
-				B0820EB81AB4BEA80015F0DB /* InstructionViewController.swift in Sources */,
 				B009C5271A94307300C43439 /* SearchService.swift in Sources */,
 				B0820EBE1ACB5B740015F0DB /* ResultsViewController.swift in Sources */,
 				B02AFA3D1ADB6C7300BAF932 /* Store.swift in Sources */,

@@ -12,6 +12,10 @@ import UIKit
 class TutorialItemController: UIViewController {
     @IBOutlet weak var instruction: UITextView!
 
+    @IBAction func gotIt(sender: AnyObject) {
+        performSegueWithIdentifier("goToSearch", sender: self)
+    }
+
     var itemIndex: Int = 0
     var instructionText: String = "" {
         didSet {
