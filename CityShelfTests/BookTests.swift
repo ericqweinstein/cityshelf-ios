@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 CityShelf. All rights reserved.
 //
 
-import CityShelf
 import XCTest
 
 class BookTests: XCTestCase {
