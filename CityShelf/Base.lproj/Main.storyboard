@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ciW-fs-Ked">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="25" y="-180"/>
         </scene>
-        <!--Tutorial View Controller-->
+        <!--TutorialViewController-->
         <scene sceneID="PXN-Hy-Z46">
             <objects>
-                <viewController id="ciW-fs-Ked" customClass="TutorialViewController" customModule="CityShelf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewController" title="TutorialViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ciW-fs-Ked" customClass="TutorialViewController" customModule="CityShelf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="37K-4Q-74D"/>
                         <viewControllerLayoutGuide type="bottom" id="oha-nl-N8M"/>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="671" y="482"/>
         </scene>
-        <!--Search View Controller-->
+        <!--SearchViewController-->
         <scene sceneID="ZiI-YQ-eb5">
             <objects>
-                <viewController id="dym-CT-Oo5" customClass="SearchViewController" customModule="CityShelf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" title="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dym-CT-Oo5" customClass="SearchViewController" customModule="CityShelf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HQE-9z-97Y"/>
                         <viewControllerLayoutGuide type="bottom" id="kJo-bX-2sx"/>

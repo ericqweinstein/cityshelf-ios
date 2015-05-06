@@ -20,7 +20,6 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkForFirstLaunch()
         createTutorialViewController()
         setUpPageControl()
     }
@@ -30,23 +29,6 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
     */
     override func supportedInterfaceOrientations() -> Int {
         return Int(UIInterfaceOrientationMask.Portrait.rawValue)
-    }
-
-    /**
-        Checks whether we're launching the app for the first time.
-        @todo Move this earlier & remove the test code so we can
-              skip the tutorial if we've launched before. (EW 29 Apr 2015)
-    */
-    func checkForFirstLaunch() {
-        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
-
-        if firstLaunch  {
-            println("Not first launch.")
-        }
-        else {
-            println("First launch, setting NSUserDefault.")
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
-        }
     }
 
     /**
