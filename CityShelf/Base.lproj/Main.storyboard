@@ -448,7 +448,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2qg-ef-xzP" id="Fo8-yT-qnj">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLh-Cp-niS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLh-Cp-niS">
                                                     <rect key="frame" x="8" y="14" width="150" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="42p-sp-z2G"/>
@@ -457,7 +457,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Ga-cjk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Ga-cjk">
                                                     <rect key="frame" x="442" y="14" width="150" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="erG-me-FFP"/>
@@ -466,7 +466,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSO-Dl-VP7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSO-Dl-VP7">
                                                     <rect key="frame" x="225" y="14" width="150" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="pUQ-h8-zVq"/>
@@ -572,6 +572,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mXb-Vk-aNY"/>
-        <segue reference="LmP-rB-nwG"/>
+        <segue reference="6vS-gD-An9"/>
     </inferredMetricsTieBreakers>
 </document>
