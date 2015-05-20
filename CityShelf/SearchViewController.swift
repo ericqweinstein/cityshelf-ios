@@ -13,7 +13,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     var query = ""
     let api = SearchService()
 
-    @IBOutlet weak var currentCity: UILabel!
     @IBAction func changeCity(sender: AnyObject) {
         performSegueWithIdentifier("backToLocation", sender: nil)
     }
@@ -45,8 +44,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         let city = NSUserDefaults.standardUserDefaults().valueForKey("City") as String
-
-        currentCity.text = "Searching: \(city)"
 
         searchField.layer.borderColor = UIColor.whiteColor().CGColor
         searchField.layer.borderWidth = 1.0
