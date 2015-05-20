@@ -138,32 +138,8 @@ class SearchService {
         var returnedStores = NSMutableArray()
         let group = dispatch_group_create()
 
-        // @todo Remove this as soon as we finish transitioning
-        // from v1 to v2 API endpoints. (EW 19 May 2015)
-        var latitude: String
-        var longitude: String
-
-        switch city {
-        case "Boston":
-            latitude = "42.3601"
-            longitude = "-71.0589"
-        case "Chicago":
-            latitude = "41.8369"
-            longitude = "-87.6847"
-        case "Minneapolis":
-            latitude = "44.9778"
-            longitude = "-93.2650"
-        case "Portland":
-            latitude = "45.5200"
-            longitude = "-122.6819"
-        case "Seattle":
-            latitude = "47.6097"
-            longitude = "-122.3331"
-        // Default to NYC
-        default:
-            latitude = "40.7127"
-            longitude = "-74.0059"
-        }
+        var latitude = NSUserDefaults.standardUserDefaults().doubleForKey("Latitude")
+        var longitude = NSUserDefaults.standardUserDefaults().doubleForKey("Longitude")
 
         dispatch_group_enter(group)
         request("\(searchEndpoint)/stores/?latitude=\(latitude)&longitude=\(longitude)") {
