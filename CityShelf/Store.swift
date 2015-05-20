@@ -14,6 +14,10 @@ class Store: NSObject, MKAnnotation {
     let phone: String
     let coordinate: CLLocationCoordinate2D
 
+    override var description: String {
+        return "\(title) \(phone) (\(coordinate))"
+    }
+
     init(title: String, phone: String, coordinate: CLLocationCoordinate2D) {
         self.title = title
         self.phone = phone

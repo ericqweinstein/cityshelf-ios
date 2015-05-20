@@ -18,6 +18,7 @@
 		B02AFA401ADB70B500BAF932 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA3C1ADB6C7300BAF932 /* Store.swift */; };
 		B02AFA421ADB70C300BAF932 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA411ADB70C300BAF932 /* StoreTests.swift */; };
 		B02AFA461ADCB62300BAF932 /* StoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA451ADCB62300BAF932 /* StoresView.swift */; };
+		B03D5A941B0BF69400742FE1 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D5A931B0BF69400742FE1 /* LocationViewController.swift */; };
 		B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */; };
 		B06FB9871A80620B00AEAB8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9851A80620B00AEAB8F /* Main.storyboard */; };
 		B06FB9891A80620B00AEAB8F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9881A80620B00AEAB8F /* Images.xcassets */; };
@@ -67,6 +68,7 @@
 		B02AFA3E1ADB6E1800BAF932 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B02AFA411ADB70C300BAF932 /* StoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
 		B02AFA451ADCB62300BAF932 /* StoresView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresView.swift; sourceTree = "<group>"; };
+		B03D5A931B0BF69400742FE1 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = ../LocationViewController.swift; sourceTree = "<group>"; };
 		B06FB9781A80620B00AEAB8F /* CityShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06FB97C1A80620B00AEAB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				B06FB9A21A8062B500AEAB8F /* Resources */,
 				B019B5331AF1BA54002417E8 /* TutorialViewController.swift */,
 				B019B5351AF1BD07002417E8 /* TutorialItemController.swift */,
+				B03D5A931B0BF69400742FE1 /* LocationViewController.swift */,
 				B0820EB91AB4CB3F0015F0DB /* SearchViewController.swift */,
 				B0820EBD1ACB5B740015F0DB /* ResultsViewController.swift */,
 				B0820EBF1ACB701F0015F0DB /* CoverImageCell.swift */,
@@ -347,6 +350,7 @@
 				B0820EBA1AB4CB3F0015F0DB /* SearchViewController.swift in Sources */,
 				B019B5361AF1BD07002417E8 /* TutorialItemController.swift in Sources */,
 				B02AFA391AD2DF4600BAF932 /* BookViewController.swift in Sources */,
+				B03D5A941B0BF69400742FE1 /* LocationViewController.swift in Sources */,
 				B009C5271A94307300C43439 /* SearchService.swift in Sources */,
 				B0820EBE1ACB5B740015F0DB /* ResultsViewController.swift in Sources */,
 				B02AFA3D1ADB6C7300BAF932 /* Store.swift in Sources */,

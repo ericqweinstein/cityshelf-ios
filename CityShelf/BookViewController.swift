@@ -28,7 +28,11 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     var selectedISBN: String!
     var selectedAvailability: Array<Book>!
 
-    let initialLocation = CLLocation(latitude: 40.759710, longitude: -73.974262)
+    let initialLocation: CLLocation = CLLocation(
+        latitude: NSUserDefaults.standardUserDefaults().doubleForKey("Latitude"),
+        longitude: NSUserDefaults.standardUserDefaults().doubleForKey("Longitude")
+    )
+
     let regionRadius: CLLocationDistance = 8000
 
     let api = SearchService()
@@ -41,49 +45,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     }
 
-    // @todo Remove this and replace with API call. (EW 13 Apr 2015)
-    let stores = [
-        Store(
-            title: "Astoria Bookshop",
-            phone: "telprompt://7182782665",
-            coordinate: CLLocationCoordinate2D(latitude: 40.763754, longitude: -73.923849)
-        ),
-        Store(
-            title: "Bank Street Books",
-            phone: "telprompt://2126781654",
-            coordinate: CLLocationCoordinate2D(latitude: 40.805786, longitude: -73.966143)
-        ),
-        Store(
-            title: "Book Culture",
-            phone: "telprompt://2128651588",
-            coordinate: CLLocationCoordinate2D(latitude: 40.805135, longitude: -73.964991)
-        ),
-        Store(
-            title: "Community Bookstore",
-            phone: "telprompt://7187833075",
-            coordinate: CLLocationCoordinate2D(latitude: 40.672900, longitude: -73.976457)
-        ),
-        Store(
-            title: "Greenlight Bookstore",
-            phone: "telprompt://7182460200",
-            coordinate: CLLocationCoordinate2D(latitude: 40.686502, longitude: -73.974571)
-        ),
-        Store(
-            title: "McNally Jackson",
-            phone: "telprompt://2122741160",
-            coordinate: CLLocationCoordinate2D(latitude: 40.723518, longitude: -73.996061)
-        ),
-        Store(
-            title: "St. Mark's Bookshop",
-            phone: "telprompt://2122607853",
-            coordinate: CLLocationCoordinate2D(latitude: 40.729921, longitude: -73.989448)
-        ),
-        Store(
-            title: "Word Bookstore",
-            phone: "telprompt://7183830096",
-            coordinate: CLLocationCoordinate2D(latitude: 40.729197, longitude: -73.957319)
-        )
-    ]
+    var stores = [Store]()
 
     override func viewDidLoad() {
         configureSearchBar()
@@ -143,7 +105,30 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     func configureMap() {
         centerMapOnLocation(initialLocation)
         map.delegate = self
-        map.addAnnotations(stores)
+
+        let city = NSUserDefaults.standardUserDefaults().valueForKey("City") as String
+
+        api.stores(city) { (results) -> () in
+            for result in results {
+                let mapData = result["map"] as? Dictionary<String, AnyObject>
+                let lat = mapData!["center"]!["latitude"]! as CLLocationDegrees
+                let long = mapData!["center"]!["longitude"]! as CLLocationDegrees
+
+                let s = Store(
+                    title: result["storeName"] as String,
+                    phone: result["phone"] as String,
+                    coordinate: CLLocationCoordinate2D(
+                        latitude: lat,
+                        longitude: long
+                    )
+                )
+
+                self.stores.append(s)
+            }
+            
+            self.map.addAnnotations(self.stores)
+            self.storesList.reloadData()
+        }
     }
 
     /**

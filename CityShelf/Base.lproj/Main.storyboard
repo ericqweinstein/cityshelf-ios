@@ -20,6 +20,7 @@
         </mutableArray>
         <mutableArray key="CooperHewitt-Book.otf">
             <string>CooperHewitt-Book</string>
+            <string>CooperHewitt-Book</string>
         </mutableArray>
         <mutableArray key="CooperHewitt-HeavyItalic.otf">
             <string>CooperHewitt-HeavyItalic</string>
@@ -111,12 +112,65 @@
                     </view>
                     <connections>
                         <outlet property="instruction" destination="zCU-A1-a9V" id="LoB-cy-Sm4"/>
-                        <segue destination="dym-CT-Oo5" kind="show" identifier="goToSearch" id="kXS-yo-Qxf"/>
+                        <segue destination="jE6-M9-Fhl" kind="show" identifier="goToLocation" id="eDL-eH-V7T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cy-XT-yDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="671" y="482"/>
+        </scene>
+        <!--LocationViewController-->
+        <scene sceneID="4Xl-rg-fZ4">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" title="LocationViewController" id="jE6-M9-Fhl" customClass="LocationViewController" customModule="CityShelf" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3gg-5i-N5s"/>
+                        <viewControllerLayoutGuide type="bottom" id="HJm-f0-Yap"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1eY-QE-ih9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiC-pY-YbG">
+                                <rect key="frame" x="0.0" y="149" width="600" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="ZST-Zy-9KI"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick your city!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPi-gl-1dN">
+                                <rect key="frame" x="246" y="85" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oj-DV-Nki">
+                                <rect key="frame" x="282" y="357" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cityPicked:" destination="jE6-M9-Fhl" eventType="touchUpInside" id="CKY-KU-IcF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tiC-pY-YbG" firstAttribute="top" secondItem="LPi-gl-1dN" secondAttribute="bottom" constant="43" id="Ozf-DD-3WU"/>
+                            <constraint firstAttribute="centerX" secondItem="LPi-gl-1dN" secondAttribute="centerX" id="kaN-ax-62S"/>
+                            <constraint firstItem="LPi-gl-1dN" firstAttribute="top" secondItem="3gg-5i-N5s" secondAttribute="bottom" constant="65" id="mf9-qU-hWE"/>
+                            <constraint firstItem="7oj-DV-Nki" firstAttribute="top" secondItem="tiC-pY-YbG" secondAttribute="bottom" constant="46" id="pLe-kB-r0e"/>
+                            <constraint firstAttribute="centerX" secondItem="tiC-pY-YbG" secondAttribute="centerX" id="q6p-C7-jdy"/>
+                            <constraint firstAttribute="centerX" secondItem="7oj-DV-Nki" secondAttribute="centerX" id="xkY-TO-dSC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="citySelection" destination="tiC-pY-YbG" id="W1F-QJ-Fyt"/>
+                        <segue destination="dym-CT-Oo5" kind="show" identifier="goToSearch" id="ZMb-9B-nvh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6g-Ik-E7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1388" y="-784"/>
         </scene>
         <!--SearchViewController-->
         <scene sceneID="ZiI-YQ-eb5">
@@ -149,17 +203,37 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FWn-Ni-cws">
-                                <rect key="frame" x="16" y="211" width="568" height="5"/>
+                                <rect key="frame" x="16" y="211" width="568" height="2"/>
                                 <color key="progressTintColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3D-9u-KBS">
+                                <rect key="frame" x="512" y="51" width="37" height="16"/>
+                                <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIj-3I-NWE">
+                                <rect key="frame" x="464" y="75" width="85" height="39"/>
+                                <state key="normal" title="Change City">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeCity:" destination="dym-CT-Oo5" eventType="touchUpInside" id="UgB-Xe-ofn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xtv-gc-CDh" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="152" id="4RE-4r-j6x"/>
+                            <constraint firstItem="YIj-3I-NWE" firstAttribute="top" secondItem="s3D-9u-KBS" secondAttribute="bottom" constant="8" id="ES2-02-NtV"/>
                             <constraint firstItem="VSe-i4-Yzp" firstAttribute="trailing" secondItem="rQW-vx-sYr" secondAttribute="trailingMargin" id="P3B-qb-ojo"/>
+                            <constraint firstItem="xtv-gc-CDh" firstAttribute="top" secondItem="YIj-3I-NWE" secondAttribute="bottom" constant="58" id="PZi-pJ-jxk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s3D-9u-KBS" secondAttribute="trailing" constant="35" id="QsH-xv-LC6"/>
                             <constraint firstItem="VSe-i4-Yzp" firstAttribute="leading" secondItem="xtv-gc-CDh" secondAttribute="trailing" constant="8" id="We9-0S-S40"/>
+                            <constraint firstItem="s3D-9u-KBS" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="31" id="YpX-8g-EvP"/>
                             <constraint firstItem="xtv-gc-CDh" firstAttribute="leading" secondItem="rQW-vx-sYr" secondAttribute="leadingMargin" id="cBp-jw-TXn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YIj-3I-NWE" secondAttribute="trailing" constant="35" id="dLX-6K-HDe"/>
                             <constraint firstItem="FWn-Ni-cws" firstAttribute="trailing" secondItem="VSe-i4-Yzp" secondAttribute="trailing" id="e9y-dQ-0IP"/>
                             <constraint firstItem="FWn-Ni-cws" firstAttribute="leading" secondItem="xtv-gc-CDh" secondAttribute="leading" id="meL-4z-fqS"/>
                             <constraint firstItem="FWn-Ni-cws" firstAttribute="top" secondItem="VSe-i4-Yzp" secondAttribute="bottom" constant="8" symbolic="YES" id="rk2-Rj-SGK"/>
@@ -167,9 +241,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentCity" destination="s3D-9u-KBS" id="ixy-3Q-LcC"/>
                         <outlet property="searchField" destination="xtv-gc-CDh" id="RbU-xb-1Rp"/>
                         <outlet property="searchProgress" destination="FWn-Ni-cws" id="eZ2-Yr-Mmg"/>
                         <segue destination="CwU-RW-kbs" kind="show" identifier="goToResults" id="LmP-rB-nwG"/>
+                        <segue destination="jE6-M9-Fhl" kind="show" identifier="backToLocation" id="mXb-Vk-aNY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTE-xm-SdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -495,6 +571,7 @@
         <image name="search.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="mXb-Vk-aNY"/>
         <segue reference="LmP-rB-nwG"/>
     </inferredMetricsTieBreakers>
 </document>

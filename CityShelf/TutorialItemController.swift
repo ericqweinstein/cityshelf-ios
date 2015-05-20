@@ -13,7 +13,7 @@ class TutorialItemController: UIViewController {
     @IBOutlet weak var instruction: UITextView!
 
     @IBAction func gotIt(sender: AnyObject) {
-        performSegueWithIdentifier("goToSearch", sender: self)
+        performSegueWithIdentifier("goToLocation", sender: self)
     }
 
     var itemIndex: Int = 0
