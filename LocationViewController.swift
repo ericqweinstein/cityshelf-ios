@@ -15,32 +15,40 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let selectedCity = cities[citySelection.selectedRowInComponent(0)]
         var latitude: Double
         var longitude: Double
+        var regionRadius: Int
 
         switch selectedCity {
         case "Boston":
             latitude = 42.3601
             longitude = -71.0589
+            regionRadius = 8000
         case "Chicago":
             latitude = 41.8369
             longitude = -87.6847
+            regionRadius = 18000
         case "Minneapolis":
             latitude = 44.9778
             longitude = -93.2650
+            regionRadius = 18000
         case "Portland":
             latitude = 45.5200
             longitude = -122.6819
+            regionRadius = 8000
         case "Seattle":
-            latitude = 47.6097
+            latitude = 47.5487
             longitude = -122.3331
+            regionRadius = 23000
         // Default to NYC
         default:
-            latitude = 40.7127
-            longitude = -74.0059
+            latitude = 40.759710
+            longitude = -73.974262
+            regionRadius = 8000
         }
 
         NSUserDefaults.standardUserDefaults().setValue(selectedCity, forKey: "City")
         NSUserDefaults.standardUserDefaults().setDouble(latitude, forKey: "Latitude")
         NSUserDefaults.standardUserDefaults().setDouble(longitude, forKey: "Longitude")
+        NSUserDefaults.standardUserDefaults().setInteger(regionRadius, forKey: "RegionRadius")
 
         performSegueWithIdentifier("goToSearch", sender: self)
     }

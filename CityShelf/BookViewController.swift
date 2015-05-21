@@ -33,7 +33,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         longitude: NSUserDefaults.standardUserDefaults().doubleForKey("Longitude")
     )
 
-    let regionRadius: CLLocationDistance = 8000
+    let regionRadius = NSUserDefaults.standardUserDefaults().doubleForKey("RegionRadius") as CLLocationDistance
 
     let api = SearchService()
     var query = ""
