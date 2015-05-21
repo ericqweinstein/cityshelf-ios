@@ -10,6 +10,7 @@ import UIKit
 
 /// Manages individual stores in the StoresView.
 class StoreCell: UITableViewCell {
+    @IBOutlet weak var storeAvailabilityIcon: UILabel!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var storePrice: UILabel!
     @IBOutlet weak var storeAvailability: UILabel!

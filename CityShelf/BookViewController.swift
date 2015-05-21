@@ -71,10 +71,8 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         @todo Pull this out, since it's shared with ResultsViewController. (EW 24 Apr 2015)
     */
     func configureSearchBar() {
-        let cityShelfGreen = UIColor(red: 0, green: 250/255, blue: 159/255, alpha: 1)
-
         searchBar.attributedPlaceholder = NSAttributedString(string: "Search again",
-            attributes:[NSForegroundColorAttributeName: cityShelfGreen])
+            attributes:[NSForegroundColorAttributeName: Settings().cityShelfGreen])
 
         var space = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
 

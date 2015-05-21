@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -450,47 +449,56 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLh-Cp-niS">
-                                                    <rect key="frame" x="8" y="14" width="150" height="21"/>
+                                                    <rect key="frame" x="38" y="12" width="120" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="42p-sp-z2G"/>
+                                                        <constraint firstAttribute="width" constant="120" id="n6U-zn-iOs"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◉" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4E-RF-RAJ">
+                                                    <rect key="frame" x="8" y="11" width="22" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="22" id="I7j-dt-8Sc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Ga-cjk">
-                                                    <rect key="frame" x="442" y="14" width="150" height="21"/>
+                                                    <rect key="frame" x="472" y="12" width="120" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="erG-me-FFP"/>
+                                                        <constraint firstAttribute="width" constant="120" id="Fn6-IY-YF1"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSO-Dl-VP7">
-                                                    <rect key="frame" x="225" y="14" width="150" height="21"/>
+                                                    <rect key="frame" x="240" y="12" width="120" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="pUQ-h8-zVq"/>
+                                                        <constraint firstAttribute="width" constant="120" id="gHG-sL-i60"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="baseline" secondItem="KLh-Cp-niS" secondAttribute="baseline" id="8Al-9p-zr5"/>
-                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="bottom" secondItem="Fo8-yT-qnj" secondAttribute="bottomMargin" id="Joe-P9-fpT"/>
-                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="trailing" secondItem="Fo8-yT-qnj" secondAttribute="trailingMargin" id="T9l-Y4-wIl"/>
-                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="top" secondItem="Fo8-yT-qnj" secondAttribute="topMargin" constant="6" id="ZvF-rz-VfM"/>
-                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="firstBaseline" secondItem="KLh-Cp-niS" secondAttribute="firstBaseline" id="cKF-Yh-bF6"/>
-                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="firstBaseline" secondItem="xSO-Dl-VP7" secondAttribute="firstBaseline" id="e8A-k5-H7s"/>
-                                                <constraint firstItem="xSO-Dl-VP7" firstAttribute="centerX" secondItem="Fo8-yT-qnj" secondAttribute="centerX" id="ga7-g0-nEU"/>
-                                                <constraint firstItem="KLh-Cp-niS" firstAttribute="leading" secondItem="Fo8-yT-qnj" secondAttribute="leadingMargin" id="lch-Iv-uyl"/>
-                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="baseline" secondItem="xSO-Dl-VP7" secondAttribute="baseline" id="xxM-mG-Kbm"/>
+                                                <constraint firstItem="U4E-RF-RAJ" firstAttribute="leading" secondItem="Fo8-yT-qnj" secondAttribute="leadingMargin" id="KhT-9Z-vID"/>
+                                                <constraint firstAttribute="centerY" secondItem="KLh-Cp-niS" secondAttribute="centerY" id="Uyg-Xi-Hx9"/>
+                                                <constraint firstAttribute="centerY" secondItem="xSO-Dl-VP7" secondAttribute="centerY" id="ZmK-Gq-O9I"/>
+                                                <constraint firstAttribute="centerY" secondItem="gvQ-Ga-cjk" secondAttribute="centerY" id="clN-ei-g4K"/>
+                                                <constraint firstItem="KLh-Cp-niS" firstAttribute="leading" secondItem="U4E-RF-RAJ" secondAttribute="trailing" constant="8" id="hH5-xc-Xte"/>
+                                                <constraint firstAttribute="centerY" secondItem="U4E-RF-RAJ" secondAttribute="centerY" id="mGs-l7-3ha"/>
+                                                <constraint firstItem="gvQ-Ga-cjk" firstAttribute="trailing" secondItem="Fo8-yT-qnj" secondAttribute="trailingMargin" id="nKM-6V-F38"/>
+                                                <constraint firstAttribute="centerX" secondItem="xSO-Dl-VP7" secondAttribute="centerX" id="uZt-Z2-Z0k"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="storeAvailability" destination="gvQ-Ga-cjk" id="cWU-kG-jR5"/>
+                                            <outlet property="storeAvailabilityIcon" destination="U4E-RF-RAJ" id="tZT-pZ-whl"/>
                                             <outlet property="storeName" destination="KLh-Cp-niS" id="Tzi-E4-F9U"/>
                                             <outlet property="storePrice" destination="xSO-Dl-VP7" id="a9W-3i-1sk"/>
                                         </connections>
@@ -565,7 +573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fd-Ka-CxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2314" y="404"/>
+            <point key="canvasLocation" x="2314" y="393"/>
         </scene>
     </scenes>
     <resources>

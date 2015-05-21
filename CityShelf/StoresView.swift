@@ -39,7 +39,8 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
 
-        cell.storeName.text = annotateStoreName(storeName, availability: availability)
+        annotateStoreName(availability, storeAvailabilityIcon: cell.storeAvailabilityIcon)
+        cell.storeName.text = storeName
         cell.storePrice.text = normalizePrice(price)
         cell.storeAvailability.text = normalizeAvailability(availability)
 
@@ -81,20 +82,17 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         Annotates the store name to signal availability.
         @todo Clean this up; I don't like doing all this if/else nonsense. (EW 16 Apr 2015)
 
-        :param: storename The name of the store.
         :param: availability The availability of the associated title.
+        :param: storeAvailabilityIcon Label indicating availability.
 
         :returns: The store name annotated with an "X" (unavailable) or a check
                   mark (available).
     */
-    func annotateStoreName(storename: String, availability: String) -> String {
-        let checkMark = "\u{2713}"
-        let x = "\u{D7}"
-
+    func annotateStoreName(availability: String, storeAvailabilityIcon: UILabel!) {
         if availability == "On shelves now" {
-            return "\(checkMark) \(storename)"
+            storeAvailabilityIcon.textColor = Settings().cityShelfGreen
         } else {
-            return " \(x)  \(storename)"
+            storeAvailabilityIcon.textColor = UIColor.grayColor()
         }
     }
 }
