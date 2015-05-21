@@ -13,6 +13,11 @@ class Store: NSObject, MKAnnotation {
     let title: String
     let phone: String
     let coordinate: CLLocationCoordinate2D
+    var availability: String = "" {
+        willSet {
+            self.availability = newValue
+        }
+    }
 
     override var description: String {
         return "\(title) \(phone) (\(coordinate))"

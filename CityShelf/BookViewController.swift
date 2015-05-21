@@ -121,10 +121,18 @@ class BookViewController: UIViewController, UITextFieldDelegate {
                     )
                 )
 
+                // @todo This is a horrible idea; correct ASAP. (EW 20 May 2015)
+                for bk in self.selectedAvailability {
+                    if bk.store == s.title {
+                        s.availability = bk.availability
+                    }
+                }
+
                 self.stores.append(s)
             }
             
             self.map.addAnnotations(self.stores)
+            self.stores.sort { $0.availability < $1.availability }
             self.storesList.reloadData()
         }
     }
