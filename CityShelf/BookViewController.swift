@@ -106,7 +106,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
 
         let city = NSUserDefaults.standardUserDefaults().valueForKey("City") as String
 
-        api.stores(city) { (results) -> () in
+        api.stores() { (results) -> () in
             for result in results {
                 let mapData = result["map"] as? Dictionary<String, AnyObject>
                 let lat = mapData!["center"]!["latitude"]! as CLLocationDegrees

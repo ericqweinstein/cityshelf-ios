@@ -134,7 +134,7 @@ class SearchService {
         :param: longitude The longitude for which we want the closest stores.
         :param: callback The completion handler to execute.
     */
-    func stores(city: String, callback: (NSMutableArray) -> ()) {
+    func stores(callback: (NSMutableArray) -> ()) {
         var returnedStores = NSMutableArray()
         let group = dispatch_group_create()
 
