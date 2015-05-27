@@ -43,8 +43,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let city = NSUserDefaults.standardUserDefaults().valueForKey("City") as String
-
         searchField.layer.borderColor = UIColor.whiteColor().CGColor
         searchField.layer.borderWidth = 1.0
 
