@@ -317,7 +317,7 @@
                                         <constraint firstAttribute="height" constant="53" id="SaY-QT-dnv"/>
                                     </constraints>
                                     <color key="textColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" name="CooperHewitt-BoldItalic" family="Cooper Hewitt" pointSize="12"/>
+                                    <fontDescription key="fontDescription" name="CooperHewitt-BoldItalic" family="Cooper Hewitt" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                 </textField>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5e2-uS-Zh3">
@@ -414,7 +414,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-IM-94N">
-                                <rect key="frame" x="0.0" y="55" width="600" height="5"/>
+                                <rect key="frame" x="0.0" y="55" width="600" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="Qib-CY-hil"/>
                                 </constraints>
@@ -509,7 +509,7 @@
                                     <constraint firstAttribute="height" constant="60" id="gBG-bi-PSp"/>
                                 </constraints>
                                 <color key="textColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="CooperHewitt-BoldItalic" family="Cooper Hewitt" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="CooperHewitt-BoldItalic" family="Cooper Hewitt" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </textField>
                         </subviews>
