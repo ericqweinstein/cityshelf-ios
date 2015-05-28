@@ -55,10 +55,10 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
 
     let cities = [
-        "New York City",
         "Boston",
         "Chicago",
         "Minneapolis",
+        "New York City",
         "Portland",
         "Seattle"
         ]
