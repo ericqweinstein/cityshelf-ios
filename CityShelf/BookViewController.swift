@@ -113,6 +113,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
                 let long = mapData!["center"]!["longitude"]! as CLLocationDegrees
 
                 let s = Store(
+                    id: result["id"] as String,
                     title: result["storeName"] as String,
                     phone: result["phone"] as String,
                     coordinate: CLLocationCoordinate2D(
@@ -121,12 +122,8 @@ class BookViewController: UIViewController, UITextFieldDelegate {
                     )
                 )
 
-                // @todo This is a horrible idea; correct ASAP. (EW 20 May 2015)
-                for bk in self.selectedAvailability {
-                    if bk.store == s.title {
-                        s.availability = bk.availability
-                    }
-                }
+                // @todo Fix; this is a placeholder. (EW 27 May 2015)
+                s.availability = "On shelves now"
 
                 self.stores.append(s)
             }
@@ -166,7 +163,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "searchAgain" {
             var svc = segue.destinationViewController as ResultsViewController
 
-            svc.searchResults = api.searchResults
+            svc.searchResults = api.searchResults as Array<NSDictionary>
             svc.searchQuery = query
         }
     }

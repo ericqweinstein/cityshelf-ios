@@ -17,10 +17,15 @@ class StoreTests: XCTestCase {
         super.setUp()
 
         store = Store(
+            id: "0",
             title: "Book Culture",
             phone: "tel:+1-212-865-1588",
             coordinate: CLLocationCoordinate2D(latitude: 40.805135, longitude: -73.964991)
         )
+    }
+
+    func testId() {
+        XCTAssertEqual(store!.id, "0", "Store has an ID number.")
     }
 
     func testTitle() {

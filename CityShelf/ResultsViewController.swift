@@ -16,7 +16,7 @@ class ResultsViewController: UICollectionViewController,
     let api = SearchService()
 
     var results = [Book]()
-    var searchResults: NSArray!
+    var searchResults: Array<NSDictionary>!
     var searchQuery: String!
     var searchBar: UITextField!
     var researchProgress: UIProgressView!
@@ -124,15 +124,16 @@ class ResultsViewController: UICollectionViewController,
     func showResults() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 
-        for result in searchResults {
+        for (result: NSDictionary) in searchResults {
+            let isbn = result.allKeys[0] as String
+            let first = result[isbn] as NSArray
+
             let book = Book(
-                title: result["title"] as String,
-                author: result["author"] as String,
-                cover: NSURL(string: result["img"] as String)!,
-                store: result["storeName"] as String,
-                availability: result["availability"] as String,
-                price: (result["price"] as NSString).doubleValue,
-                isbn: result["isbn"] as String
+                isbn: isbn,
+                title: first[0]["title"] as String,
+                author: first[0]["author"] as String,
+                cover: NSURL(string: first[0]["img"] as String)!,
+                availability: result[isbn] as NSArray
             )
 
             self.results.append(book)
@@ -146,7 +147,7 @@ class ResultsViewController: UICollectionViewController,
         Updates search results when we search again.
     */
     func updateSearchResults() {
-        searchResults = api.searchResults
+        searchResults = api.searchResults as Array<NSDictionary>
         showResults()
     }
 

@@ -11,14 +11,11 @@ import UIKit
 
 /// Models a book returned by the API.
 class Book: NSObject {
+    var isbn: String
     var title: String
     var author: String
     var cover: NSURL
-    var store: String
-    var availability: String
-    var price: Double
-    var image = UIImage(named: "Placeholder")
-    var isbn: String
+    var availability: NSArray
 
     override var description: String {
         return "\(title) \(author) (\(isbn))"
@@ -38,13 +35,11 @@ class Book: NSObject {
 
         :returns: A new book instance.
     */
-    init(title: String, author: String, cover: NSURL, store: String, availability: String, price: Double, isbn: String) {
+    init(isbn: String, title: String, author: String, cover: NSURL, availability: NSArray) {
+        self.isbn = isbn
         self.title = title
         self.author = author
         self.cover = cover
-        self.store = store
         self.availability = availability
-        self.price = price
-        self.isbn = isbn
     }
 }

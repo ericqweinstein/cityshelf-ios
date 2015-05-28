@@ -31,12 +31,10 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         var price = 0.00
         var availability = "Call to place an order"
 
-        // @todo This is a horrible idea; correct ASAP. (EW 14 Apr 2015)
+        // @todo Fix; this is a placeholder. (EW 27 May 2015)
         for bk in selectedAvailability {
-            if bk.store == storeName {
-                price = bk.price
-                availability = bk.availability
-            }
+            price = 9.99
+            availability = "On shelves now"
         }
 
         annotateStoreName(availability, storeAvailabilityIcon: cell.storeAvailabilityIcon)

@@ -11,7 +11,8 @@ import UIKit
 
 /// Performs searches against the CityShelf API.
 class SearchService {
-    let searchEndpoint = "http://www.cityshelf.com"
+    // let searchEndpoint = "http://www.cityshelf.com"
+    let searchEndpoint = "http://localhost:8080"
     var searchResults = NSArray()
 
     /// Manages getting and setting search results.
@@ -82,43 +83,31 @@ class SearchService {
     func search(queryString: String, searchProgress: UIProgressView, callback: () -> ()) {
         var books = NSMutableArray()
         let group = dispatch_group_create()
-        let city = NSUserDefaults.standardUserDefaults().valueForKey("City") as String
 
-        // @todo Remove this as soon as we finish transitioning
-        // from v1 to v2 API endpoints. (EW 19 May 2015)
-        var startAndEnd: (start: Int, end: Int)
+        var latitude = NSUserDefaults.standardUserDefaults().doubleForKey("Latitude")
+        var longitude = NSUserDefaults.standardUserDefaults().doubleForKey("Longitude")
 
-        switch city {
-        case "Boston":
-            startAndEnd = (start: 8, end: 11)
-        case "Chicago":
-            startAndEnd = (start: 12, end: 16)
-        case "Minneapolis":
-            startAndEnd = (start: 17, end: 20)
-        case "Portland":
-            startAndEnd = (start: 21, end: 23)
-        case "Seattle":
-            startAndEnd = (start: 24, end: 28)
-        // Default to NYC
-        default:
-            startAndEnd = (start: 0, end: 7)
-        }
-
-        let numberOfStores = (startAndEnd.end - startAndEnd.start) + 1
-        var completeness = (1 / Float(numberOfStores))
+        var completeness = Float(0.30)
         searchProgress.setProgress(completeness, animated: true)
 
-        for storeNumber in (startAndEnd.start...startAndEnd.end) {
-            dispatch_group_enter(group)
-            request("\(searchEndpoint)/api/stores/\(storeNumber)/?query=\(queryString)") {
-                (response) in
-                books.addObjectsFromArray(response)
-                completeness += (1 / Float(numberOfStores))
-                dispatch_group_leave(group)
+        dispatch_group_enter(group)
+        request("\(searchEndpoint)/books/?query=\(queryString)&latitude=\(latitude)&longitude=\(longitude)") {
+            (response) in
 
-                dispatch_async(dispatch_get_main_queue()) {
-                    searchProgress.setProgress(completeness, animated: true)
-                }
+            let results = response as NSArray
+            let hits = results[0] as Dictionary<String, NSArray>
+
+            for (isbn, availability) in hits {
+                let hit = [isbn: availability] as Dictionary
+                books.addObject(hit)
+            }
+
+            completeness = Float(1)
+
+            dispatch_group_leave(group)
+
+            dispatch_async(dispatch_get_main_queue()) {
+                searchProgress.setProgress(completeness, animated: true)
             }
         }
 
