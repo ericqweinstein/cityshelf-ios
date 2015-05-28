@@ -25,6 +25,19 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         api.search(api.formatQuery(query), searchProgress: searchProgress, goToResults)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.navigationBarHidden = true
+        super.viewWillAppear(animated)
+    }
+
+
+    override func viewWillDisappear(animated: Bool) {
+        if (navigationController?.topViewController != self) {
+            navigationController?.navigationBarHidden = false
+        }
+        super.viewWillDisappear(animated)
+    }
+
     /**
         Allows us to pass API data to the ResultsViewController.
     */
@@ -72,6 +85,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         Segues to the search results view.
     */
     func goToResults() {
-        performSegueWithIdentifier("goToResults", sender: self)
+        performSegueWithIdentifier("goToResults", sender: nil)
     }
 }

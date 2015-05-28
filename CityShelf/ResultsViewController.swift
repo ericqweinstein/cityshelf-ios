@@ -24,8 +24,14 @@ class ResultsViewController: UICollectionViewController,
     private let reuseIdentifier = "ResultCell"
 
     override func viewDidLoad() {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+
         super.viewDidLoad()
         showResults()
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

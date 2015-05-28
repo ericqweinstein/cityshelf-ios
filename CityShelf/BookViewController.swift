@@ -48,10 +48,16 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     var stores = [Store]()
 
     override func viewDidLoad() {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+
         configureSearchBar()
         configureBook()
         configureMap()
         configureStoreList()
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
     }
 
     /**

@@ -129,19 +129,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiC-pY-YbG">
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tiC-pY-YbG">
                                 <rect key="frame" x="0.0" y="149" width="600" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="ZST-Zy-9KI"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick your city!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPi-gl-1dN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pick your city!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPi-gl-1dN">
                                 <rect key="frame" x="246" y="85" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oj-DV-Nki">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oj-DV-Nki">
                                 <rect key="frame" x="282" y="357" width="37" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,7 +163,7 @@
                     </view>
                     <connections>
                         <outlet property="citySelection" destination="tiC-pY-YbG" id="W1F-QJ-Fyt"/>
-                        <segue destination="dym-CT-Oo5" kind="show" identifier="goToSearch" id="ZMb-9B-nvh"/>
+                        <segue destination="6vv-Kh-Ebw" kind="show" identifier="goToSearch" id="ZMb-9B-nvh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6g-Ik-E7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -182,12 +182,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title, author, ISBN" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-gc-CDh">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title, author, ISBN" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xtv-gc-CDh">
                                 <rect key="frame" x="16" y="172" width="533" height="30"/>
                                 <fontDescription key="fontDescription" name="CooperHewitt-HeavyItalic" family="Cooper Hewitt" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSe-i4-Yzp">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSe-i4-Yzp">
                                 <rect key="frame" x="557" y="176" width="27" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="R6f-bX-hlu"/>
@@ -200,19 +200,19 @@
                                     <action selector="searchButtonClicked:" destination="dym-CT-Oo5" eventType="touchUpInside" id="C7O-2o-OpS"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FWn-Ni-cws">
+                            <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FWn-Ni-cws">
                                 <rect key="frame" x="16" y="211" width="568" height="2"/>
                                 <color key="progressTintColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CityShelf_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="eb0-Xg-a9g">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="CityShelf_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="eb0-Xg-a9g">
                                 <rect key="frame" x="16" y="20" width="94" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="5kj-Ol-Ppt"/>
                                     <constraint firstAttribute="height" constant="94" id="djZ-1k-UAl"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIj-3I-NWE">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIj-3I-NWE">
                                 <rect key="frame" x="456" y="33" width="93" height="26"/>
                                 <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="14"/>
                                 <state key="normal" title="Change my city">
@@ -240,6 +240,7 @@
                             <constraint firstItem="VSe-i4-Yzp" firstAttribute="top" secondItem="HQE-9z-97Y" secondAttribute="bottom" constant="156" id="vYL-vp-6cc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mRa-HS-Rm1"/>
                     <connections>
                         <outlet property="searchField" destination="xtv-gc-CDh" id="RbU-xb-1Rp"/>
                         <outlet property="searchProgress" destination="FWn-Ni-cws" id="eZ2-Yr-Mmg"/>
@@ -249,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTE-xm-SdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1388" y="-114"/>
+            <point key="canvasLocation" x="2200" y="-114"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="M8D-lK-TX3">
@@ -376,14 +377,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pRt-6Q-iTK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRt-6Q-iTK">
                                 <rect key="frame" x="16" y="73" width="62" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="AWw-98-ARr"/>
                                     <constraint firstAttribute="height" constant="95" id="wYy-oA-n64"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydJ-ZT-PM4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydJ-ZT-PM4">
                                 <rect key="frame" x="86" y="73" width="467" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="i0a-aV-pT4"/>
@@ -392,7 +393,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-Ck-LRd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Author" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-Ck-LRd">
                                 <rect key="frame" x="86" y="101" width="467" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="WgP-RH-Q1z"/>
@@ -401,10 +402,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-kE-oUI">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-kE-oUI">
                                 <rect key="frame" x="0.0" y="176" width="600" height="171"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
                                 <rect key="frame" x="86" y="129" width="467" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="kIh-4T-4le"/>
@@ -413,7 +414,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-IM-94N">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-IM-94N">
                                 <rect key="frame" x="0.0" y="55" width="600" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="Qib-CY-hil"/>
@@ -502,7 +503,7 @@
                                     </mask>
                                 </variation>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search again" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jix-ui-QUl">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Search again" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jix-ui-QUl">
                                 <rect key="frame" x="0.0" y="-5" width="600" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -565,7 +566,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fd-Ka-CxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2314" y="392"/>
+            <point key="canvasLocation" x="3126" y="392"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="l1f-YK-tdB">
+            <objects>
+                <navigationController restorationIdentifier="NavigationViewController" storyboardIdentifier="NavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="6vv-Kh-Ebw" customClass="NavigationViewController" customModule="CityShelf" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AnZ-e5-WcU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dym-CT-Oo5" kind="relationship" relationship="rootViewController" id="L7g-25-p6S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lzn-2f-mM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1388" y="-114"/>
         </scene>
     </scenes>
     <resources>
@@ -573,7 +592,7 @@
         <image name="search.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eDL-eH-V7T"/>
-        <segue reference="6vS-gD-An9"/>
+        <segue reference="LmP-rB-nwG"/>
+        <segue reference="mXb-Vk-aNY"/>
     </inferredMetricsTieBreakers>
 </document>

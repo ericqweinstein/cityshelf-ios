@@ -23,10 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let skipTutorial = NSUserDefaults.standardUserDefaults().boolForKey("SkipTutorial")
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
-        if skipTutorial {
-            var searchViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SearchViewController") as SearchViewController
+        UINavigationBar.appearance().barTintColor = UIColor.blackColor()
+        UINavigationBar.appearance().tintColor = Settings().cityShelfGreen
 
-            self.window?.rootViewController = searchViewController
+        if skipTutorial {
+            var nvc = mainStoryboard.instantiateViewControllerWithIdentifier("NavigationViewController") as NavigationViewController
+
+            self.window?.rootViewController = nvc
         } else {
             var tutorialViewController = mainStoryboard.instantiateViewControllerWithIdentifier("TutorialViewController") as TutorialViewController
             self.window?.rootViewController = tutorialViewController
