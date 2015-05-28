@@ -92,7 +92,7 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
             )
 
             alert.addAction(UIAlertAction(
-                title: "OK",
+                title: "I'll pick my city",
                 style: UIAlertActionStyle.Default,
                 handler: nil))
 
