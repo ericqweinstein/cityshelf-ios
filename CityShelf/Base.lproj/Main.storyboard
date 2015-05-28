@@ -28,7 +28,6 @@
             <string>CooperHewitt-Light</string>
             <string>CooperHewitt-Light</string>
             <string>CooperHewitt-Light</string>
-            <string>CooperHewitt-Light</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -278,22 +277,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="93" height="140"/>
                                             <gestureRecognizers/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh2-xd-Dca">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh2-xd-Dca">
                                             <rect key="frame" x="0.0" y="148" width="93" height="21"/>
-                                            <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="11"/>
+                                            <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bd-dN-smA">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bd-dN-smA">
                                             <rect key="frame" x="0.0" y="171" width="93" height="21"/>
-                                            <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="11"/>
+                                            <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ISBN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXm-K5-deZ">
-                                            <rect key="frame" x="0.0" y="191" width="93" height="21"/>
-                                            <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -302,7 +295,6 @@
                                 <connections>
                                     <outlet property="author" destination="7bd-dN-smA" id="HmG-s5-JkP"/>
                                     <outlet property="imageView" destination="X3s-bC-GMR" id="lr5-td-3f0"/>
-                                    <outlet property="isbn" destination="tXm-K5-deZ" id="91C-Xf-COT"/>
                                     <outlet property="title" destination="qh2-xd-Dca" id="QJ7-lP-qWR"/>
                                     <segue destination="uiT-70-UZv" kind="show" identifier="goToTitle" id="LQN-1e-tHB"/>
                                 </connections>

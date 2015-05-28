@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>CityShelf works best when we know where you are.</string>
+	<string>CityShelf works best when we know where to look.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>CooperHewitt-Book.otf</string>

@@ -14,9 +14,15 @@ class Store: NSObject, MKAnnotation {
     let title: String
     let phone: String
     let coordinate: CLLocationCoordinate2D
-    var availability: String = "" {
+    var availability: Int = 0 {
         willSet {
             self.availability = newValue
+        }
+    }
+
+    var price: Double = 0.00 {
+        willSet {
+            self.price = newValue
         }
     }
 

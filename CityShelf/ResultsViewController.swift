@@ -64,7 +64,6 @@ class ResultsViewController: UICollectionViewController,
             cell.imageView?.image = image
             cell.title.text = book.title
             cell.author.text = book.author
-            cell.isbn.text = book.isbn
         }
         
         return cell
@@ -105,7 +104,7 @@ class ResultsViewController: UICollectionViewController,
             bk.selectedAuthor = book.author
             bk.selectedCover = book.cover
             bk.selectedISBN = book.isbn
-            bk.selectedAvailability = results.filter() { $0.isbn == book.isbn }
+            bk.selectedAvailability = book.availability as Array<NSDictionary>
         }
     }
 

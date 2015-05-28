@@ -28,13 +28,16 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         var cell = storesList.dequeueReusableCellWithIdentifier("StoreCell") as StoreCell
 
         let storeName = stores[indexPath.row].title
-        var price = 0.00
-        var availability = "Call to place an order"
+        let storeID = stores[indexPath.row].id
 
-        // @todo Fix; this is a placeholder. (EW 27 May 2015)
-        for bk in selectedAvailability {
-            price = 9.99
-            availability = "On shelves now"
+        var price = 0.00
+        var availability = 0
+
+        for (hit: NSDictionary) in selectedAvailability {
+            if storeID == hit["store"] as Int {
+                price = (hit["price"] as NSString).doubleValue
+                availability = hit["available"] as Int
+            }
         }
 
         annotateStoreName(availability, storeAvailabilityIcon: cell.storeAvailabilityIcon)
@@ -49,7 +52,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         Calls the book store when the user selects it.
     */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        UIApplication.sharedApplication().openURL(NSURL(string: stores[indexPath.row].phone)!)
+        UIApplication.sharedApplication().openURL(NSURL(string: normalizePhone(stores[indexPath.row].phone))!)
     }
 
     /**
@@ -67,18 +70,27 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     /**
+        Normalizes phone numbers.
+
+        :param: phoneNumber The phone number to normalize.
+        :returns: The normalized phone number.
+    */
+    func normalizePhone(phoneNumber: String) -> String {
+        return phoneNumber.stringByReplacingOccurrencesOfString("tel", withString: "telprompt")
+    }
+
+    /**
         Normalizes book availability language.
 
         :param: text The text to normalize.
         :returns: The normalized text.
     */
-    func normalizeAvailability(text: String) -> String {
-        return text == "On shelves now" ? "Call to reserve" : "Call to place an order"
+    func normalizeAvailability(text: Int) -> String {
+        return text == 1 ? "Call to reserve" : "Call to place an order"
     }
 
     /**
         Annotates the store name to signal availability.
-        @todo Clean this up; I don't like doing all this if/else nonsense. (EW 16 Apr 2015)
 
         :param: availability The availability of the associated title.
         :param: storeAvailabilityIcon Label indicating availability.
@@ -86,8 +98,8 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         :returns: The store name annotated with an "X" (unavailable) or a check
                   mark (available).
     */
-    func annotateStoreName(availability: String, storeAvailabilityIcon: UILabel!) {
-        if availability == "On shelves now" {
+    func annotateStoreName(availability: Int, storeAvailabilityIcon: UILabel!) {
+        if availability == 1 {
             storeAvailabilityIcon.textColor = Settings().cityShelfGreen
         } else {
             storeAvailabilityIcon.textColor = UIColor.grayColor()

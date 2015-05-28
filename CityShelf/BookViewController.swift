@@ -26,7 +26,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     var selectedAuthor: String!
     var selectedCover: NSURL!
     var selectedISBN: String!
-    var selectedAvailability: Array<Book>!
+    var selectedAvailability: Array<NSDictionary>!
 
     let initialLocation: CLLocation = CLLocation(
         latitude: NSUserDefaults.standardUserDefaults().doubleForKey("Latitude"),
@@ -122,14 +122,18 @@ class BookViewController: UIViewController, UITextFieldDelegate {
                     )
                 )
 
-                // @todo Fix; this is a placeholder. (EW 27 May 2015)
-                s.availability = "On shelves now"
+                for (hit: NSDictionary) in self.selectedAvailability {
+                    if s.id == hit["store"] as Int {
+                        s.availability = hit["available"] as Int
+                        s.price = (hit["price"] as NSString).doubleValue
+                    }
+                }
 
                 self.stores.append(s)
             }
             
             self.map.addAnnotations(self.stores)
-            self.stores.sort { $0.availability < $1.availability }
+            self.stores.sort { $0.availability == $1.availability ? $0.price < $1.price : $0.availability > $1.availability }
             self.storesList.reloadData()
         }
     }
