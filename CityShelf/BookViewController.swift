@@ -113,7 +113,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
                 let long = mapData!["center"]!["longitude"]! as CLLocationDegrees
 
                 let s = Store(
-                    id: result["id"] as String,
+                    id: result["id"] as Int,
                     title: result["storeName"] as String,
                     phone: result["phone"] as String,
                     coordinate: CLLocationCoordinate2D(
