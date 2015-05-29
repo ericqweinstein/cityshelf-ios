@@ -54,6 +54,10 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
         performSegueWithIdentifier("goToSearch", sender: self)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.navigationBarHidden = true
+    }
+
     let cities = [
         "Boston",
         "Chicago",
