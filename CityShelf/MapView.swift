@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 CityShelf. All rights reserved.
 //
 
+import AddressBook
 import MapKit
 
 /// Extends the BookViewController in order to enable map annotations.
@@ -44,5 +45,20 @@ extension BookViewController: MKMapViewDelegate {
         }
 
         return nil
+    }
+
+    /**
+        Opens Apple Maps if the user clicks into the callout
+        on the map annotation.
+
+        :param: mapView The map view instance.
+        :annotationView The annotation view.
+    */
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!,
+        calloutAccessoryControlTapped control: UIControl!) {
+
+            let location = view.annotation as Store
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+            location.mapItem().openInMapsWithLaunchOptions(launchOptions)
     }
 }

@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 CityShelf. All rights reserved.
 //
 
+import AddressBook
 import MapKit
 
 /// Models a store returned by the API.
@@ -14,6 +15,7 @@ class Store: NSObject, MKAnnotation {
     let title: String
     let phone: String
     let coordinate: CLLocationCoordinate2D
+
     var availability: Int = 0 {
         willSet {
             self.availability = newValue
@@ -37,5 +39,22 @@ class Store: NSObject, MKAnnotation {
         self.coordinate = coordinate
 
         super.init()
+    }
+
+    /**
+        Creates a map item from the store instance. This allows us to open
+        the Apple Maps application if a user clicks into the callout for
+        the store on the map, providing directions.
+
+        :returns: The map item.
+    */
+    func mapItem() -> MKMapItem {
+        let addressDictionary = [String(kABPersonAddressStreetKey): title]
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDictionary)
+
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = title
+        
+        return mapItem
     }
 }
