@@ -16,11 +16,12 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cover: UIImageView!
     @IBOutlet weak var isbn: UILabel!
 
-    @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var researchProgress: UIProgressView!
 
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var storesList: UITableView!
+
+    var searchBar = UITextField()
 
     var selectedTitle: String!
     var selectedAuthor: String!
@@ -56,10 +57,6 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         configureStoreList()
     }
 
-    override func viewWillDisappear(animated: Bool) {
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
-    }
-
     /**
         Centers the map on the desired location.
 
@@ -77,8 +74,15 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         @todo Pull this out, since it's shared with ResultsViewController. (EW 24 Apr 2015)
     */
     func configureSearchBar() {
+        let cityShelfGreen = Settings().cityShelfGreen
+
+        searchBar.frame = CGRectMake(0, 0, 250, 20)
+
+        searchBar.textColor = cityShelfGreen
         searchBar.attributedPlaceholder = NSAttributedString(string: "Search again",
-            attributes:[NSForegroundColorAttributeName: Settings().cityShelfGreen])
+            attributes:[NSForegroundColorAttributeName: cityShelfGreen])
+
+        searchBar.font = UIFont(name: "CooperHewitt-Bold", size: 16)
 
         var space = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
 
@@ -86,6 +90,8 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         searchBar.leftView = space
 
         searchBar.delegate = self
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
 
         researchProgress.setProgress(0, animated: true)
     }

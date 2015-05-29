@@ -26,6 +26,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
 
     override func viewWillAppear(animated: Bool) {
+        UIApplication.sharedApplication().statusBarStyle = .Default
         navigationController?.navigationBarHidden = true
         super.viewWillAppear(animated)
     }

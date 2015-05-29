@@ -14,11 +14,11 @@ class ResultsViewController: UICollectionViewController,
                              UITextFieldDelegate {
 
     let api = SearchService()
+    var searchBar = UITextField()
 
     var results = [Book]()
     var searchResults: Array<NSDictionary>!
     var searchQuery: String!
-    var searchBar: UITextField!
     var researchProgress: UIProgressView!
 
     private let reuseIdentifier = "ResultCell"
@@ -28,10 +28,6 @@ class ResultsViewController: UICollectionViewController,
 
         super.viewDidLoad()
         showResults()
-    }
-
-    override func viewWillDisappear(animated: Bool) {
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -49,7 +45,7 @@ class ResultsViewController: UICollectionViewController,
         layout collectionViewLayout: UICollectionViewLayout!,
         sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
             // Sets gutters around cell content.
-            collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+            collectionView.contentInset = UIEdgeInsetsMake(5, 5, 5, 5)
 
             return CGSize(width: 93, height: 220)
     }
@@ -87,7 +83,6 @@ class ResultsViewController: UICollectionViewController,
                     as ResultsHeaderView
                 headerView.search.text = "You searched for \"\(searchQuery)\". Which book are you looking for?"
 
-                searchBar = headerView.searchBar
                 researchProgress = headerView.researchProgress
                 configureSearchBar()
 
@@ -161,8 +156,15 @@ class ResultsViewController: UICollectionViewController,
         @todo Pull this out, since it's shared with BookViewController. (EW 24 Apr 2015)
     */
     func configureSearchBar() {
+        let cityShelfGreen = Settings().cityShelfGreen
+
+        searchBar.frame = CGRectMake(0, 0, 250, 20)
+
+        searchBar.textColor = cityShelfGreen
         searchBar.attributedPlaceholder = NSAttributedString(string: "Search again",
-            attributes:[NSForegroundColorAttributeName: Settings().cityShelfGreen])
+            attributes:[NSForegroundColorAttributeName: cityShelfGreen])
+
+        searchBar.font = UIFont(name: "CooperHewitt-Bold", size: 16)
 
         var space = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
 
@@ -170,6 +172,8 @@ class ResultsViewController: UICollectionViewController,
         searchBar.leftView = space
 
         searchBar.delegate = self
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
 
         researchProgress.setProgress(0, animated: true)
     }
