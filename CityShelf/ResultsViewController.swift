@@ -45,7 +45,7 @@ class ResultsViewController: UICollectionViewController,
         layout collectionViewLayout: UICollectionViewLayout!,
         sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
             // Sets gutters around cell content.
-            collectionView.contentInset = UIEdgeInsetsMake(5, 5, 5, 5)
+            collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
 
             return CGSize(width: 93, height: 220)
     }

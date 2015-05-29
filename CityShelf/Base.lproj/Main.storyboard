@@ -308,7 +308,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5e2-uS-Zh3">
-                                    <rect key="frame" x="-8" y="56" width="618" height="2"/>
+                                    <rect key="frame" x="-8" y="64" width="618" height="2"/>
                                     <color key="progressTintColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="trackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </progressView>
@@ -318,11 +318,11 @@
                                 <constraint firstItem="5e2-uS-Zh3" firstAttribute="leading" secondItem="yf6-EN-PKR" secondAttribute="leadingMargin" id="8Rg-ON-5a4"/>
                                 <constraint firstItem="kbg-vJ-c5w" firstAttribute="trailing" secondItem="yf6-EN-PKR" secondAttribute="trailingMargin" id="Aka-WB-A85"/>
                                 <constraint firstItem="5e2-uS-Zh3" firstAttribute="leading" secondItem="yf6-EN-PKR" secondAttribute="leadingMargin" constant="-16" id="Ig5-Au-laz"/>
-                                <constraint firstItem="5e2-uS-Zh3" firstAttribute="top" secondItem="yf6-EN-PKR" secondAttribute="topMargin" constant="48" id="Qb4-sx-u0f"/>
+                                <constraint firstItem="5e2-uS-Zh3" firstAttribute="top" secondItem="yf6-EN-PKR" secondAttribute="topMargin" constant="56" id="Qb4-sx-u0f"/>
                                 <constraint firstItem="kbg-vJ-c5w" firstAttribute="leading" secondItem="yf6-EN-PKR" secondAttribute="leadingMargin" id="cm8-7W-dZH"/>
                                 <constraint firstItem="kbg-vJ-c5w" firstAttribute="bottom" secondItem="yf6-EN-PKR" secondAttribute="bottomMargin" id="kWf-V5-63t"/>
                                 <constraint firstAttribute="centerX" secondItem="5e2-uS-Zh3" secondAttribute="centerX" constant="-1" id="sBI-qn-bko"/>
-                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="top" secondItem="5e2-uS-Zh3" secondAttribute="bottom" constant="-2" id="uQA-tM-f9Y"/>
+                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="top" secondItem="5e2-uS-Zh3" secondAttribute="bottom" constant="-10" id="uQA-tM-f9Y"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
