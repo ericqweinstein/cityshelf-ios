@@ -22,7 +22,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func searchButtonClicked(sender: AnyObject) {
         query = searchField.text
-        api.search(api.formatQuery(query), searchProgress: searchProgress, goToResults)
+        api.search(api.formatQuery(query), searchProgress: searchProgress, callback: goToResults)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -47,9 +47,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToResults" {
-            var svc = segue.destinationViewController as ResultsViewController
+            var svc = segue.destinationViewController as! ResultsViewController
 
-            svc.searchResults = api.searchResults as Array<NSDictionary>
+            svc.searchResults = api.searchResults as! Array<NSDictionary>
             svc.searchQuery = query
         }
     }
@@ -80,7 +80,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchField.text
-        api.search(api.formatQuery(query), searchProgress: searchProgress, goToResults)
+        api.search(api.formatQuery(query), searchProgress: searchProgress, callback: goToResults)
 
         return true
     }

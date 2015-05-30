@@ -25,7 +25,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         :returns: The row (a UITableViewCell).
     */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = storesList.dequeueReusableCellWithIdentifier("StoreCell") as StoreCell
+        var cell = storesList.dequeueReusableCellWithIdentifier("StoreCell") as! StoreCell
 
         let storeName = stores[indexPath.row].title
         let storeID = stores[indexPath.row].id
@@ -34,9 +34,9 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         var availability = 0
 
         for (hit: NSDictionary) in selectedAvailability {
-            if storeID == hit["store"] as Int {
-                price = (hit["price"] as NSString).doubleValue
-                availability = hit["available"] as Int
+            if storeID == hit["store"] as! Int {
+                price = (hit["price"] as! NSString).doubleValue
+                availability = hit["available"] as! Int
             }
         }
 
@@ -66,7 +66,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
                   "Call for price," "N/A", &c).
     */
     func normalizePrice(price: Double) -> String {
-        return price > 0 ? "$" + NSString(format: "%.2f", price) : "N/A"
+        return price > 0 ? "$" + (NSString(format: "%.2f", price) as String) : "N/A"
     }
 
     /**

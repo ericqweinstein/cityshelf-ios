@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Shows the tutorial if this is the first launch of the app.
         Otherwise, skips straight to the search view.
     */
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
 
         let skipTutorial = NSUserDefaults.standardUserDefaults().boolForKey("SkipTutorial")
@@ -27,11 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = Settings().cityShelfGreen
 
         if skipTutorial {
-            var nvc = mainStoryboard.instantiateViewControllerWithIdentifier("NavigationViewController") as NavigationViewController
+            var nvc = mainStoryboard.instantiateViewControllerWithIdentifier("NavigationViewController") as! NavigationViewController
 
             self.window?.rootViewController = nvc
         } else {
-            var tutorialViewController = mainStoryboard.instantiateViewControllerWithIdentifier("TutorialViewController") as TutorialViewController
+            var tutorialViewController = mainStoryboard.instantiateViewControllerWithIdentifier("TutorialViewController") as! TutorialViewController
             self.window?.rootViewController = tutorialViewController
 
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "SkipTutorial")

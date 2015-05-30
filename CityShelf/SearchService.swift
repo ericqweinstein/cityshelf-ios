@@ -41,7 +41,7 @@ class SearchService {
             if data != nil && data.length != 0 {
                 var response = NSJSONSerialization.JSONObjectWithData(data,
                     options: NSJSONReadingOptions.MutableContainers,
-                    error: &parseError) as NSArray
+                    error: &parseError) as! NSArray
 
                 callback(response)
             }
@@ -94,7 +94,7 @@ class SearchService {
             (response) in
 
             let results = response as NSArray
-            let hits = results[0] as Dictionary<String, NSArray>
+            let hits = results[0] as! Dictionary<String, NSArray>
 
             for (isbn, availability) in hits {
                 let hit = [isbn: availability] as Dictionary
@@ -131,7 +131,7 @@ class SearchService {
         dispatch_group_enter(group)
         request("\(searchEndpoint)/stores/?latitude=\(latitude)&longitude=\(longitude)") {
             (response) in
-            returnedStores.addObjectsFromArray(response)
+            returnedStores.addObjectsFromArray(response as [AnyObject])
 
             dispatch_group_leave(group)
             dispatch_async(dispatch_get_main_queue()) {

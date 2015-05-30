@@ -41,9 +41,9 @@ class ResultsViewController: UICollectionViewController,
 
         :returns: The cell dimensions.
     */
-    func collectionView(collectionView: UICollectionView!,
-        layout collectionViewLayout: UICollectionViewLayout!,
-        sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             // Sets gutters around cell content.
             collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
 
@@ -52,7 +52,7 @@ class ResultsViewController: UICollectionViewController,
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as CoverImageCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CoverImageCell
 
         let book = coverForIndexPath(indexPath)
 
@@ -80,7 +80,7 @@ class ResultsViewController: UICollectionViewController,
                 collectionView.dequeueReusableSupplementaryViewOfKind(kind,
                     withReuseIdentifier: "ResultsHeaderView",
                     forIndexPath: indexPath)
-                    as ResultsHeaderView
+                    as! ResultsHeaderView
                 headerView.search.text = "You searched for \"\(searchQuery)\". Which book are you looking for?"
 
                 researchProgress = headerView.researchProgress
@@ -94,9 +94,9 @@ class ResultsViewController: UICollectionViewController,
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToTitle" {
-            var bk = segue.destinationViewController as BookViewController
+            var bk = segue.destinationViewController as! BookViewController
 
-            let cell = sender as CoverImageCell
+            let cell = sender as! CoverImageCell
             let indexPath = self.collectionView!.indexPathForCell(cell)!
 
             let book = results[indexPath.item]
@@ -105,7 +105,7 @@ class ResultsViewController: UICollectionViewController,
             bk.selectedAuthor = book.author
             bk.selectedCover = book.cover
             bk.selectedISBN = book.isbn
-            bk.selectedAvailability = book.availability as Array<NSDictionary>
+            bk.selectedAvailability = book.availability as! Array<NSDictionary>
         }
     }
 
@@ -125,15 +125,15 @@ class ResultsViewController: UICollectionViewController,
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 
         for (result: NSDictionary) in searchResults {
-            let isbn = result.allKeys[0] as String
-            let first = result[isbn] as NSArray
+            let isbn = result.allKeys[0] as! String
+            let first = result[isbn] as! NSArray
 
             let book = Book(
                 isbn: isbn,
-                title: first[0]["title"] as String,
-                author: first[0]["author"] as String,
-                cover: NSURL(string: first[0]["img"] as String)!,
-                availability: result[isbn] as NSArray
+                title: first[0]["title"] as! String,
+                author: first[0]["author"] as! String,
+                cover: NSURL(string: first[0]["img"] as! String)!,
+                availability: result[isbn] as! NSArray
             )
 
             self.results.append(book)
@@ -147,7 +147,7 @@ class ResultsViewController: UICollectionViewController,
         Updates search results when we search again.
     */
     func updateSearchResults() {
-        searchResults = api.searchResults as Array<NSDictionary>
+        searchResults = api.searchResults as! Array<NSDictionary>
         showResults()
     }
 
@@ -189,7 +189,7 @@ class ResultsViewController: UICollectionViewController,
         searchQuery = searchBar.text
         searchResults = []
         results = []
-        api.search(api.formatQuery(searchQuery), searchProgress: researchProgress, updateSearchResults)
+        api.search(api.formatQuery(searchQuery), searchProgress: researchProgress, callback: updateSearchResults)
 
         return true
     }

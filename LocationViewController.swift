@@ -111,7 +111,7 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
     */
     func locationManager(manager: CLLocationManager!, didUpdateLocations location: [AnyObject]!) {
         var locationArray = location as NSArray
-        var locationObj = locationArray.lastObject as CLLocation
+        var locationObj = locationArray.lastObject as! CLLocation
         var coord = locationObj.coordinate
 
         NSUserDefaults.standardUserDefaults().setDouble(coord.latitude, forKey: "Latitude")
@@ -130,7 +130,7 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
     */
     func locationManager(manager: CLLocationManager!,
         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-            if (status == CLAuthorizationStatus.Authorized) {
+            if (status == CLAuthorizationStatus.AuthorizedWhenInUse) {
                 locationManager.startUpdatingLocation()
             }
     }

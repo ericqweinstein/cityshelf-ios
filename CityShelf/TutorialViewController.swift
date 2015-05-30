@@ -35,14 +35,14 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
         Creates the tutorial view controller.
     */
     func createTutorialViewController() {
-        let tutorialController = self.storyboard!.instantiateViewControllerWithIdentifier("TutorialController") as UIPageViewController
+        let tutorialController = self.storyboard!.instantiateViewControllerWithIdentifier("TutorialController") as! UIPageViewController
         tutorialController.dataSource = self
 
         if instructions.count > 0 {
             let firstController = getTutorialController(0)!
 
             let startingViewControllers: NSArray = [firstController]
-            tutorialController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+            tutorialController.setViewControllers(startingViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         }
 
         tutorialViewController = tutorialController
@@ -66,7 +66,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
         Gets the current page view controller for the tutorial.
     */
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let tutorialController = viewController as TutorialItemController
+        let tutorialController = viewController as! TutorialItemController
 
         if tutorialController.itemIndex > 0 {
             return getTutorialController(tutorialController.itemIndex - 1)
@@ -79,7 +79,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
         Gets the next page view controller for the tutorial.
     */
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let tutorialController = viewController as TutorialItemController
+        let tutorialController = viewController as! TutorialItemController
 
         if tutorialController.itemIndex + 1 < instructions.count {
             return getTutorialController(tutorialController.itemIndex + 1)
@@ -95,7 +95,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
     */
     func getTutorialController(itemIndex: Int) -> TutorialItemController? {
         if itemIndex < instructions.count {
-            let tutorialItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemController") as TutorialItemController
+            let tutorialItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemController") as! TutorialItemController
             tutorialItemController.itemIndex = itemIndex
             tutorialItemController.instructionText = instructions[itemIndex]
             return tutorialItemController

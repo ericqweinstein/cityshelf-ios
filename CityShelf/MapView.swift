@@ -38,7 +38,7 @@ extension BookViewController: MKMapViewDelegate {
                     view.pinColor = MKPinAnnotationColor.Red
                 }
 
-                view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as UIView
+                view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
             }
 
             return view
@@ -57,7 +57,7 @@ extension BookViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!,
         calloutAccessoryControlTapped control: UIControl!) {
 
-            let location = view.annotation as Store
+            let location = view.annotation as! Store
             let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
             location.mapItem().openInMapsWithLaunchOptions(launchOptions)
     }

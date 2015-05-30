@@ -119,13 +119,13 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         api.stores() { (results) -> () in
             for result in results {
                 let mapData = result["map"] as? Dictionary<String, AnyObject>
-                let lat = mapData!["center"]!["latitude"]! as CLLocationDegrees
-                let long = mapData!["center"]!["longitude"]! as CLLocationDegrees
+                let lat = mapData!["center"]!["latitude"]! as! CLLocationDegrees
+                let long = mapData!["center"]!["longitude"]! as! CLLocationDegrees
 
                 let s = Store(
-                    id: result["id"] as Int,
-                    title: result["storeName"] as String,
-                    phone: result["phone"] as String,
+                    id: result["id"] as! Int,
+                    title: result["storeName"] as! String,
+                    phone: result["phone"] as! String,
                     coordinate: CLLocationCoordinate2D(
                         latitude: lat,
                         longitude: long
@@ -133,9 +133,9 @@ class BookViewController: UIViewController, UITextFieldDelegate {
                 )
 
                 for (hit: NSDictionary) in self.selectedAvailability {
-                    if s.id == hit["store"] as Int {
-                        s.availability = hit["available"] as Int
-                        s.price = (hit["price"] as NSString).doubleValue
+                    if s.id == hit["store"] as! Int {
+                        s.availability = hit["available"] as! Int
+                        s.price = (hit["price"] as! NSString).doubleValue
                     }
                 }
 
@@ -165,7 +165,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         query = searchBar.text
-        api.search(api.formatQuery(query), searchProgress: researchProgress, searchAgain)
+        api.search(api.formatQuery(query), searchProgress: researchProgress, callback: searchAgain)
 
         return true
     }
@@ -175,9 +175,9 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "searchAgain" {
-            var svc = segue.destinationViewController as ResultsViewController
+            var svc = segue.destinationViewController as! ResultsViewController
 
-            svc.searchResults = api.searchResults as Array<NSDictionary>
+            svc.searchResults = api.searchResults as! Array<NSDictionary>
             svc.searchQuery = query
         }
     }
