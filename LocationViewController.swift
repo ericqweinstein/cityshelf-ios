@@ -132,19 +132,6 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
             if (status == CLAuthorizationStatus.Authorized) {
                 locationManager.startUpdatingLocation()
-            } else {
-                let alert = UIAlertController(
-                    title: "CityShelf is not using your location.",
-                    message: "You can enable geolocation in your iPhone settings.",
-                    preferredStyle: UIAlertControllerStyle.Alert
-                )
-
-                alert.addAction(UIAlertAction(
-                    title: "I'll pick my city",
-                    style: UIAlertActionStyle.Default,
-                    handler: nil))
-
-                self.presentViewController(alert, animated: true, completion: nil)
             }
     }
 
