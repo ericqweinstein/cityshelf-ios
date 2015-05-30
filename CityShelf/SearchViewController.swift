@@ -36,6 +36,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         if (navigationController?.topViewController != self) {
             navigationController?.navigationBarHidden = false
         }
+
+        searchProgress.setProgress(0, animated: true)
+
         super.viewWillDisappear(animated)
     }
 
@@ -86,6 +89,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         Segues to the search results view.
     */
     func goToResults() {
-        performSegueWithIdentifier("goToResults", sender: nil)
+        performSegueWithIdentifier("goToResults", sender: self)
     }
 }

@@ -99,9 +99,8 @@ class SearchService {
             for (isbn, availability) in hits {
                 let hit = [isbn: availability] as Dictionary
                 books.addObject(hit)
+                completeness += 0.70 / Float(hits.count)
             }
-
-            completeness = Float(1)
 
             dispatch_group_leave(group)
 
