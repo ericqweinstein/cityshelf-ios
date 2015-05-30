@@ -46,7 +46,6 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
             regionRadius = 8000
         }
 
-        NSUserDefaults.standardUserDefaults().setValue(selectedCity, forKey: "City")
         NSUserDefaults.standardUserDefaults().setDouble(latitude, forKey: "Latitude")
         NSUserDefaults.standardUserDefaults().setDouble(longitude, forKey: "Longitude")
         NSUserDefaults.standardUserDefaults().setInteger(regionRadius, forKey: "RegionRadius")
