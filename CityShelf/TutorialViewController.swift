@@ -18,6 +18,12 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
         "CityShelf works best when we know where to look."
     ]
 
+    private let tutorialImages = [
+        "cs_intro_01.png",
+        "cs_intro_02.png",
+        "cs_intro_03.png"
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         createTutorialViewController()
@@ -98,6 +104,7 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
             let tutorialItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemController") as! TutorialItemController
             tutorialItemController.itemIndex = itemIndex
             tutorialItemController.instructionText = instructions[itemIndex]
+            tutorialItemController.tutorialImageText = tutorialImages[itemIndex]
             return tutorialItemController
         }
 

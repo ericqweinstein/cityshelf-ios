@@ -18,6 +18,9 @@
 		B02AFA401ADB70B500BAF932 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA3C1ADB6C7300BAF932 /* Store.swift */; };
 		B02AFA421ADB70C300BAF932 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA411ADB70C300BAF932 /* StoreTests.swift */; };
 		B02AFA461ADCB62300BAF932 /* StoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02AFA451ADCB62300BAF932 /* StoresView.swift */; };
+		B036109C1B1FBF0B001E0C8E /* cs_intro_01.png in Resources */ = {isa = PBXBuildFile; fileRef = B03610991B1FBF0B001E0C8E /* cs_intro_01.png */; };
+		B036109D1B1FBF0B001E0C8E /* cs_intro_02.png in Resources */ = {isa = PBXBuildFile; fileRef = B036109A1B1FBF0B001E0C8E /* cs_intro_02.png */; };
+		B036109E1B1FBF0B001E0C8E /* cs_intro_03.png in Resources */ = {isa = PBXBuildFile; fileRef = B036109B1B1FBF0B001E0C8E /* cs_intro_03.png */; };
 		B03D5A941B0BF69400742FE1 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03D5A931B0BF69400742FE1 /* LocationViewController.swift */; };
 		B06FB97E1A80620B00AEAB8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06FB97D1A80620B00AEAB8F /* AppDelegate.swift */; };
 		B06FB9871A80620B00AEAB8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9851A80620B00AEAB8F /* Main.storyboard */; };
@@ -70,6 +73,9 @@
 		B02AFA3E1ADB6E1800BAF932 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B02AFA411ADB70C300BAF932 /* StoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
 		B02AFA451ADCB62300BAF932 /* StoresView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresView.swift; sourceTree = "<group>"; };
+		B03610991B1FBF0B001E0C8E /* cs_intro_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cs_intro_01.png; sourceTree = "<group>"; };
+		B036109A1B1FBF0B001E0C8E /* cs_intro_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cs_intro_02.png; sourceTree = "<group>"; };
+		B036109B1B1FBF0B001E0C8E /* cs_intro_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cs_intro_03.png; sourceTree = "<group>"; };
 		B03D5A931B0BF69400742FE1 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = ../LocationViewController.swift; sourceTree = "<group>"; };
 		B06FB9781A80620B00AEAB8F /* CityShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06FB97C1A80620B00AEAB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -207,6 +213,9 @@
 		B06FB9A31A8062B500AEAB8F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B03610991B1FBF0B001E0C8E /* cs_intro_01.png */,
+				B036109A1B1FBF0B001E0C8E /* cs_intro_02.png */,
+				B036109B1B1FBF0B001E0C8E /* cs_intro_03.png */,
 				B0820EBB1AB67CCE0015F0DB /* search.png */,
 				B009C5221A80630D00C43439 /* CityShelf_logo.png */,
 			);
@@ -316,8 +325,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B009C5231A80630D00C43439 /* CityShelf_logo.png in Resources */,
+				B036109E1B1FBF0B001E0C8E /* cs_intro_03.png in Resources */,
 				B0820EAA1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf in Resources */,
 				B0820EAF1AB4AE1F0015F0DB /* CooperHewitt-Light.otf in Resources */,
+				B036109C1B1FBF0B001E0C8E /* cs_intro_01.png in Resources */,
 				B0820EB11AB4AE1F0015F0DB /* CooperHewitt-Medium.otf in Resources */,
 				B0820EA91AB4AE1F0015F0DB /* CooperHewitt-Bold.otf in Resources */,
 				B0820EB41AB4AE1F0015F0DB /* CooperHewitt-SemiboldItalic.otf in Resources */,
@@ -333,6 +344,7 @@
 				B0820EB51AB4AE1F0015F0DB /* CooperHewitt-Thin.otf in Resources */,
 				B0820EB21AB4AE1F0015F0DB /* CooperHewitt-MediumItalic.otf in Resources */,
 				B06FB9891A80620B00AEAB8F /* Images.xcassets in Resources */,
+				B036109D1B1FBF0B001E0C8E /* cs_intro_02.png in Resources */,
 				B0820EB01AB4AE1F0015F0DB /* CooperHewitt-LightItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

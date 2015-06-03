@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -75,7 +75,7 @@
                                 <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bk-VF-I6E" customClass="TutorialView" customModule="CityShelf" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bk-VF-I6E" customClass="UIImageView">
                                 <rect key="frame" x="138" y="235" width="325" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -91,21 +91,29 @@
                                     <action selector="gotIt:" destination="GrU-7G-y0y" eventType="touchUpInside" id="dhd-up-6us"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U19-OQ-tX9">
+                                <rect key="frame" x="138" y="73" width="325" height="507"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zCU-A1-a9V" firstAttribute="top" secondItem="FLw-sS-GJc" secondAttribute="bottom" constant="45" id="3eG-AK-9pt"/>
                             <constraint firstItem="qll-jX-W64" firstAttribute="top" secondItem="4Bk-VF-I6E" secondAttribute="bottom" constant="65" id="8kX-Dd-pN6"/>
                             <constraint firstAttribute="centerX" secondItem="M7i-qW-Jga" secondAttribute="centerX" constant="1" id="BvJ-ix-HQO"/>
+                            <constraint firstItem="U19-OQ-tX9" firstAttribute="trailing" secondItem="4Bk-VF-I6E" secondAttribute="trailing" id="CLQ-Hy-oaW"/>
                             <constraint firstItem="M7i-qW-Jga" firstAttribute="top" secondItem="FLw-sS-GJc" secondAttribute="bottom" constant="8" id="HgH-hJ-mKX"/>
+                            <constraint firstItem="U19-OQ-tX9" firstAttribute="leading" secondItem="4Bk-VF-I6E" secondAttribute="leading" id="QVX-TQ-zPq"/>
                             <constraint firstItem="zCU-A1-a9V" firstAttribute="leading" secondItem="0Vh-y7-3aD" secondAttribute="leadingMargin" id="bct-24-Pub"/>
                             <constraint firstItem="4Bk-VF-I6E" firstAttribute="top" secondItem="zCU-A1-a9V" secondAttribute="bottom" constant="-57" id="dTU-M5-XLg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zCU-A1-a9V" secondAttribute="trailing" id="hVT-TQ-oMD"/>
                             <constraint firstAttribute="centerX" secondItem="4Bk-VF-I6E" secondAttribute="centerX" id="igl-he-Itb"/>
+                            <constraint firstAttribute="bottom" secondItem="U19-OQ-tX9" secondAttribute="bottom" constant="20" symbolic="YES" id="jjO-MT-771"/>
+                            <constraint firstItem="U19-OQ-tX9" firstAttribute="top" secondItem="M7i-qW-Jga" secondAttribute="bottom" constant="15" id="tq0-Jg-qdz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="instruction" destination="zCU-A1-a9V" id="LoB-cy-Sm4"/>
+                        <outlet property="tutorialImage" destination="U19-OQ-tX9" id="eYt-5e-MyA"/>
                         <segue destination="jE6-M9-Fhl" kind="show" identifier="goToLocation" id="eDL-eH-V7T"/>
                     </connections>
                 </viewController>
@@ -134,7 +142,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick your city!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPi-gl-1dN">
                                 <rect key="frame" x="246" y="85" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oj-DV-Nki">
@@ -277,13 +285,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qh2-xd-Dca">
                                             <rect key="frame" x="0.0" y="148" width="93" height="38"/>
                                             <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bd-dN-smA">
                                             <rect key="frame" x="0.0" y="188" width="93" height="21"/>
                                             <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -304,7 +312,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbg-vJ-c5w">
                                     <rect key="frame" x="8" y="56" width="584" height="81"/>
                                     <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="15"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5e2-uS-Zh3">
@@ -370,7 +378,7 @@
                                     <constraint firstAttribute="height" constant="39" id="i0a-aV-pT4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-Ck-LRd">
@@ -379,7 +387,7 @@
                                     <constraint firstAttribute="height" constant="39" id="WgP-RH-Q1z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-kE-oUI">
@@ -391,7 +399,7 @@
                                     <constraint firstAttribute="height" constant="39" id="kIh-4T-4le"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9Eu-dV-dKP">
@@ -414,7 +422,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="n6U-zn-iOs"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◉" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4E-RF-RAJ">
@@ -423,7 +431,7 @@
                                                         <constraint firstAttribute="width" constant="22" id="I7j-dt-8Sc"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Ga-cjk">
@@ -432,7 +440,7 @@
                                                         <constraint firstAttribute="width" constant="120" id="Fn6-IY-YF1"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSO-Dl-VP7">
@@ -441,7 +449,7 @@
                                                         <constraint firstAttribute="width" constant="120" id="gHG-sL-i60"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
