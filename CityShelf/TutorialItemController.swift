@@ -12,10 +12,13 @@ import UIKit
 class TutorialItemController: UIViewController {
     @IBOutlet weak var instruction: UITextView!
     @IBOutlet weak var tutorialImage: UIImageView!
+    @IBOutlet weak var distanceToTop: NSLayoutConstraint!
 
     @IBAction func gotIt(sender: UIButton) {
         performSegueWithIdentifier("goToLocation", sender: self)
     }
+
+    var offset: CGFloat = 20
 
     var itemIndex: Int = 0
 
@@ -42,5 +45,13 @@ class TutorialItemController: UIViewController {
         tutorialImage!.image = UIImage(named: tutorialImageText)
 
         tutorialImage.contentMode = UIViewContentMode.ScaleAspectFit
+    }
+
+    override func viewWillLayoutSubviews() {
+        if topLayoutGuide.length == 0 {
+            distanceToTop.constant = offset
+        } else {
+            distanceToTop.constant = 0
+        }
     }
 }

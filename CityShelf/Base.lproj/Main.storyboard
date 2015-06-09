@@ -113,6 +113,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="distanceToTop" destination="ajb-se-9aY" id="Fed-xS-wqD"/>
                         <outlet property="instruction" destination="zCU-A1-a9V" id="LoB-cy-Sm4"/>
                         <outlet property="tutorialImage" destination="U19-OQ-tX9" id="eYt-5e-MyA"/>
                         <segue destination="jE6-M9-Fhl" kind="show" identifier="goToLocation" id="eDL-eH-V7T"/>
