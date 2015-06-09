@@ -14,8 +14,8 @@ class TutorialViewController: UIViewController, UIPageViewControllerDataSource {
 
     private let instructions = [
         "Go local for books!\nCityShelf makes it easy.",
-        "Just type in the title and we'll show you which indie bookstores in your neighborhood have it in stock.",
-        "CityShelf works best when we know where to look."
+        "Tell us the title you're looking for.",
+        "We'll show you which local bookstores have it in stock."
     ]
 
     private let tutorialImages = [

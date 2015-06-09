@@ -82,33 +82,34 @@
                                     <constraint firstAttribute="width" constant="325" id="Bri-k9-UoS"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7i-qW-Jga">
-                                <rect key="frame" x="266" y="28" width="66" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U19-OQ-tX9">
+                                <rect key="frame" x="138" y="73" width="325" height="469"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgi-tv-C37">
+                                <rect key="frame" x="267" y="550" width="66" height="30"/>
                                 <state key="normal" title="Skip intro">
+                                    <color key="titleColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="gotIt:" destination="GrU-7G-y0y" eventType="touchUpInside" id="dhd-up-6us"/>
+                                    <action selector="gotIt:" destination="GrU-7G-y0y" eventType="touchUpInside" id="R3W-xC-xPn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U19-OQ-tX9">
-                                <rect key="frame" x="138" y="73" width="325" height="507"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zCU-A1-a9V" firstAttribute="top" secondItem="FLw-sS-GJc" secondAttribute="bottom" constant="45" id="3eG-AK-9pt"/>
                             <constraint firstItem="qll-jX-W64" firstAttribute="top" secondItem="4Bk-VF-I6E" secondAttribute="bottom" constant="65" id="8kX-Dd-pN6"/>
-                            <constraint firstAttribute="centerX" secondItem="M7i-qW-Jga" secondAttribute="centerX" constant="1" id="BvJ-ix-HQO"/>
                             <constraint firstItem="U19-OQ-tX9" firstAttribute="trailing" secondItem="4Bk-VF-I6E" secondAttribute="trailing" id="CLQ-Hy-oaW"/>
-                            <constraint firstItem="M7i-qW-Jga" firstAttribute="top" secondItem="FLw-sS-GJc" secondAttribute="bottom" constant="8" id="HgH-hJ-mKX"/>
                             <constraint firstItem="U19-OQ-tX9" firstAttribute="leading" secondItem="4Bk-VF-I6E" secondAttribute="leading" id="QVX-TQ-zPq"/>
+                            <constraint firstItem="Zgi-tv-C37" firstAttribute="centerX" secondItem="4Bk-VF-I6E" secondAttribute="centerX" id="Zlb-uQ-sct"/>
+                            <constraint firstItem="U19-OQ-tX9" firstAttribute="top" secondItem="FLw-sS-GJc" secondAttribute="bottom" constant="53" id="ajb-se-9aY"/>
                             <constraint firstItem="zCU-A1-a9V" firstAttribute="leading" secondItem="0Vh-y7-3aD" secondAttribute="leadingMargin" id="bct-24-Pub"/>
                             <constraint firstItem="4Bk-VF-I6E" firstAttribute="top" secondItem="zCU-A1-a9V" secondAttribute="bottom" constant="-57" id="dTU-M5-XLg"/>
+                            <constraint firstItem="Zgi-tv-C37" firstAttribute="top" secondItem="U19-OQ-tX9" secondAttribute="bottom" constant="8" symbolic="YES" id="eZL-ju-Vp2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zCU-A1-a9V" secondAttribute="trailing" id="hVT-TQ-oMD"/>
                             <constraint firstAttribute="centerX" secondItem="4Bk-VF-I6E" secondAttribute="centerX" id="igl-he-Itb"/>
-                            <constraint firstAttribute="bottom" secondItem="U19-OQ-tX9" secondAttribute="bottom" constant="20" symbolic="YES" id="jjO-MT-771"/>
-                            <constraint firstItem="U19-OQ-tX9" firstAttribute="top" secondItem="M7i-qW-Jga" secondAttribute="bottom" constant="15" id="tq0-Jg-qdz"/>
+                            <constraint firstAttribute="bottom" secondItem="U19-OQ-tX9" secondAttribute="bottom" constant="58" id="jjO-MT-771"/>
                         </constraints>
                     </view>
                     <connections>
@@ -566,7 +567,7 @@
         <image name="search.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6vS-gD-An9"/>
-        <segue reference="eDL-eH-V7T"/>
+        <segue reference="mXb-Vk-aNY"/>
+        <segue reference="LmP-rB-nwG"/>
     </inferredMetricsTieBreakers>
 </document>

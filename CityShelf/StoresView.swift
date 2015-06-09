@@ -102,7 +102,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         if availability == 1 {
             storeAvailabilityIcon.textColor = Settings().cityShelfGreen
         } else {
-            storeAvailabilityIcon.textColor = UIColor.grayColor()
+            storeAvailabilityIcon.textColor = UIColor.redColor()
         }
     }
 }

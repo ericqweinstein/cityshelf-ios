@@ -13,7 +13,7 @@ class TutorialItemController: UIViewController {
     @IBOutlet weak var instruction: UITextView!
     @IBOutlet weak var tutorialImage: UIImageView!
 
-    @IBAction func gotIt(sender: AnyObject) {
+    @IBAction func gotIt(sender: UIButton) {
         performSegueWithIdentifier("goToLocation", sender: self)
     }
 
