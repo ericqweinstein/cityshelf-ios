@@ -102,10 +102,12 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     func configureBook() {
         bookTitle.text = selectedTitle
         author.text = selectedAuthor
-        isbn.text = selectedISBN
+        isbn.text = "ISBN: \(selectedISBN)"
 
         if let coverData = NSData(contentsOfURL: selectedCover) {
             cover.image = UIImage(data: coverData)
+        } else {
+            cover.image = UIImage(named: "default_book.png")
         }
     }
 

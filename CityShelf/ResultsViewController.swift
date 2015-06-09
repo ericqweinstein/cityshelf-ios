@@ -64,10 +64,14 @@ class ResultsViewController: UICollectionViewController,
         if data != nil {
             let image = UIImage(data: data!)
             cell.imageView?.image = image
-            cell.title.text = book.title
-            cell.author.text = book.author
+        } else {
+            let image = UIImage(named: "default_book.png")
+            cell.imageView?.image = image
         }
-        
+
+        cell.title.text = book.title
+        cell.author.text = book.author
+
         return cell
     }
 
