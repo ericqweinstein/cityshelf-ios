@@ -58,19 +58,23 @@ class ResultsViewController: UICollectionViewController,
 
         cell.backgroundColor = UIColor.whiteColor()
 
-        let imageLink = book.cover
-        let data = NSData(contentsOfURL: imageLink)
+        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.value), 0)) {
+            let imageLink = book.cover
+            let data = NSData(contentsOfURL: imageLink)
 
-        if data != nil {
-            let image = UIImage(data: data!)
-            cell.imageView?.image = image
-        } else {
-            let image = UIImage(named: "default_book.png")
-            cell.imageView?.image = image
+            dispatch_async(dispatch_get_main_queue()) {
+                if data != nil {
+                    let image = UIImage(data: data!)
+                    cell.imageView?.image = image
+                } else {
+                    let image = UIImage(named: "default_book.png")
+                    cell.imageView?.image = image
+                }
+
+                cell.title.text = book.title
+                cell.author.text = book.author
+            }
         }
-
-        cell.title.text = book.title
-        cell.author.text = book.author
 
         return cell
     }
