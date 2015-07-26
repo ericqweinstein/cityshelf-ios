@@ -148,7 +148,6 @@ class ResultsViewController: UICollectionViewController,
             self.results.append(book)
         }
 
-        collectionView?.reloadData()
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
 
