@@ -85,7 +85,12 @@ class ResultsViewController: UICollectionViewController,
                     withReuseIdentifier: "ResultsHeaderView",
                     forIndexPath: indexPath)
                     as! ResultsHeaderView
-                headerView.search.text = "You searched for \"\(searchQuery)\". Which book are you looking for?"
+
+                let headerText = "You searched for \"\(searchQuery)\".\nWhich book are you looking for?"
+                let underlineAttribute = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
+                let underlinedHeaderText = NSAttributedString(string: headerText, attributes: underlineAttribute)
+
+                headerView.search.attributedText = underlinedHeaderText
 
                 researchProgress = headerView.researchProgress
                 configureSearchBar()
