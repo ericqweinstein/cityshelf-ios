@@ -132,19 +132,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tiC-pY-YbG">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiC-pY-YbG">
                                 <rect key="frame" x="0.0" y="149" width="600" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="ZST-Zy-9KI"/>
                                 </constraints>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pick your city!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPi-gl-1dN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick your city!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPi-gl-1dN">
                                 <rect key="frame" x="246" y="85" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oj-DV-Nki">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oj-DV-Nki">
                                 <rect key="frame" x="282" y="357" width="37" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -318,12 +318,6 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="145"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbg-vJ-c5w">
-                                    <rect key="frame" x="8" y="60" width="584" height="77"/>
-                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="15"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5e2-uS-Zh3">
                                     <rect key="frame" x="-8" y="64" width="618" height="6"/>
                                     <constraints>
@@ -339,6 +333,12 @@
                                         </mask>
                                     </variation>
                                 </progressView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbg-vJ-c5w">
+                                    <rect key="frame" x="8" y="68" width="584" height="77"/>
+                                    <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="21"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="5e2-uS-Zh3" firstAttribute="trailing" secondItem="yf6-EN-PKR" secondAttribute="trailingMargin" id="7bA-CA-2UG"/>
@@ -347,9 +347,9 @@
                                 <constraint firstItem="5e2-uS-Zh3" firstAttribute="leading" secondItem="yf6-EN-PKR" secondAttribute="leadingMargin" constant="-16" id="Ig5-Au-laz"/>
                                 <constraint firstItem="5e2-uS-Zh3" firstAttribute="top" secondItem="yf6-EN-PKR" secondAttribute="topMargin" constant="56" id="Qb4-sx-u0f"/>
                                 <constraint firstItem="kbg-vJ-c5w" firstAttribute="leading" secondItem="yf6-EN-PKR" secondAttribute="leadingMargin" id="cm8-7W-dZH"/>
-                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="bottom" secondItem="yf6-EN-PKR" secondAttribute="bottomMargin" id="kWf-V5-63t"/>
+                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="bottom" secondItem="yf6-EN-PKR" secondAttribute="bottomMargin" constant="8" id="kWf-V5-63t"/>
                                 <constraint firstAttribute="centerX" secondItem="5e2-uS-Zh3" secondAttribute="centerX" constant="-1" id="sBI-qn-bko"/>
-                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="top" secondItem="5e2-uS-Zh3" secondAttribute="bottom" constant="-10" id="uQA-tM-f9Y"/>
+                                <constraint firstItem="kbg-vJ-c5w" firstAttribute="top" secondItem="5e2-uS-Zh3" secondAttribute="bottom" constant="-2" id="uQA-tM-f9Y"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">

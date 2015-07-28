@@ -90,9 +90,14 @@ class ResultsViewController: UICollectionViewController,
                     forIndexPath: indexPath)
                     as! ResultsHeaderView
 
-                let headerText = "You searched for \"\(searchQuery)\".\nWhich book are you looking for?"
+                let headerText = "Which one of these books are you looking for?"
                 let underlineAttribute = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
-                let underlinedHeaderText = NSAttributedString(string: headerText, attributes: underlineAttribute)
+
+                var paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = 10
+
+                var underlinedHeaderText = NSMutableAttributedString(string: headerText, attributes: underlineAttribute)
+                underlinedHeaderText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, underlinedHeaderText.length))
 
                 headerView.search.attributedText = underlinedHeaderText
 
@@ -186,9 +191,27 @@ class ResultsViewController: UICollectionViewController,
 
         searchBar.delegate = self
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
+        navigationItem.titleView = searchBar
+
+        let magnifyingGlass = UIButton()
+        magnifyingGlass.setBackgroundImage(UIImage(named: "search_icn_green.png"), forState: .Normal)
+        magnifyingGlass.frame = CGRectMake(15, -50, 50, 50)
+        magnifyingGlass.addTarget(self, action: "newSearch", forControlEvents: .TouchUpInside)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: magnifyingGlass)
 
         researchProgress.setProgress(0, animated: true)
+    }
+
+    /**
+        Works as advertised.
+        @todo Pull this out, since it's shared with BookViewController. (EW 27 Jul 2015)
+    */
+    func newSearch() {
+        searchQuery = searchBar.text
+        searchResults = []
+        results = []
+        api.search(api.formatQuery(searchQuery), searchProgress: researchProgress, callback: updateSearchResults)
     }
 
     /**
@@ -199,10 +222,7 @@ class ResultsViewController: UICollectionViewController,
         :returns: Boolean true.
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        searchQuery = searchBar.text
-        searchResults = []
-        results = []
-        api.search(api.formatQuery(searchQuery), searchProgress: researchProgress, callback: updateSearchResults)
+        newSearch()
 
         return true
     }

@@ -91,7 +91,14 @@ class BookViewController: UIViewController, UITextFieldDelegate {
 
         searchBar.delegate = self
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
+        navigationItem.titleView = searchBar
+
+        let magnifyingGlass = UIButton()
+        magnifyingGlass.setBackgroundImage(UIImage(named: "search_icn_green.png"), forState: .Normal)
+        magnifyingGlass.frame = CGRectMake(15, -50, 50, 50)
+        magnifyingGlass.addTarget(self, action: "newSearch", forControlEvents: .TouchUpInside)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: magnifyingGlass)
 
         researchProgress.setProgress(0, animated: true)
     }
@@ -159,6 +166,14 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     }
 
     /**
+        Works as advertised.
+    */
+    func newSearch() {
+        query = searchBar.text
+        api.search(api.formatQuery(query), searchProgress: researchProgress, callback: searchAgain)
+    }
+
+    /**
         Sets the search text if the return key is
         pressed rather than the search button.
 
@@ -166,8 +181,7 @@ class BookViewController: UIViewController, UITextFieldDelegate {
         :returns: Boolean true.
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        query = searchBar.text
-        api.search(api.formatQuery(query), searchProgress: researchProgress, callback: searchAgain)
+        newSearch()
 
         return true
     }
