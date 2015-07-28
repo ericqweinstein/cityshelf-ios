@@ -14,6 +14,6 @@ class NavigationViewController: UINavigationController, UISearchBarDelegate {
     // negative offset is a common solution to removing the text
     // on a navigation controller's back button. (EW 28 May 2015)
     override func viewWillAppear(animated: Bool) {
-        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-100, 0), forBarMetrics: UIBarMetrics.Default)
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-100, 0), forBarMetrics: .Default)
     }
 }

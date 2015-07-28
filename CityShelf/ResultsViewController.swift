@@ -161,6 +161,7 @@ class ResultsViewController: UICollectionViewController,
     func updateSearchResults() {
         searchResults = api.searchResults as! Array<NSDictionary>
         showResults()
+        self.collectionView?.reloadData()
     }
 
     /**
