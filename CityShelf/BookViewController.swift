@@ -51,6 +51,10 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
 
+        let doneSearching = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        doneSearching.numberOfTapsRequired = 2
+        view.addGestureRecognizer(doneSearching)
+
         configureSearchBar()
         configureBook()
         configureMap()
@@ -88,6 +92,8 @@ class BookViewController: UIViewController, UITextFieldDelegate {
 
         searchBar.leftViewMode = UITextFieldViewMode.Always
         searchBar.leftView = space
+
+        searchBar.returnKeyType = UIReturnKeyType.Search
 
         searchBar.delegate = self
 
@@ -203,5 +209,12 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     */
     func searchAgain() {
         performSegueWithIdentifier("searchAgain", sender: nil)
+    }
+
+    /**
+        Dismisses the keyboard if the user is done typing but does not want to search.
+    */
+    func dismissKeyboard() {
+        searchBar.resignFirstResponder()
     }
 }

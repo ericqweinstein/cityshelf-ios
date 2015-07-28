@@ -26,6 +26,10 @@ class ResultsViewController: UICollectionViewController,
     override func viewDidLoad() {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
 
+        let doneSearching = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        doneSearching.numberOfTapsRequired = 2
+        view.addGestureRecognizer(doneSearching)
+
         super.viewDidLoad()
         showResults()
     }
@@ -189,6 +193,8 @@ class ResultsViewController: UICollectionViewController,
         searchBar.leftViewMode = UITextFieldViewMode.Always
         searchBar.leftView = space
 
+        searchBar.returnKeyType = UIReturnKeyType.Search
+
         searchBar.delegate = self
 
         navigationItem.titleView = searchBar
@@ -225,5 +231,12 @@ class ResultsViewController: UICollectionViewController,
         newSearch()
 
         return true
+    }
+
+    /**
+        Dismisses the keyboard if the user is done typing but does not want to search.
+    */
+    func dismissKeyboard() {
+        searchBar.resignFirstResponder()
     }
 }
