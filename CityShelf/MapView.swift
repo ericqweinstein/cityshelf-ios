@@ -8,9 +8,10 @@
 
 import AddressBook
 import MapKit
+import CoreLocation
 
 /// Extends the BookViewController in order to enable map annotations.
-extension BookViewController: MKMapViewDelegate {
+extension BookViewController: MKMapViewDelegate, CLLocationManagerDelegate {
     /**
         Allows us to annotate our map view with pins.
 
@@ -41,6 +42,12 @@ extension BookViewController: MKMapViewDelegate {
                 view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
             }
 
+            if (locationServicesEnabled()) {
+                mapView.showsUserLocation = true
+            } else {
+                mapView.showsUserLocation = false
+            }
+
             return view
         }
 
@@ -60,5 +67,17 @@ extension BookViewController: MKMapViewDelegate {
             let location = view.annotation as! Store
             let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
             location.mapItem().openInMapsWithLaunchOptions(launchOptions)
+    }
+
+    /**
+        Checks whether the user has enabled location services.
+
+        :returns: True if enabled, false otherwise.
+    */
+    func locationServicesEnabled() -> Bool {
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+
+        return CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse
     }
 }
