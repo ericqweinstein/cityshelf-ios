@@ -39,13 +39,6 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     let api = SearchService()
     var query = ""
 
-    /**
-        Only allow portrait orientation for this view.
-    */
-    override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
-    }
-
     var stores = [Store]()
 
     override func viewDidLoad() {

@@ -16,4 +16,11 @@ class NavigationViewController: UINavigationController, UISearchBarDelegate {
     override func viewWillAppear(animated: Bool) {
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-100, 0), forBarMetrics: .Default)
     }
+
+    /**
+        Only allow portrait orientation.
+    */
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
 }
