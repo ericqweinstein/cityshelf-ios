@@ -99,14 +99,14 @@ class SearchService {
             for (isbn, availability) in hits {
                 let hit = [isbn: availability] as Dictionary
                 books.addObject(hit)
-                completeness += 0.70 / Float(hits.count)
+
+                dispatch_sync(dispatch_get_main_queue()) {
+                    completeness += 0.70 / Float(hits.count)
+                    searchProgress.setProgress(completeness, animated: true)
+                }
             }
 
             dispatch_group_leave(group)
-
-            dispatch_async(dispatch_get_main_queue()) {
-                searchProgress.setProgress(completeness, animated: true)
-            }
         }
 
         searchResults = books
