@@ -45,6 +45,9 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
         cell.storePrice.text = normalizePrice(price)
         cell.storeAvailability.text = normalizeAvailability(availability)
 
+        cell.storeAvailability.layer.borderWidth = 3.0
+        cell.storeAvailability.layer.borderColor = Settings().cityShelfGreen.CGColor
+
         return cell
     }
 

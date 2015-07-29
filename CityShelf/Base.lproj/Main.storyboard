@@ -384,14 +384,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pRt-6Q-iTK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRt-6Q-iTK">
                                 <rect key="frame" x="16" y="73" width="62" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="AWw-98-ARr"/>
                                     <constraint firstAttribute="height" constant="95" id="wYy-oA-n64"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydJ-ZT-PM4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydJ-ZT-PM4">
                                 <rect key="frame" x="86" y="73" width="467" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="i0a-aV-pT4"/>
@@ -400,7 +400,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-Ck-LRd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Author" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-Ck-LRd">
                                 <rect key="frame" x="86" y="101" width="467" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="WgP-RH-Q1z"/>
@@ -409,10 +409,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-kE-oUI">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-kE-oUI">
                                 <rect key="frame" x="0.0" y="176" width="600" height="171"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
                                 <rect key="frame" x="86" y="129" width="467" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="kIh-4T-4le"/>
@@ -453,15 +453,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Ga-cjk">
-                                                    <rect key="frame" x="472" y="16" width="120" height="14"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="Fn6-IY-YF1"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSO-Dl-VP7">
                                                     <rect key="frame" x="240" y="15" width="120" height="14"/>
                                                     <constraints>
@@ -471,12 +462,24 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Ga-cjk">
+                                                    <rect key="frame" x="472" y="4" width="120" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="8As-7a-ZVz"/>
+                                                        <constraint firstAttribute="width" constant="120" id="Fn6-IY-YF1"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="Muf-EL-qb5"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="SB1-Xb-kEM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="CooperHewitt-Book" family="Cooper Hewitt" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="U4E-RF-RAJ" firstAttribute="leading" secondItem="Fo8-yT-qnj" secondAttribute="leadingMargin" id="KhT-9Z-vID"/>
                                                 <constraint firstAttribute="centerY" secondItem="KLh-Cp-niS" secondAttribute="centerY" constant="-1" id="Uyg-Xi-Hx9"/>
                                                 <constraint firstAttribute="centerY" secondItem="xSO-Dl-VP7" secondAttribute="centerY" id="ZmK-Gq-O9I"/>
-                                                <constraint firstAttribute="centerY" secondItem="gvQ-Ga-cjk" secondAttribute="centerY" constant="-1" id="clN-ei-g4K"/>
+                                                <constraint firstAttribute="centerY" secondItem="gvQ-Ga-cjk" secondAttribute="centerY" id="clN-ei-g4K"/>
                                                 <constraint firstItem="KLh-Cp-niS" firstAttribute="leading" secondItem="U4E-RF-RAJ" secondAttribute="trailing" constant="8" id="hH5-xc-Xte"/>
                                                 <constraint firstAttribute="centerY" secondItem="U4E-RF-RAJ" secondAttribute="centerY" id="mGs-l7-3ha"/>
                                                 <constraint firstItem="gvQ-Ga-cjk" firstAttribute="trailing" secondItem="Fo8-yT-qnj" secondAttribute="trailingMargin" id="nKM-6V-F38"/>
@@ -497,7 +500,7 @@
                                     </mask>
                                 </variation>
                             </tableView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-IM-94N">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-IM-94N">
                                 <rect key="frame" x="0.0" y="20" width="600" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="Qib-CY-hil"/>
@@ -586,6 +589,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mXb-Vk-aNY"/>
-        <segue reference="LmP-rB-nwG"/>
+        <segue reference="6vS-gD-An9"/>
     </inferredMetricsTieBreakers>
 </document>
