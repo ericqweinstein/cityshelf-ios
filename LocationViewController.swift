@@ -74,7 +74,19 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
         citySelection.delegate = self
 
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+
+        // If the user is here, (s)he doesn't want to
+        // enable location services. (EW 28 Jul 2015)
+        locationManager.stopUpdatingLocation()
+
+        let alert = UIAlertView(
+            title: "Location Services Disabled",
+            message: "You can enable location services under Settings > CityShelf.",
+            delegate: self,
+            cancelButtonTitle: "OK"
+        )
+
+        alert.show()
     }
 
     /**
@@ -88,18 +100,14 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
         locationManager.stopUpdatingLocation()
 
         if (error != nil) {
-            let alert = UIAlertController(
+            let alert = UIAlertView(
                 title: "Sorry! We couldn't find you.",
-                message: error.description,
-                preferredStyle: UIAlertControllerStyle.Alert
+                message: "Go ahead and pick your city.",
+                delegate: self,
+                cancelButtonTitle: "OK"
             )
 
-            alert.addAction(UIAlertAction(
-                title: "I'll pick my city",
-                style: UIAlertActionStyle.Default,
-                handler: nil))
-
-            self.presentViewController(alert, animated: true, completion: nil)
+            alert.show()
         }
     }
 
