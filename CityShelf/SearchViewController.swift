@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import CoreLocation
 
 /// View controller for the book search field.
-class SearchViewController: UIViewController, UITextFieldDelegate {
+class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
     var query = ""
     let api = SearchService()
 
     @IBAction func changeCity(sender: AnyObject) {
-        performSegueWithIdentifier("backToLocation", sender: nil)
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+
+        if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse) {
+            handleLocationServices()
+        } else {
+            performSegueWithIdentifier("backToLocation", sender: nil)
+        }
     }
 
     @IBOutlet weak var searchField: UITextField!
@@ -90,5 +98,33 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     */
     func goToResults() {
         performSegueWithIdentifier("goToResults", sender: self)
+    }
+
+    /**
+        If the user is already using location services, let them know
+        they need to disable in order to pick their city.
+    */
+    func handleLocationServices() {
+        let alertController = UIAlertController(
+            title: "Location Services Enabled",
+            message: "You cannot pick your city while location services are enabled. You can disable location services under Settings > CityShelf.",
+            preferredStyle: .Alert
+        )
+
+        let settingsAction = UIAlertAction(
+            title: "Go to Settings",
+            style: .Default) { (_) -> Void in
+                let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
+
+                if let url = settingsUrl {
+                    UIApplication.sharedApplication().openURL(url)
+                }
+        }
+
+        let cancelAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(settingsAction)
+        alertController.addAction(cancelAction)
+
+        presentViewController(alertController, animated: true, completion: nil)
     }
 }

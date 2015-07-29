@@ -75,18 +75,11 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
         locationManager.delegate = self
 
-        // If the user is here, (s)he doesn't want to
-        // enable location services. (EW 28 Jul 2015)
-        locationManager.stopUpdatingLocation()
+        let shouldAskLocation = CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined
 
-        let alert = UIAlertView(
-            title: "Location Services Disabled",
-            message: "You can enable location services under Settings > CityShelf.",
-            delegate: self,
-            cancelButtonTitle: "OK"
-        )
-
-        alert.show()
+        if (shouldAskLocation) {
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
 
     /**
@@ -99,7 +92,9 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         locationManager.stopUpdatingLocation()
 
-        if (error != nil) {
+        let intentionallyDenied = (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied)
+
+        if (error != nil && !intentionallyDenied) {
             let alert = UIAlertView(
                 title: "Sorry! We couldn't find you.",
                 message: "Go ahead and pick your city.",
@@ -125,8 +120,6 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
         NSUserDefaults.standardUserDefaults().setDouble(coord.latitude, forKey: "Latitude")
         NSUserDefaults.standardUserDefaults().setDouble(coord.longitude, forKey: "Longitude")
         NSUserDefaults.standardUserDefaults().setInteger(16000, forKey: "RegionRadius")
-
-        performSegueWithIdentifier("goToSearch", sender: self)
     }
 
     /**
@@ -140,6 +133,12 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
             if (status == CLAuthorizationStatus.AuthorizedWhenInUse) {
                 locationManager.startUpdatingLocation()
+
+                performSegueWithIdentifier("goToSearch", sender: self)
+            }
+
+            if (status == CLAuthorizationStatus.Denied) {
+                handleLocationServices()
             }
     }
 
@@ -177,5 +176,34 @@ class LocationViewController: UIViewController, UIPickerViewDataSource, UIPicker
     */
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         return cities[row]
+    }
+
+    /**
+        If the user is already using location services, let them know
+        they need to disable in order to pick their city.
+        @todo Pull this out, since it's shared with SearchViewController. (EW 28 Jul 2015)
+    */
+    func handleLocationServices() {
+        let alertController = UIAlertController(
+            title: "Location Services Disabled",
+            message: "You can enable location services under Settings > CityShelf.",
+            preferredStyle: .Alert
+        )
+
+        let settingsAction = UIAlertAction(
+            title: "Go to Settings",
+            style: .Default) { (_) -> Void in
+                let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
+
+                if let url = settingsUrl {
+                    UIApplication.sharedApplication().openURL(url)
+                }
+        }
+
+        let cancelAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(settingsAction)
+        alertController.addAction(cancelAction)
+
+        presentViewController(alertController, animated: true, completion: nil)
     }
 }
