@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B009C5231A80630D00C43439 /* CityShelf_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B009C5221A80630D00C43439 /* CityShelf_logo.png */; };
 		B009C5251A94306400C43439 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5241A94306400C43439 /* Book.swift */; };
 		B009C5271A94307300C43439 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B009C5261A94307300C43439 /* SearchService.swift */; };
 		B019B5341AF1BA54002417E8 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B019B5331AF1BA54002417E8 /* TutorialViewController.swift */; };
@@ -28,6 +27,7 @@
 		B06FB9891A80620B00AEAB8F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06FB9881A80620B00AEAB8F /* Images.xcassets */; };
 		B06FB98C1A80620B00AEAB8F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B06FB98A1A80620B00AEAB8F /* LaunchScreen.xib */; };
 		B07F0CD91B0D4D79007CFEB6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07F0CD81B0D4D79007CFEB6 /* Settings.swift */; };
+		B081ACAE1B6C267F0034E8C5 /* CS_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B081ACAD1B6C267F0034E8C5 /* CS_logo.png */; };
 		B0820EA91AB4AE1F0015F0DB /* CooperHewitt-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820E9B1AB4AE1F0015F0DB /* CooperHewitt-Bold.otf */; };
 		B0820EAA1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820E9C1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf */; };
 		B0820EAB1AB4AE1F0015F0DB /* CooperHewitt-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B0820E9D1AB4AE1F0015F0DB /* CooperHewitt-Book.otf */; };
@@ -65,7 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B009C5221A80630D00C43439 /* CityShelf_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CityShelf_logo.png; sourceTree = "<group>"; };
 		B009C5241A94306400C43439 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B009C5261A94307300C43439 /* SearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		B019B5331AF1BA54002417E8 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		B06FB9911A80620B00AEAB8F /* CityShelfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityShelfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06FB9961A80620B00AEAB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B07F0CD81B0D4D79007CFEB6 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B081ACAD1B6C267F0034E8C5 /* CS_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CS_logo.png; sourceTree = "<group>"; };
 		B0820E9B1AB4AE1F0015F0DB /* CooperHewitt-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Bold.otf"; sourceTree = "<group>"; };
 		B0820E9C1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-BoldItalic.otf"; sourceTree = "<group>"; };
 		B0820E9D1AB4AE1F0015F0DB /* CooperHewitt-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Book.otf"; sourceTree = "<group>"; };
@@ -217,13 +217,13 @@
 		B06FB9A31A8062B500AEAB8F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B081ACAD1B6C267F0034E8C5 /* CS_logo.png */,
 				B09C505F1B65A3E700A451AC /* search_icn_black.png */,
 				B09C50601B65A3E700A451AC /* search_icn_green.png */,
 				B036109F1B267DDD001E0C8E /* default_book.png */,
 				B03610991B1FBF0B001E0C8E /* cs_intro_01.png */,
 				B036109A1B1FBF0B001E0C8E /* cs_intro_02.png */,
 				B036109B1B1FBF0B001E0C8E /* cs_intro_03.png */,
-				B009C5221A80630D00C43439 /* CityShelf_logo.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -330,7 +330,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B009C5231A80630D00C43439 /* CityShelf_logo.png in Resources */,
 				B036109E1B1FBF0B001E0C8E /* cs_intro_03.png in Resources */,
 				B0820EAA1AB4AE1F0015F0DB /* CooperHewitt-BoldItalic.otf in Resources */,
 				B0820EAF1AB4AE1F0015F0DB /* CooperHewitt-Light.otf in Resources */,
@@ -339,6 +338,7 @@
 				B09C50621B65A3E700A451AC /* search_icn_green.png in Resources */,
 				B0820EA91AB4AE1F0015F0DB /* CooperHewitt-Bold.otf in Resources */,
 				B0820EB41AB4AE1F0015F0DB /* CooperHewitt-SemiboldItalic.otf in Resources */,
+				B081ACAE1B6C267F0034E8C5 /* CS_logo.png in Resources */,
 				B06FB9871A80620B00AEAB8F /* Main.storyboard in Resources */,
 				B0820EAE1AB4AE1F0015F0DB /* CooperHewitt-HeavyItalic.otf in Resources */,
 				B06FB98C1A80620B00AEAB8F /* LaunchScreen.xib in Resources */,
