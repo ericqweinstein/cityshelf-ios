@@ -385,42 +385,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pRt-6Q-iTK">
-                                <rect key="frame" x="16" y="73" width="62" height="95"/>
+                                <rect key="frame" x="16" y="30" width="62" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="AWw-98-ARr"/>
                                     <constraint firstAttribute="height" constant="95" id="wYy-oA-n64"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydJ-ZT-PM4">
-                                <rect key="frame" x="86" y="73" width="467" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="i0a-aV-pT4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="21"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-Ck-LRd">
-                                <rect key="frame" x="86" y="101" width="467" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="WgP-RH-Q1z"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytI-kE-oUI">
-                                <rect key="frame" x="0.0" y="176" width="600" height="171"/>
+                                <rect key="frame" x="0.0" y="133" width="600" height="214"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
-                                <rect key="frame" x="86" y="129" width="467" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="kIh-4T-4le"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9Eu-dV-dKP">
                                 <rect key="frame" x="0.0" y="355" width="600" height="237"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -500,10 +473,11 @@
                                     </mask>
                                 </variation>
                             </tableView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-IM-94N">
-                                <rect key="frame" x="0.0" y="20" width="600" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnM-IM-94N">
+                                <rect key="frame" x="0.0" y="20" width="600" height="6"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="Qib-CY-hil"/>
+                                    <constraint firstAttribute="height" constant="6" id="eBZ-LV-uxa"/>
                                 </constraints>
                                 <color key="progressTintColor" red="0.0" green="0.98039215690000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -513,18 +487,46 @@
                                     </mask>
                                 </variation>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydJ-ZT-PM4">
+                                <rect key="frame" x="86" y="30" width="467" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="i0a-aV-pT4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CooperHewitt-Bold" family="Cooper Hewitt" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-Ck-LRd">
+                                <rect key="frame" x="86" y="58" width="467" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="WgP-RH-Q1z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Z-li-6ag">
+                                <rect key="frame" x="86" y="86" width="467" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="kIh-4T-4le"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CooperHewitt-Light" family="Cooper Hewitt" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="A5Z-li-6ag" firstAttribute="top" secondItem="MKj-Ck-LRd" secondAttribute="bottom" constant="-11" id="5EC-ny-7IO"/>
                             <constraint firstItem="ytI-kE-oUI" firstAttribute="leading" secondItem="ke0-EV-Gf4" secondAttribute="leading" id="6Hh-OE-M46"/>
+                            <constraint firstItem="tnM-IM-94N" firstAttribute="top" secondItem="Q9o-eh-8mL" secondAttribute="bottom" id="APC-Qc-LPa"/>
                             <constraint firstAttribute="centerX" secondItem="9Eu-dV-dKP" secondAttribute="centerX" id="Ck5-fX-1Eg"/>
-                            <constraint firstItem="ytI-kE-oUI" firstAttribute="top" secondItem="Q9o-eh-8mL" secondAttribute="bottom" constant="112" id="DHF-Pt-9N0"/>
+                            <constraint firstItem="ytI-kE-oUI" firstAttribute="top" secondItem="Q9o-eh-8mL" secondAttribute="bottom" constant="113" id="DHF-Pt-9N0"/>
                             <constraint firstItem="tnM-IM-94N" firstAttribute="trailing" secondItem="ytI-kE-oUI" secondAttribute="trailing" id="EwW-F9-hD4"/>
                             <constraint firstItem="A5Z-li-6ag" firstAttribute="leading" secondItem="pRt-6Q-iTK" secondAttribute="trailing" constant="8" id="HTF-1G-zoo"/>
                             <constraint firstItem="ytI-kE-oUI" firstAttribute="trailing" secondItem="ke0-EV-Gf4" secondAttribute="trailingMargin" id="HmP-c7-Eyd"/>
                             <constraint firstAttribute="trailing" secondItem="ytI-kE-oUI" secondAttribute="trailing" id="JnQ-Ug-pYF"/>
-                            <constraint firstItem="ydJ-ZT-PM4" firstAttribute="top" secondItem="tnM-IM-94N" secondAttribute="bottom" constant="51" id="Jrx-kh-VAu"/>
+                            <constraint firstItem="ydJ-ZT-PM4" firstAttribute="top" secondItem="tnM-IM-94N" secondAttribute="bottom" constant="4" id="Jrx-kh-VAu"/>
                             <constraint firstItem="MKj-Ck-LRd" firstAttribute="leading" secondItem="pRt-6Q-iTK" secondAttribute="trailing" constant="8" id="LOa-qS-4yT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MKj-Ck-LRd" secondAttribute="trailing" constant="31" id="Mbl-94-Iwk"/>
                             <constraint firstItem="9Eu-dV-dKP" firstAttribute="leading" secondItem="ke0-EV-Gf4" secondAttribute="leadingMargin" constant="-16" id="OJj-OT-Esp"/>
@@ -544,6 +546,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="SgX-Q7-8Kk"/>
                                 <exclude reference="HmP-c7-Eyd"/>
                                 <exclude reference="Wdi-Jq-Dtk"/>
                             </mask>
@@ -589,6 +592,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mXb-Vk-aNY"/>
-        <segue reference="LmP-rB-nwG"/>
+        <segue reference="6vS-gD-An9"/>
     </inferredMetricsTieBreakers>
 </document>
