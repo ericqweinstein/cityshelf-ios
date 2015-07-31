@@ -144,8 +144,6 @@ class ResultsViewController: UICollectionViewController,
         Converts JSON from the API into Book objects.
     */
     func showResults() {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-
         for (result: NSDictionary) in searchResults {
             let isbn = result.allKeys[0] as! String
             let first = result[isbn] as! NSArray
@@ -160,8 +158,6 @@ class ResultsViewController: UICollectionViewController,
 
             self.results.append(book)
         }
-
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
 
     /**

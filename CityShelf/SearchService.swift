@@ -89,6 +89,8 @@ class SearchService {
         var completeness = Float(0.30)
         searchProgress.setProgress(completeness, animated: true)
 
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+
         dispatch_group_enter(group)
         request("\(searchEndpoint)/books/?query=\(queryString)&latitude=\(latitude)&longitude=\(longitude)") {
             (response) in
@@ -107,6 +109,8 @@ class SearchService {
             }
 
             dispatch_group_leave(group)
+
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
 
         searchResults = books
