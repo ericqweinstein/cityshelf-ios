@@ -2,7 +2,7 @@ CityShelf iOS
 =============
 
 ## About
-CityShelf iOS is a native iOS application that makes searching for books through local and independent booksellers quick and easy. You can find more information in the [service repo](https://github.com/ericqweinstein/cityshelf), which also houses the original mobile web application.
+CityShelf iOS is a native iOS application that makes searching for books through local and independent booksellers quick and easy. You can find more information in the [service repo](https://github.com/ericqweinstein/quixote) and [web client repo](https://github.com/ericqweinstein/cityshelf).
 
 ## Running Locally
 To get up and running, you'll need the following:
