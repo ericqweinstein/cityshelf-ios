@@ -25,4 +25,4 @@ By default, you'll be querying the production CityShelf search service; you can 
 5. Ye Olde Pulle Request
 
 ## License
-Copyright © 2015 CityShelf. All rights reserved.
+MIT (see LICENSE).

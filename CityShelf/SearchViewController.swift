@@ -39,7 +39,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, CLLocationMan
         super.viewWillAppear(animated)
     }
 
-
     override func viewWillDisappear(animated: Bool) {
         if (navigationController?.topViewController != self) {
             navigationController?.navigationBarHidden = false
